@@ -14,7 +14,7 @@ class LugarModel
     {
         $database = DatabaseFactory::getFactory()->getConnection();
 
-        $sql = "SELECT user_id, lugar_id, lugar_text FROM lugares WHERE user_id = :user_id";
+        $sql = "SELECT user_id, lugar_id, lugar_name FROM lugares WHERE user_id = :user_id";
         $query = $database->prepare($sql);
         $query->execute(array(':user_id' => Session::get('user_id')));
 
@@ -31,7 +31,7 @@ class LugarModel
     {
         $database = DatabaseFactory::getFactory()->getConnection();
 
-        $sql = "SELECT user_id, lugar_id, lugar_text FROM lugares WHERE user_id = :user_id AND lugar_id = :lugar_id LIMIT 1";
+        $sql = "SELECT user_id, lugar_id, lugar_name FROM lugares WHERE user_id = :user_id AND lugar_id = :lugar_id LIMIT 1";
         $query = $database->prepare($sql);
         $query->execute(array(':user_id' => Session::get('user_id'), ':lugar_id' => $lugar_id));
 
@@ -41,21 +41,21 @@ class LugarModel
 
     /**
      * Set a lugar (create a new one)
-     * @param string $lugar_text lugar text that will be created
+     * @param string $lugar_name lugar name that will be created
      * @return bool feedback (was the lugar created properly ?)
      */
-    public static function createLugar($lugar_text)
+    public static function createLugar($lugar_name)
     {
-        if (!$lugar_text || strlen($lugar_text) == 0) {
+        if (!$lugar_name || strlen($lugar_name) == 0) {
             Session::add('feedback_negative', Text::get('FEEDBACK_NOTE_CREATION_FAILED'));
             return false;
         }
 
         $database = DatabaseFactory::getFactory()->getConnection();
 
-        $sql = "INSERT INTO lugares (lugar_text, user_id) VALUES (:lugar_text, :user_id)";
+        $sql = "INSERT INTO lugares (lugar_name, user_id) VALUES (:lugar_name, :user_id)";
         $query = $database->prepare($sql);
-        $query->execute(array(':lugar_text' => $lugar_text, ':user_id' => Session::get('user_id')));
+        $query->execute(array(':lugar_name' => $lugar_name, ':user_id' => Session::get('user_id')));
 
         if ($query->rowCount() == 1) {
             return true;
@@ -69,20 +69,20 @@ class LugarModel
     /**
      * Update an existing lugar
      * @param int $lugar_id id of the specific lugar
-     * @param string $lugar_text new text of the specific lugar
+     * @param string $lugar_name new name of the specific lugar
      * @return bool feedback (was the update successful ?)
      */
-    public static function updateLugar($lugar_id, $lugar_text)
+    public static function updateLugar($lugar_id, $lugar_name)
     {
-        if (!$lugar_id || !$lugar_text) {
+        if (!$lugar_id || !$lugar_name) {
             return false;
         }
 
         $database = DatabaseFactory::getFactory()->getConnection();
 
-        $sql = "UPDATE lugares SET lugar_text = :lugar_text WHERE lugar_id = :lugar_id AND user_id = :user_id LIMIT 1";
+        $sql = "UPDATE lugares SET lugar_name = :lugar_name WHERE lugar_id = :lugar_id AND user_id = :user_id LIMIT 1";
         $query = $database->prepare($sql);
-        $query->execute(array(':lugar_id' => $lugar_id, ':lugar_text' => $lugar_text, ':user_id' => Session::get('user_id')));
+        $query->execute(array(':lugar_id' => $lugar_id, ':lugar_name' => $lugar_name, ':user_id' => Session::get('user_id')));
 
         if ($query->rowCount() == 1) {
             return true;

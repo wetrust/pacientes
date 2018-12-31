@@ -14,7 +14,7 @@ class PrevisionModel
     {
         $database = DatabaseFactory::getFactory()->getConnection();
 
-        $sql = "SELECT user_id, prevision_id, prevision_text FROM previsiones WHERE user_id = :user_id";
+        $sql = "SELECT user_id, prevision_id, prevision_name FROM previsiones WHERE user_id = :user_id";
         $query = $database->prepare($sql);
         $query->execute(array(':user_id' => Session::get('user_id')));
 
@@ -31,7 +31,7 @@ class PrevisionModel
     {
         $database = DatabaseFactory::getFactory()->getConnection();
 
-        $sql = "SELECT user_id, prevision_id, prevision_text FROM previsiones WHERE user_id = :user_id AND prevision_id = :prevision_id LIMIT 1";
+        $sql = "SELECT user_id, prevision_id, prevision_name FROM previsiones WHERE user_id = :user_id AND prevision_id = :prevision_id LIMIT 1";
         $query = $database->prepare($sql);
         $query->execute(array(':user_id' => Session::get('user_id'), ':prevision_id' => $prevision_id));
 
@@ -41,21 +41,21 @@ class PrevisionModel
 
     /**
      * Set a prevision (create a new one)
-     * @param string $prevision_text prevision text that will be created
+     * @param string $prevision_name prevision name that will be created
      * @return bool feedback (was the prevision created properly ?)
      */
-    public static function createPrevision($prevision_text)
+    public static function createPrevision($prevision_name)
     {
-        if (!$prevision_text || strlen($prevision_text) == 0) {
+        if (!$prevision_name || strlen($prevision_name) == 0) {
             Session::add('feedback_negative', Text::get('FEEDBACK_NOTE_CREATION_FAILED'));
             return false;
         }
 
         $database = DatabaseFactory::getFactory()->getConnection();
 
-        $sql = "INSERT INTO previsiones (prevision_text, user_id) VALUES (:prevision_text, :user_id)";
+        $sql = "INSERT INTO previsiones (prevision_name, user_id) VALUES (:prevision_name, :user_id)";
         $query = $database->prepare($sql);
-        $query->execute(array(':prevision_text' => $prevision_text, ':user_id' => Session::get('user_id')));
+        $query->execute(array(':prevision_name' => $prevision_name, ':user_id' => Session::get('user_id')));
 
         if ($query->rowCount() == 1) {
             return true;
@@ -69,20 +69,20 @@ class PrevisionModel
     /**
      * Update an existing prevision
      * @param int $prevision_id id of the specific prevision
-     * @param string $prevision_text new text of the specific prevision
+     * @param string $prevision_name new name of the specific prevision
      * @return bool feedback (was the update successful ?)
      */
-    public static function updatePrevision($prevision_id, $prevision_text)
+    public static function updatePrevision($prevision_id, $prevision_name)
     {
-        if (!$prevision_id || !$prevision_text) {
+        if (!$prevision_id || !$prevision_name) {
             return false;
         }
 
         $database = DatabaseFactory::getFactory()->getConnection();
 
-        $sql = "UPDATE previsiones SET prevision_text = :prevision_text WHERE prevision_id = :prevision_id AND user_id = :user_id LIMIT 1";
+        $sql = "UPDATE previsiones SET prevision_name = :prevision_name WHERE prevision_id = :prevision_id AND user_id = :user_id LIMIT 1";
         $query = $database->prepare($sql);
-        $query->execute(array(':prevision_id' => $prevision_id, ':prevision_text' => $prevision_text, ':user_id' => Session::get('user_id')));
+        $query->execute(array(':prevision_id' => $prevision_id, ':prevision_name' => $prevision_name, ':user_id' => Session::get('user_id')));
 
         if ($query->rowCount() == 1) {
             return true;
