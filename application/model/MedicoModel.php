@@ -14,7 +14,7 @@ class MedicoModel
     {
         $database = DatabaseFactory::getFactory()->getConnection();
 
-        $sql = "SELECT user_id, medico_id, medico_text FROM medicos WHERE user_id = :user_id";
+        $sql = "SELECT medico_id, medico_name FROM medicos WHERE user_id = :user_id";
         $query = $database->prepare($sql);
         $query->execute(array(':user_id' => Session::get('user_id')));
 
@@ -31,7 +31,7 @@ class MedicoModel
     {
         $database = DatabaseFactory::getFactory()->getConnection();
 
-        $sql = "SELECT user_id, medico_id, medico_text FROM medicos WHERE user_id = :user_id AND medico_id = :medico_id LIMIT 1";
+        $sql = "SELECT medico_id, medico_name FROM medicos WHERE user_id = :user_id AND medico_id = :medico_id LIMIT 1";
         $query = $database->prepare($sql);
         $query->execute(array(':user_id' => Session::get('user_id'), ':medico_id' => $medico_id));
 
@@ -41,21 +41,21 @@ class MedicoModel
 
     /**
      * Set a medico (create a new one)
-     * @param string $medico_text medico text that will be created
+     * @param string $medico_name medico name that will be created
      * @return bool feedback (was the medico created properly ?)
      */
-    public static function createMedico($medico_text)
+    public static function createMedico($medico_name)
     {
-        if (!$medico_text || strlen($medico_text) == 0) {
+        if (!$medico_name || strlen($medico_name) == 0) {
             Session::add('feedback_negative', Text::get('FEEDBACK_NOTE_CREATION_FAILED'));
             return false;
         }
 
         $database = DatabaseFactory::getFactory()->getConnection();
 
-        $sql = "INSERT INTO medicos (medico_text, user_id) VALUES (:medico_text, :user_id)";
+        $sql = "INSERT INTO medicos (medico_name, user_id) VALUES (:medico_name, :user_id)";
         $query = $database->prepare($sql);
-        $query->execute(array(':medico_text' => $medico_text, ':user_id' => Session::get('user_id')));
+        $query->execute(array(':medico_name' => $medico_name, ':user_id' => Session::get('user_id')));
 
         if ($query->rowCount() == 1) {
             return true;
@@ -69,20 +69,20 @@ class MedicoModel
     /**
      * Update an existing medico
      * @param int $medico_id id of the specific medico
-     * @param string $medico_text new text of the specific medico
+     * @param string $medico_name new name of the specific medico
      * @return bool feedback (was the update successful ?)
      */
-    public static function updateMedico($medico_id, $medico_text)
+    public static function updateMedico($medico_id, $medico_name)
     {
-        if (!$medico_id || !$medico_text) {
+        if (!$medico_id || !$medico_name) {
             return false;
         }
 
         $database = DatabaseFactory::getFactory()->getConnection();
 
-        $sql = "UPDATE medicos SET medico_text = :medico_text WHERE medico_id = :medico_id AND user_id = :user_id LIMIT 1";
+        $sql = "UPDATE medicos SET medico_name = :medico_name WHERE medico_id = :medico_id AND user_id = :user_id LIMIT 1";
         $query = $database->prepare($sql);
-        $query->execute(array(':medico_id' => $medico_id, ':medico_text' => $medico_text, ':user_id' => Session::get('user_id')));
+        $query->execute(array(':medico_id' => $medico_id, ':medico_name' => $medico_name, ':user_id' => Session::get('user_id')));
 
         if ($query->rowCount() == 1) {
             return true;

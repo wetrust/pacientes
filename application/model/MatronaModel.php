@@ -14,7 +14,7 @@ class MatronaModel
     {
         $database = DatabaseFactory::getFactory()->getConnection();
 
-        $sql = "SELECT user_id, matrona_id, matrona_text FROM matronas WHERE user_id = :user_id";
+        $sql = "SELECT matrona_id, matrona_name FROM matronas WHERE user_id = :user_id";
         $query = $database->prepare($sql);
         $query->execute(array(':user_id' => Session::get('user_id')));
 
@@ -31,7 +31,7 @@ class MatronaModel
     {
         $database = DatabaseFactory::getFactory()->getConnection();
 
-        $sql = "SELECT user_id, matrona_id, matrona_text FROM matronas WHERE user_id = :user_id AND matrona_id = :matrona_id LIMIT 1";
+        $sql = "SELECT matrona_id, matrona_name FROM matronas WHERE user_id = :user_id AND matrona_id = :matrona_id LIMIT 1";
         $query = $database->prepare($sql);
         $query->execute(array(':user_id' => Session::get('user_id'), ':matrona_id' => $matrona_id));
 
@@ -41,21 +41,21 @@ class MatronaModel
 
     /**
      * Set a matrona (create a new one)
-     * @param string $matrona_text matrona text that will be created
+     * @param string $matrona_name matrona name that will be created
      * @return bool feedback (was the matrona created properly ?)
      */
-    public static function createMatrona($matrona_text)
+    public static function createMatrona($matrona_name)
     {
-        if (!$matrona_text || strlen($matrona_text) == 0) {
+        if (!$matrona_name || strlen($matrona_name) == 0) {
             Session::add('feedback_negative', Text::get('FEEDBACK_NOTE_CREATION_FAILED'));
             return false;
         }
 
         $database = DatabaseFactory::getFactory()->getConnection();
 
-        $sql = "INSERT INTO matronas (matrona_text, user_id) VALUES (:matrona_text, :user_id)";
+        $sql = "INSERT INTO matronas (matrona_name, user_id) VALUES (:matrona_name, :user_id)";
         $query = $database->prepare($sql);
-        $query->execute(array(':matrona_text' => $matrona_text, ':user_id' => Session::get('user_id')));
+        $query->execute(array(':matrona_name' => $matrona_name, ':user_id' => Session::get('user_id')));
 
         if ($query->rowCount() == 1) {
             return true;
@@ -69,20 +69,20 @@ class MatronaModel
     /**
      * Update an existing matrona
      * @param int $matrona_id id of the specific matrona
-     * @param string $matrona_text new text of the specific matrona
+     * @param string $matrona_name new name of the specific matrona
      * @return bool feedback (was the update successful ?)
      */
-    public static function updateMatrona($matrona_id, $matrona_text)
+    public static function updateMatrona($matrona_id, $matrona_name)
     {
-        if (!$matrona_id || !$matrona_text) {
+        if (!$matrona_id || !$matrona_name) {
             return false;
         }
 
         $database = DatabaseFactory::getFactory()->getConnection();
 
-        $sql = "UPDATE matronas SET matrona_text = :matrona_text WHERE matrona_id = :matrona_id AND user_id = :user_id LIMIT 1";
+        $sql = "UPDATE matronas SET matrona_name = :matrona_name WHERE matrona_id = :matrona_id AND user_id = :user_id LIMIT 1";
         $query = $database->prepare($sql);
-        $query->execute(array(':matrona_id' => $matrona_id, ':matrona_text' => $matrona_text, ':user_id' => Session::get('user_id')));
+        $query->execute(array(':matrona_id' => $matrona_id, ':matrona_name' => $matrona_name, ':user_id' => Session::get('user_id')));
 
         if ($query->rowCount() == 1) {
             return true;
