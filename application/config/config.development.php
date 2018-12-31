@@ -62,10 +62,10 @@ return array(
      * DB_CHARSET The charset, necessary for security reasons. Check Database.php class for more info.
      */
     'DB_TYPE' => 'mysql',
-    'DB_HOST' => 'db',
-    'DB_NAME' => 'huge',
+    'DB_HOST' => 'healthdb',
+    'DB_NAME' => 'pacientes',
     'DB_USER' => 'root',
-    'DB_PASS' => 'test',
+    'DB_PASS' => '/Sha256:1',
     'DB_PORT' => '3306',
     'DB_CHARSET' => 'utf8',
     /**
@@ -99,7 +99,7 @@ return array(
     'COOKIE_DOMAIN' => "",
     'COOKIE_SECURE' => false,
     'COOKIE_HTTP' => true,
-    'COOKIE_NAME' => "PHPSESSID",
+    'COOKIE_NAME' => "pacientes",
     'SESSION_RUNTIME' => 604800,
     /**
      * Configuration for: Avatars/Gravatar support
