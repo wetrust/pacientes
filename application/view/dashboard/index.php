@@ -246,6 +246,9 @@
     $(document).ready(function(){
         loadData();
         let i;
+        let args = {
+            action: "get"
+        }
 
         for (i = 135; i < 186; i++) {
             let option = '<option val="' + i + '">' + i + '</option>';
