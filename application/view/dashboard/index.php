@@ -12,15 +12,15 @@
     </nav>
     <div class="tab-content" id="nav-tabContent">
         <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-            <div class="row">
-                <div class="col-9">
-                    <div class="card mt-2">
+            <div class="row pt-2">
+                <div class="col-10">
+                    <div class="card">
                         <div class="card-body">
                             <h5 class="card-title">Pacientes</h5>
                         </div>
                     </div>
                 </div>
-                <div class="col-3">
+                <div class="col-2">
                     <div class="btn-group-vertical" role="group">
                         <button type="button" class="btn btn-primary">Nuevo</button>
                         <button type="button" class="btn btn-secondary">Modificar</button>
@@ -33,14 +33,14 @@
         </div>
         <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
             <div class="row pt-2">
-                <div class="col-9">
-                    <div class="card mt-2">
+                <div class="col-10">
+                    <div class="card">
                         <div class="card-body">
                             <h5 class="card-title">Horas de atención</h5>
                         </div>
                     </div>
                 </div>
-                <div class="col-3">
+                <div class="col-2">
                     <div class="btn-group-vertical" role="group">
                         <button type="button" class="btn btn-primary">Nuevo</button>
                         <button type="button" class="btn btn-secondary">Modificar</button>
@@ -53,14 +53,14 @@
         </div>
         <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
             <div class="row pt-2">
-                <div class="col-9">
+                <div class="col-10">
                     <div class="card">
                         <div class="card-body">
                             <h5 class="card-title">Resumen</h5>
                         </div>
                     </div>
                 </div>
-                <div class="col-3">
+                <div class="col-2">
                     <div class="btn-group-vertical" role="group">
                         <button type="button" class="btn btn-primary">Nuevo</button>
                         <button type="button" class="btn btn-secondary">Modificar</button>
