@@ -135,33 +135,15 @@
                                 <label for="inputPassword4">Edad Materna</label>
                                 <input type="text" class="form-control" id="inputPassword4">
                                 </div>
+                            </div>
+                            <div class="form-row">
                                 <div class="form-group col-md-4">
                                 <label for="inputEmail4">FUR Referida</label>
                                 <input type="text" class="form-control" id="inputEmail4">
                                 </div>
-                            </div>
-                            <div class="form-row">
                                 <div class="form-group col-md-4">
                                 <label for="inputPassword4">Edad Gestacional</label>
                                 <input type="number" class="form-control" id="inputPassword4">
-                                </div>
-                                <div class="form-group col-md-4">
-                                <label for="inputEmail4">Talla materna</label>
-                                <input type="email" class="form-control" id="inputEmail4">
-                                </div>
-                                <div class="form-group col-md-4">
-                                <label for="inputPassword4">Peso materno</label>
-                                <select id="prevision" class="form-control">
-                                    <option selected>Elegir...</option>
-                                </select>
-                                </div>
-                            </div>
-                            <div class="form-row">
-                                <div class="form-group col-md-4">
-                                <label for="inputEmail4">Estado nutricional</label>
-                                <select id="ciudad" class="form-control">
-                                    <option selected>Elegir...</option>
-                                </select>
                                 </div>
                                 <div class="form-group col-md-4">
                                 <label for="inputPassword4">Fecha probable de parto</label>
@@ -172,24 +154,28 @@
                             </div>
                             <div class="form-row">
                                 <div class="form-group col-md-4">
+                                <label for="inputEmail4">Talla materna</label>
+                                <input type="email" class="form-control" id="inputEmail4">
+                                </div>
+                                <div class="form-group col-md-4">
+                                <label for="inputPassword4">Peso materno</label>
+                                <select id="prevision" class="form-control">
+                                    <option selected>Elegir...</option>
+                                </select>
+                                </div>
+                                <div class="form-group col-md-4">
+                                <label for="inputEmail4">Estado nutricional</label>
+                                <select id="ciudad" class="form-control">
+                                    <option selected>Elegir...</option>
+                                </select>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-4">
                                 <label for="inputPassword4">Gestas previas</label>
                                 <select id="inputState" class="form-control">
                                     <option selected>Elegir...</option>
                                     <option>...</option>
-                                </select>
-                                </div>
-                                <div class="form-group col-md-4">
-                                <label for="inputEmail4">Acompañantes</label>
-                                <select id="inputState" class="form-control">
-                                    <option selected>Elegir...</option>
-                                    <option value="0">0</option>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                    <option value="5">5</option>
-                                    <option value="6">6</option>
-                                    <option value="7">7</option>
                                 </select>
                                 </div>
                             </div>
