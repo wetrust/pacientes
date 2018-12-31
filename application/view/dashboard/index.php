@@ -367,7 +367,7 @@
             let args = {
                 action: "new",
                 paciente_rut: $("#rut").val(),
-                paciente_nombre: ("#nombre").val(),
+                paciente_nombre: $("#nombre").val(),
                 paciente_apellido: $("#apellido").val(),
                 paciente_telefono: $("#telefono").val(),
                 paciente_email: $("#email").val(),
