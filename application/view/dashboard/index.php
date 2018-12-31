@@ -314,6 +314,7 @@
             $("#gridRadios1").attr("disabled", false);
             $("#gridRadios2").attr("disabled", false);
             $("#gridRadios3").attr("disabled", false);
+            $("#profesional").attr("disabled", false).val("");
             $("#acompanantes").attr("disabled", false).val("");
 
             $("#paciente\\.nuevo").addClass("d-none");
@@ -334,6 +335,7 @@
             $("#gridRadios1").attr("disabled", false);
             $("#gridRadios2").attr("disabled", false);
             $("#gridRadios3").attr("disabled", false);
+            $("#profesional").attr("disabled", false);
             $("#acompanantes").attr("disabled", false);
 
             $("#paciente\\.nuevo").addClass("d-none");
@@ -354,6 +356,7 @@
             $("#gridRadios1").attr("disabled", true);
             $("#gridRadios2").attr("disabled", true);
             $("#gridRadios3").attr("disabled", true);
+            $("#profesional").attr("disabled", true);
             $("#acompanantes").attr("disabled", true);
 
             $("#paciente\\.nuevo").removeClass("d-none");
@@ -374,6 +377,7 @@
             $("#gridRadios1").attr("disabled", true);
             $("#gridRadios2").attr("disabled", true);
             $("#gridRadios3").attr("disabled", true);
+            $("#profesional").attr("disabled", true);
             $("#acompanantes").attr("disabled", true);
 
             $("#paciente\\.nuevo").removeClass("d-none");
