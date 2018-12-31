@@ -363,6 +363,25 @@
             $("#paciente\\.modificar").removeClass("d-none");
             $("#paciente\\.guardar").addClass("d-none");
             $("#paciente\\.cancelar").addClass("d-none");
+
+            let args = {
+                action: "new",
+                paciente_rut: $("#rut").val();
+                paciente_nombre: ("#nombre").val();
+                paciente_apellido: $("#apellido").val();
+                paciente_telefono: $("#telefono").val();
+                paciente_email: $("#email").val();
+                paciente_prevision: $("#prevision").val();
+                paciente_ciudad: $("#ciudad").val();
+                paciente_lugar: $("#lugar").val();
+                paciente_profesional: $("#profesional").val();
+                paciente_acompanantes: $("#acompanantes").val();
+            }
+            
+            $.post("<?php echo Config::get('URL'); ?>pacientes/api", args).done(function(data){
+                CRUDInterface.reloadTable(_api);
+            });
+
         });
 
         $("#paciente\\.cancelar").on("click", function(){
