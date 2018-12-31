@@ -80,7 +80,7 @@
                                 </label>
                                 </div>
                                 <div class="form-check disabled">
-                                <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" value="option3" disabled>
+                                <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" value="option3">
                                 <label class="form-check-label" for="gridRadios3">
                                     Otros
                                 </label>
