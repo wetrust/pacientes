@@ -66,19 +66,19 @@
                                 <div class="form-group col-md-4">
                                 <label for="inputEmail4">Profesional referente</label>
                                 <div class="form-check">
-                                <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
+                                <input class="form-check-input" type="radio" name="referentes" id="gridRadios1" value="medico" checked>
                                 <label class="form-check-label" for="gridRadios1">
                                     Médico
                                 </label>
                                 </div>
                                 <div class="form-check">
-                                <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
+                                <input class="form-check-input" type="radio" name="referentes" id="gridRadios2" value="matrona">
                                 <label class="form-check-label" for="gridRadios2">
                                     Matrona
                                 </label>
                                 </div>
                                 <div class="form-check disabled">
-                                <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" value="option3">
+                                <input class="form-check-input" type="radio" name="referentes" id="gridRadios3" value="otros">
                                 <label class="form-check-label" for="gridRadios3">
                                     Otros
                                 </label>
@@ -86,9 +86,8 @@
                                 </div>
                                 <div class="form-group col-md-4">
                                 <label for="inputPassword4">Nombre del profesional</label>
-                                <select id="inputState" class="form-control">
+                                <select id="profesional" class="form-control">
                                     <option selected>Elegir...</option>
-                                    <option>...</option>
                                 </select>
                                 </div>
                                 <div class="form-group col-md-4">
@@ -257,6 +256,36 @@
             let option = '<option val="' + i + '">' + i + '</option>';
             $("#pesomaterno").append(option);
         }
+
+        $("input[name='referentes']").on("click", function(){
+            if ($(this).val() == "medico"){
+                $.post("<?php echo Config::get('URL'); ?>medicos/api", args).done(function(data){
+                    $('#profesional').empty();
+                    if (Object.keys(data).length > 0) {
+                        for (let i = 0; i < data.length; i++) {
+                            let response = '<option value="' + data[i][Object.keys(data[i])[0]] + '">' + data[i][Object.keys(data[i])[1]];
+                            response += '</option>';
+                            $('#profesional').append(response);
+                        }
+                    }
+                });
+            }
+            else if ($(this).val() == "matrona"){
+                $.post("<?php echo Config::get('URL'); ?>matronas/api", args).done(function(data){
+                    $('#profesional').empty();
+                    if (Object.keys(data).length > 0) {
+                        for (let i = 0; i < data.length; i++) {
+                            let response = '<option value="' + data[i][Object.keys(data[i])[0]] + '">' + data[i][Object.keys(data[i])[1]];
+                            response += '</option>';
+                            $('#profesional').append(response);
+                        }
+                    }
+                });
+            }
+            else{
+                $("#profesional").empty();
+            }
+        });
     });
 
     function loadData(){
