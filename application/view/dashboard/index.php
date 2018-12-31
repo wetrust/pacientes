@@ -176,10 +176,7 @@
             $('#ciudad').empty();
             if (Object.keys(data).length > 0) {
                 for (let i = 0; i < data.length; i++) {
-                    let response = '<option value="' + data[i][Object.keys(data[i])[0]] + '">';
-                    for (var col in data[i]) {
-                        response += data[i][col];
-                    }
+                    let response = '<option value="' + data[i][Object.keys(data[i])[0]] + '">' + data[i][Object.keys(data[i])[1]];
                     response += '</option>';
                     $('#ciudad').append(response);
                 }
@@ -190,10 +187,7 @@
             $('#prevision').empty();
             if (Object.keys(data).length > 0) {
                 for (let i = 0; i < data.length; i++) {
-                    let response = '<option value="' + data[i][Object.keys(data[i])[0]] + '">';
-                    for (var col in data[i]) {
-                        response += data[i][col];
-                    }
+                    let response = '<option value="' + data[i][Object.keys(data[i])[0]] + '">' + data[i][Object.keys(data[i])[1]];
                     response += '</option>';
                     $('#prevision').append(response);
                 }
@@ -204,10 +198,7 @@
             $('#lugar').empty();
             if (Object.keys(data).length > 0) {
                 for (let i = 0; i < data.length; i++) {
-                    let response = '<option value="' + data[i][Object.keys(data[i])[0]] + '">';
-                    for (var col in data[i]) {
-                        response += data[i][col];
-                    }
+                    let response = '<option value="' + data[i][Object.keys(data[i])[0]] + '">' + data[i][Object.keys(data[i])[1]];
                     response += '</option>';
                     $('#lugar').append(response);
                 }
