@@ -129,45 +129,43 @@
                             <div class="form-row">
                                 <div class="form-group col-md-4">
                                 <label for="inputEmail4">Fecha de nacimiento</label>
-                                <input type="text" class="form-control" id="inputEmail4">
+                                <input type="date" class="form-control" id="inputEmail4">
                                 </div>
                                 <div class="form-group col-md-4">
                                 <label for="inputPassword4">Edad Materna</label>
-                                <input type="text" class="form-control" id="inputPassword4">
+                                <input type="text" class="form-control" id="inputPassword4" disabled>
                                 </div>
                             </div>
                             <div class="form-row">
                                 <div class="form-group col-md-4">
                                 <label for="inputEmail4">FUR Referida</label>
-                                <input type="text" class="form-control" id="inputEmail4">
+                                <input type="date" class="form-control" id="inputEmail4">
                                 </div>
                                 <div class="form-group col-md-4">
                                 <label for="inputPassword4">Edad Gestacional</label>
-                                <input type="number" class="form-control" id="inputPassword4">
+                                <input type="number" class="form-control" id="inputPassword4" disabled>
                                 </div>
                                 <div class="form-group col-md-4">
                                 <label for="inputPassword4">Fecha probable de parto</label>
-                                <select id="lugar" class="form-control">
-                                    <option selected>Elegir...</option>
-                                </select>
+                                <input type="date" class="form-control" id="inputEmail4">
                                 </div>
                             </div>
                             <div class="form-row">
                                 <div class="form-group col-md-4">
                                 <label for="inputEmail4">Talla materna</label>
-                                <input type="email" class="form-control" id="inputEmail4">
+                                <select id="tallamaterna" class="form-control">
+                                    <option selected>Elegir...</option>
+                                </select>
                                 </div>
                                 <div class="form-group col-md-4">
                                 <label for="inputPassword4">Peso materno</label>
-                                <select id="prevision" class="form-control">
+                                <select id="pesomaterno" class="form-control">
                                     <option selected>Elegir...</option>
                                 </select>
                                 </div>
                                 <div class="form-group col-md-4">
-                                <label for="inputEmail4">Estado nutricional</label>
-                                <select id="ciudad" class="form-control">
-                                    <option selected>Elegir...</option>
-                                </select>
+                                <label for="inputEmail4">IMC</label>
+                                <input type="date" class="form-control" id="inputEmail4" disabled>
                                 </div>
                             </div>
                             <div class="form-row">
@@ -175,7 +173,17 @@
                                 <label for="inputPassword4">Gestas previas</label>
                                 <select id="inputState" class="form-control">
                                     <option selected>Elegir...</option>
-                                    <option>...</option>
+                                    <option>0</option>
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5</option>
+                                    <option>6</option>
+                                    <option>7</option>
+                                    <option>8</option>
+                                    <option>9</option>
+                                    <option>10</option>
                                 </select>
                                 </div>
                             </div>
@@ -238,6 +246,17 @@
 <script>
     $(document).ready(function(){
         loadData();
+        let i;
+
+        for (i = 135; i < 185; i++) {
+            let option = '<option val="' + i '">' + i + '</option>';
+            $("#tallamaterna").append(option);
+        }
+
+        for (i = 35; i < 140; i++) {
+            let option = '<option val="' + i '">' + i + '</option>';
+            $("#pesomaterno").append(option);
+        }
     });
 
     function loadData(){
