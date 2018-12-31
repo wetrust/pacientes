@@ -108,11 +108,11 @@
             view = {
                 titulo: "Matronas",
                 inputs: {
-                    medico_id: {
+                    matrona_id: {
                         name: "#",
                         type: "hidden"
                     },
-                    medico_name: {
+                    matrona_name: {
                         name: "Matrona",
                         type: "text"
                     }
