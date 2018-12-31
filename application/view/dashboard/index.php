@@ -15,7 +15,19 @@
             <div class="card mt-2">
                 <div class="card-body">
                     <h5 class="card-title">Pacientes</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <div class="row">
+                        <div class="col-8">
+                        </div>
+                        <div class="col-4">
+                            <div class="btn-group-vertical" role="group">
+                                <button type="button" class="btn btn-primary">Nuevo</button>
+                                <button type="button" class="btn btn-secondary">Modificar</button>
+                                <button type="button" class="btn btn-secondary">Guardar</button>
+                                <button type="button" class="btn btn-secondary">Cancelar</button>
+                                <button type="button" class="btn btn-secondary">Eliminar</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -27,7 +39,7 @@
                         <div class="col-8">
                         </div>
                         <div class="col-4">
-                            <div class="btn-group" role="group">
+                            <div class="btn-group-vertical" role="group">
                                 <button type="button" class="btn btn-primary">Nuevo</button>
                                 <button type="button" class="btn btn-secondary">Modificar</button>
                                 <button type="button" class="btn btn-secondary">Guardar</button>
@@ -43,7 +55,19 @@
             <div class="card mt-2">
                 <div class="card-body">
                     <h5 class="card-title">Resumen</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <div class="row">
+                        <div class="col-8">
+                        </div>
+                        <div class="col-4">
+                            <div class="btn-group-vertical" role="group">
+                                <button type="button" class="btn btn-primary">Nuevo</button>
+                                <button type="button" class="btn btn-secondary">Modificar</button>
+                                <button type="button" class="btn btn-secondary">Guardar</button>
+                                <button type="button" class="btn btn-secondary">Cancelar</button>
+                                <button type="button" class="btn btn-secondary">Eliminar</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
