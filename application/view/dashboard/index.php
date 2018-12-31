@@ -379,7 +379,7 @@
             }
             
             $.post("<?php echo Config::get('URL'); ?>pacientes/api", args).done(function(data){
-                CRUDInterface.reloadTable(_api);
+
             });
 
         });

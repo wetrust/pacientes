@@ -46,7 +46,7 @@ class PacienteModel
      */
     public static function createPaciente($paciente_rut,$paciente_nombre,$paciente_apellido,$paciente_telefono,$paciente_email,$paciente_prevision,$paciente_ciudad,$paciente_lugar,$paciente_profesional,$paciente_acompanantes)
     {
-        if (!$paciente_text || strlen($paciente_text) == 0) {
+        if (!$paciente_nombre || strlen($paciente_nombre) == 0) {
             Session::add('feedback_negative', Text::get('FEEDBACK_NOTE_CREATION_FAILED'));
             return false;
         }
