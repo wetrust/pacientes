@@ -63,6 +63,8 @@
                                     <option>...</option>
                                 </select>
                                 </div>
+                            </div>
+                            <div class="form-row">
                                 <div class="form-group col-md-4">
                                 <label for="inputEmail4">Profesional referente</label>
                                 <div class="form-check">
@@ -84,16 +86,14 @@
                                 </label>
                                 </div>
                                 </div>
-                            </div>
-                            <div class="form-row">
-                                <div class="form-group col-md-6">
+                                <div class="form-group col-md-4">
                                 <label for="inputPassword4">Nombre del profesional</label>
                                 <select id="inputState" class="form-control">
                                     <option selected>Choose...</option>
                                     <option>...</option>
                                 </select>
                                 </div>
-                                <div class="form-group col-md-6">
+                                <div class="form-group col-md-4">
                                 <label for="inputEmail4">Acompañantes</label>
                                 <select id="inputState" class="form-control">
                                     <option selected>Choose...</option>
