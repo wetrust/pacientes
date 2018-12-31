@@ -290,6 +290,8 @@
                 $("#profesional").empty();
             }
         });
+
+        $("input[name='referentes']").trigger("click");
     });
 
     function loadData(){
