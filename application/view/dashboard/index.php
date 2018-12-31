@@ -291,7 +291,7 @@
             }
         });
 
-        $("input[name='referentes']").trigger("click");
+        $("#gridRadios1").trigger("click");
     });
 
     function loadData(){
