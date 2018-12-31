@@ -243,12 +243,13 @@
     </div>
 </div>
 <script>
+    var args = {
+        action: "get"
+    }
+    
     $(document).ready(function(){
         loadData();
         let i;
-        let args = {
-            action: "get"
-        }
 
         for (i = 135; i < 186; i++) {
             let option = '<option val="' + i + '">' + i + '</option>';
@@ -292,10 +293,6 @@
     });
 
     function loadData(){
-
-        let args = {
-            action: "get"
-        }
 
         $.post("<?php echo Config::get('URL'); ?>ciudad/api", args).done(function(data){
             $('#ciudad').empty();
