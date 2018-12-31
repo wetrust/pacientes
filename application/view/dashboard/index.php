@@ -5,8 +5,9 @@
     <?php $this->renderFeedbackMessages(); ?>
     <nav>
         <div class="nav nav-tabs" id="nav-tab" role="tablist">
-            <a class="nav-item nav-link shadow-sm border mr-2 active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Pacientes</a>
-            <a class="nav-item nav-link shadow-sm border mr-2" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Horas de atención</a>
+            <a class="nav-item nav-link shadow-sm border mr-2 active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Pacientes datos iniciales</a>
+            <a class="nav-item nav-link shadow-sm border mr-2" id="nav-clinico-tab" data-toggle="tab" href="#nav-clinico" role="tab" aria-controls="nav-clinico" aria-selected="true">Datos Clínicos</a>
+            <a class="nav-item nav-link shadow-sm border mr-2" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Reservas de atención</a>
             <a class="nav-item nav-link shadow-sm border" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Resumen</a>
         </div>
     </nav>
@@ -85,6 +86,93 @@
                                 </div>
                                 <div class="form-group col-md-4">
                                 <label for="inputPassword4">Nombre del profesional</label>
+                                <select id="inputState" class="form-control">
+                                    <option selected>Elegir...</option>
+                                    <option>...</option>
+                                </select>
+                                </div>
+                                <div class="form-group col-md-4">
+                                <label for="inputEmail4">Acompañantes</label>
+                                <select id="inputState" class="form-control">
+                                    <option selected>Elegir...</option>
+                                    <option value="0">0</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div class="btn-group-vertical" role="group">
+                        <button type="button" class="btn btn-primary">Nuevo</button>
+                        <button type="button" class="btn btn-secondary">Modificar</button>
+                        <button type="button" class="btn btn-secondary">Guardar</button>
+                        <button type="button" class="btn btn-secondary">Cancelar</button>
+                        <button type="button" class="btn btn-secondary">Eliminar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane fade" id="nav-clinico" role="tabpanel" aria-labelledby="nav-clinico-tab">
+            <div class="row pt-2">
+                <div class="col-10">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Datos Clinicos</h5>
+                            <div class="form-row">
+                                <div class="form-group col-md-4">
+                                <label for="inputEmail4">Fecha de nacimiento</label>
+                                <input type="text" class="form-control" id="inputEmail4">
+                                </div>
+                                <div class="form-group col-md-4">
+                                <label for="inputPassword4">Edad Materna</label>
+                                <input type="text" class="form-control" id="inputPassword4">
+                                </div>
+                                <div class="form-group col-md-4">
+                                <label for="inputEmail4">FUR Referida</label>
+                                <input type="text" class="form-control" id="inputEmail4">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-4">
+                                <label for="inputPassword4">Edad Gestacional</label>
+                                <input type="number" class="form-control" id="inputPassword4">
+                                </div>
+                                <div class="form-group col-md-4">
+                                <label for="inputEmail4">Talla materna</label>
+                                <input type="email" class="form-control" id="inputEmail4">
+                                </div>
+                                <div class="form-group col-md-4">
+                                <label for="inputPassword4">Peso materno</label>
+                                <select id="prevision" class="form-control">
+                                    <option selected>Elegir...</option>
+                                </select>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-4">
+                                <label for="inputEmail4">Estado nutricional</label>
+                                <select id="ciudad" class="form-control">
+                                    <option selected>Elegir...</option>
+                                </select>
+                                </div>
+                                <div class="form-group col-md-4">
+                                <label for="inputPassword4">Fecha probable de parto</label>
+                                <select id="lugar" class="form-control">
+                                    <option selected>Elegir...</option>
+                                </select>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-4">
+                                <label for="inputPassword4">Gestas previas</label>
                                 <select id="inputState" class="form-control">
                                     <option selected>Elegir...</option>
                                     <option>...</option>
