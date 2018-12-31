@@ -114,12 +114,16 @@
                             <h5 class="card-title">Buscar</h5>
                         </div>
                     </div>
-                    <div class="btn-group-vertical" role="group">
-                        <button type="button" class="btn btn-primary">Nuevo</button>
-                        <button type="button" class="btn btn-secondary d-none">Modificar</button>
-                        <button type="button" class="btn btn-secondary d-none">Guardar</button>
-                        <button type="button" class="btn btn-secondary d-none">Cancelar</button>
-                        <button type="button" class="btn btn-secondary d-none">Eliminar</button>
+                    <div class="card mt-2">
+                        <div class="card-body">
+                            <div class="btn-group-vertical" role="group">
+                                <button type="button" class="btn btn-primary">Nuevo</button>
+                                <button type="button" class="btn btn-secondary d-none">Modificar</button>
+                                <button type="button" class="btn btn-secondary d-none">Guardar</button>
+                                <button type="button" class="btn btn-secondary d-none">Cancelar</button>
+                                <button type="button" class="btn btn-secondary d-none">Eliminar</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
