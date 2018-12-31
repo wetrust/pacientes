@@ -111,10 +111,10 @@
                 <div class="col-2">
                     <div class="btn-group-vertical" role="group">
                         <button type="button" class="btn btn-primary">Nuevo</button>
-                        <button type="button" class="btn btn-secondary">Modificar</button>
-                        <button type="button" class="btn btn-secondary">Guardar</button>
-                        <button type="button" class="btn btn-secondary">Cancelar</button>
-                        <button type="button" class="btn btn-secondary">Eliminar</button>
+                        <button type="button" class="btn btn-secondary d-none">Modificar</button>
+                        <button type="button" class="btn btn-secondary d-none">Guardar</button>
+                        <button type="button" class="btn btn-secondary d-none">Cancelar</button>
+                        <button type="button" class="btn btn-secondary d-none">Eliminar</button>
                     </div>
                 </div>
             </div>
@@ -192,10 +192,10 @@
                 <div class="col-2">
                     <div class="btn-group-vertical" role="group">
                         <button type="button" class="btn btn-primary">Nuevo</button>
-                        <button type="button" class="btn btn-secondary">Modificar</button>
-                        <button type="button" class="btn btn-secondary">Guardar</button>
-                        <button type="button" class="btn btn-secondary">Cancelar</button>
-                        <button type="button" class="btn btn-secondary">Eliminar</button>
+                        <button type="button" class="btn btn-secondary d-none">Modificar</button>
+                        <button type="button" class="btn btn-secondary d-none">Guardar</button>
+                        <button type="button" class="btn btn-secondary d-none">Cancelar</button>
+                        <button type="button" class="btn btn-secondary d-none">Eliminar</button>
                     </div>
                 </div>
             </div>
@@ -212,10 +212,10 @@
                 <div class="col-2">
                     <div class="btn-group-vertical" role="group">
                         <button type="button" class="btn btn-primary">Nuevo</button>
-                        <button type="button" class="btn btn-secondary">Modificar</button>
-                        <button type="button" class="btn btn-secondary">Guardar</button>
-                        <button type="button" class="btn btn-secondary">Cancelar</button>
-                        <button type="button" class="btn btn-secondary">Eliminar</button>
+                        <button type="button" class="btn btn-secondary d-none">Modificar</button>
+                        <button type="button" class="btn btn-secondary d-none">Guardar</button>
+                        <button type="button" class="btn btn-secondary d-none">Cancelar</button>
+                        <button type="button" class="btn btn-secondary d-none">Eliminar</button>
                     </div>
                 </div>
             </div>
@@ -232,10 +232,10 @@
                 <div class="col-2">
                     <div class="btn-group-vertical" role="group">
                         <button type="button" class="btn btn-primary">Nuevo</button>
-                        <button type="button" class="btn btn-secondary">Modificar</button>
-                        <button type="button" class="btn btn-secondary">Guardar</button>
-                        <button type="button" class="btn btn-secondary">Cancelar</button>
-                        <button type="button" class="btn btn-secondary">Eliminar</button>
+                        <button type="button" class="btn btn-secondary d-none">Modificar</button>
+                        <button type="button" class="btn btn-secondary d-none">Guardar</button>
+                        <button type="button" class="btn btn-secondary d-none">Cancelar</button>
+                        <button type="button" class="btn btn-secondary d-none">Eliminar</button>
                     </div>
                 </div>
             </div>
