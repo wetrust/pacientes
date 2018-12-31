@@ -248,12 +248,12 @@
         loadData();
         let i;
 
-        for (i = 135; i < 185; i++) {
+        for (i = 135; i < 186; i++) {
             let option = '<option val="' + i + '">' + i + '</option>';
             $("#tallamaterna").append(option);
         }
 
-        for (i = 35; i < 140; i++) {
+        for (i = 35; i < 141; i++) {
             let option = '<option val="' + i + '">' + i + '</option>';
             $("#pesomaterno").append(option);
         }
