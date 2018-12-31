@@ -21,25 +21,25 @@
                             <div class="form-row">
                                 <div class="form-group col-md-4">
                                 <label for="inputEmail4">RUT</label>
-                                <input type="text" class="form-control" id="inputEmail4" disabled>
+                                <input type="text" class="form-control" id="rut" disabled>
                                 </div>
                                 <div class="form-group col-md-4">
                                 <label for="inputPassword4">Nombre</label>
-                                <input type="text" class="form-control" id="inputPassword4" disabled>
+                                <input type="text" class="form-control" id="nombre" disabled>
                                 </div>
                                 <div class="form-group col-md-4">
                                 <label for="inputEmail4">Apellidos</label>
-                                <input type="text" class="form-control" id="inputEmail4" disabled>
+                                <input type="text" class="form-control" id="apellido" disabled>
                                 </div>
                             </div>
                             <div class="form-row">
                                 <div class="form-group col-md-4">
                                 <label for="inputPassword4">Teléfono</label>
-                                <input type="number" class="form-control" id="inputPassword4" disabled>
+                                <input type="number" class="form-control" id="telefono" disabled>
                                 </div>
                                 <div class="form-group col-md-4">
                                 <label for="inputEmail4">Email</label>
-                                <input type="email" class="form-control" id="inputEmail4" disabled>
+                                <input type="email" class="form-control" id="email" disabled>
                                 </div>
                                 <div class="form-group col-md-4">
                                 <label for="inputPassword4">Prevision</label>
@@ -92,7 +92,7 @@
                                 </div>
                                 <div class="form-group col-md-4">
                                 <label for="inputEmail4">Acompañantes</label>
-                                <select id="inputState" class="form-control" disabled>
+                                <select id="acompanantes" class="form-control" disabled>
                                     <option selected>Elegir...</option>
                                     <option value="0">0</option>
                                     <option value="1">1</option>
@@ -117,11 +117,11 @@
                     <div class="card mt-2">
                         <div class="card-body">
                             <div class="btn-group-vertical" role="group">
-                                <button type="button" class="btn btn-primary">Nuevo</button>
-                                <button type="button" class="btn btn-secondary d-none">Modificar</button>
-                                <button type="button" class="btn btn-secondary d-none">Guardar</button>
-                                <button type="button" class="btn btn-secondary d-none">Cancelar</button>
-                                <button type="button" class="btn btn-secondary d-none">Eliminar</button>
+                                <button type="button" id="paciente.nuevo" class="btn btn-primary">Nuevo</button>
+                                <button type="button" id="paciente.modificar" class="btn btn-secondary d-none">Modificar</button>
+                                <button type="button" id="paciente.guardar" class="btn btn-secondary d-none">Guardar</button>
+                                <button type="button" id="paciente.cancelar" class="btn btn-secondary d-none">Cancelar</button>
+                                <button type="button" id="paciente.eliminar" class="btn btn-secondary d-none">Eliminar</button>
                             </div>
                         </div>
                     </div>
@@ -301,6 +301,87 @@
         });
 
         $("#gridRadios1").trigger("click");
+
+        $("#paciente\\.nuevo").on("click", function(){
+            $("#rut").attr("disabled", false).val("");
+            $("#nombre").attr("disabled", false).val("");
+            $("#apellido").attr("disabled", false).val("");
+            $("#telefono").attr("disabled", false).val("");
+            $("#email").attr("disabled", false).val("");
+            $("#prevision").attr("disabled", false).val("");
+            $("#ciudad").attr("disabled", false).val("");
+            $("#lugar").attr("disabled", false).val("");
+            $("#gridRadios1").attr("disabled", false);
+            $("#gridRadios2").attr("disabled", false);
+            $("#gridRadios3").attr("disabled", false);
+            $("#acompanantes").attr("disabled", false).val("");
+
+            $("#paciente\\.nuevo").addClass("d-none");
+            $("#paciente\\.modificar").addClass("d-none");
+            $("#paciente\\.guardar").removeClass("d-none");
+            $("#paciente\\.cancelar").removeClass("d-none");
+        });
+
+        $("#paciente\\.modificar").on("click", function(){
+            $("#rut").attr("disabled", false);
+            $("#nombre").attr("disabled", false);
+            $("#apellido").attr("disabled", false);
+            $("#telefono").attr("disabled", false);
+            $("#email").attr("disabled", false);
+            $("#prevision").attr("disabled", false);
+            $("#ciudad").attr("disabled", false);
+            $("#lugar").attr("disabled", false);
+            $("#gridRadios1").attr("disabled", false);
+            $("#gridRadios2").attr("disabled", false);
+            $("#gridRadios3").attr("disabled", false);
+            $("#acompanantes").attr("disabled", false);
+
+            $("#paciente\\.nuevo").addClass("d-none");
+            $("#paciente\\.modificar").addClass("d-none");
+            $("#paciente\\.guardar").removeClass("d-none");
+            $("#paciente\\.cancelar").removeClass("d-none");
+        });
+
+        $("#paciente\\.guardar").on("click", function(){
+            $("#rut").attr("disabled", true);
+            $("#nombre").attr("disabled", true);
+            $("#apellido").attr("disabled", true);
+            $("#telefono").attr("disabled", true);
+            $("#email").attr("disabled", true);
+            $("#prevision").attr("disabled", true);
+            $("#ciudad").attr("disabled", true);
+            $("#lugar").attr("disabled", true);
+            $("#gridRadios1").attr("disabled", true);
+            $("#gridRadios2").attr("disabled", true);
+            $("#gridRadios3").attr("disabled", true);
+            $("#acompanantes").attr("disabled", true);
+
+            $("#paciente\\.nuevo").removeClass("d-none");
+            $("#paciente\\.modificar").removeClass("d-none");
+            $("#paciente\\.guardar").addClass("d-none");
+            $("#paciente\\.cancelar").addClass("d-none");
+        });
+
+        $("#paciente\\.cancelar").on("click", function(){
+            $("#rut").attr("disabled", true);
+            $("#nombre").attr("disabled", true);
+            $("#apellido").attr("disabled", true);
+            $("#telefono").attr("disabled", true);
+            $("#email").attr("disabled", true);
+            $("#prevision").attr("disabled", true);
+            $("#ciudad").attr("disabled", true);
+            $("#lugar").attr("disabled", true);
+            $("#gridRadios1").attr("disabled", true);
+            $("#gridRadios2").attr("disabled", true);
+            $("#gridRadios3").attr("disabled", true);
+            $("#acompanantes").attr("disabled", true);
+
+            $("#paciente\\.nuevo").removeClass("d-none");
+            $("#paciente\\.modificar").removeClass("d-none");
+            $("#paciente\\.guardar").addClass("d-none");
+            $("#paciente\\.cancelar").addClass("d-none");
+        });
+        
     });
 
     function loadData(){
