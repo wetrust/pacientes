@@ -43,7 +43,7 @@
                                 <div class="form-group col-md-4">
                                 <label for="inputPassword4">Prevision</label>
                                 <select id="inputState" class="form-control">
-                                    <option selected>Choose...</option>
+                                    <option selected>Elegir...</option>
                                     <option>...</option>
                                 </select>
                                 </div>
@@ -52,14 +52,14 @@
                                 <div class="form-group col-md-4">
                                 <label for="inputEmail4">Ciudad</label>
                                 <select id="inputState" class="form-control">
-                                    <option selected>Choose...</option>
+                                    <option selected>Elegir...</option>
                                     <option>...</option>
                                 </select>
                                 </div>
                                 <div class="form-group col-md-4">
                                 <label for="inputPassword4">Lugar de control</label>
                                 <select id="inputState" class="form-control">
-                                    <option selected>Choose...</option>
+                                    <option selected>Elegir...</option>
                                     <option>...</option>
                                 </select>
                                 </div>
@@ -89,15 +89,22 @@
                                 <div class="form-group col-md-4">
                                 <label for="inputPassword4">Nombre del profesional</label>
                                 <select id="inputState" class="form-control">
-                                    <option selected>Choose...</option>
+                                    <option selected>Elegir...</option>
                                     <option>...</option>
                                 </select>
                                 </div>
                                 <div class="form-group col-md-4">
                                 <label for="inputEmail4">Acompañantes</label>
                                 <select id="inputState" class="form-control">
-                                    <option selected>Choose...</option>
-                                    <option>...</option>
+                                    <option selected>Elegir...</option>
+                                    <option value="0">0</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
                                 </select>
                                 </div>
                             </div>

@@ -23,4 +23,9 @@ class DashboardController extends Controller
     {
         $this->View->render('dashboard/index');
     }
+
+    public function configuracion()
+    {
+        $this->View->render('dashboard/configuracion');
+    }
 }
