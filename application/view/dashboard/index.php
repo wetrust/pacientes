@@ -249,12 +249,12 @@
         let i;
 
         for (i = 135; i < 185; i++) {
-            let option = '<option val="' + i '">' + i + '</option>';
+            let option = '<option val="' + i + '">' + i + '</option>';
             $("#tallamaterna").append(option);
         }
 
         for (i = 35; i < 140; i++) {
-            let option = '<option val="' + i '">' + i + '</option>';
+            let option = '<option val="' + i + '">' + i + '</option>';
             $("#pesomaterno").append(option);
         }
     });
