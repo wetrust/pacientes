@@ -14,7 +14,7 @@ class LugarModel
     {
         $database = DatabaseFactory::getFactory()->getConnection();
 
-        $sql = "SELECT user_id, lugar_id, lugar_name FROM lugares WHERE user_id = :user_id";
+        $sql = "SELECT lugar_id, lugar_name FROM lugares WHERE user_id = :user_id";
         $query = $database->prepare($sql);
         $query->execute(array(':user_id' => Session::get('user_id')));
 
@@ -31,7 +31,7 @@ class LugarModel
     {
         $database = DatabaseFactory::getFactory()->getConnection();
 
-        $sql = "SELECT user_id, lugar_id, lugar_name FROM lugares WHERE user_id = :user_id AND lugar_id = :lugar_id LIMIT 1";
+        $sql = "SELECT lugar_id, lugar_name FROM lugares WHERE user_id = :user_id AND lugar_id = :lugar_id LIMIT 1";
         $query = $database->prepare($sql);
         $query->execute(array(':user_id' => Session::get('user_id'), ':lugar_id' => $lugar_id));
 

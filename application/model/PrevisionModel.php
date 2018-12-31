@@ -14,7 +14,7 @@ class PrevisionModel
     {
         $database = DatabaseFactory::getFactory()->getConnection();
 
-        $sql = "SELECT user_id, prevision_id, prevision_name FROM previsiones WHERE user_id = :user_id";
+        $sql = "SELECT prevision_id, prevision_name FROM previsiones WHERE user_id = :user_id";
         $query = $database->prepare($sql);
         $query->execute(array(':user_id' => Session::get('user_id')));
 
@@ -31,7 +31,7 @@ class PrevisionModel
     {
         $database = DatabaseFactory::getFactory()->getConnection();
 
-        $sql = "SELECT user_id, prevision_id, prevision_name FROM previsiones WHERE user_id = :user_id AND prevision_id = :prevision_id LIMIT 1";
+        $sql = "SELECT prevision_id, prevision_name FROM previsiones WHERE user_id = :user_id AND prevision_id = :prevision_id LIMIT 1";
         $query = $database->prepare($sql);
         $query->execute(array(':user_id' => Session::get('user_id'), ':prevision_id' => $prevision_id));
 

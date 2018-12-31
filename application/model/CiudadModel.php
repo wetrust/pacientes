@@ -14,7 +14,7 @@ class CiudadModel
     {
         $database = DatabaseFactory::getFactory()->getConnection();
 
-        $sql = "SELECT user_id, ciudad_id, ciudad_name FROM ciudades WHERE user_id = :user_id";
+        $sql = "SELECT ciudad_id, ciudad_name FROM ciudades WHERE user_id = :user_id";
         $query = $database->prepare($sql);
         $query->execute(array(':user_id' => Session::get('user_id')));
 
@@ -31,7 +31,7 @@ class CiudadModel
     {
         $database = DatabaseFactory::getFactory()->getConnection();
 
-        $sql = "SELECT user_id, ciudad_id, ciudad_name FROM ciudades WHERE user_id = :user_id AND ciudad_id = :ciudad_id LIMIT 1";
+        $sql = "SELECT ciudad_id, ciudad_name FROM ciudades WHERE user_id = :user_id AND ciudad_id = :ciudad_id LIMIT 1";
         $query = $database->prepare($sql);
         $query->execute(array(':user_id' => Session::get('user_id'), ':ciudad_id' => $ciudad_id));
 
