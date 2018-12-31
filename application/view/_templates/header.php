@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <title>HUGE</title>
+    <title>Pacientes</title>
     <!-- META -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -12,9 +12,9 @@
 </head>
 <body>
     <!-- navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-success">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
         <div class="container">
-            <a class="navbar-brand" href="<?php echo Config::get('URL'); ?>">HUGE</a>
+            <a class="navbar-brand" href="<?php echo Config::get('URL'); ?>">Pacientes</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHome" aria-controls="navbarHome" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
