@@ -33,7 +33,7 @@
                 }
             };
             wtInterface = null;
-            wtInterface = new CRUDInterface;
+            wtInterface = new CRUDInterface(view);
             wtInterface.html("#contenedor");
         });
 
@@ -54,7 +54,7 @@
                 }
             };
             wtInterface = null;
-            wtInterface = new CRUDInterface;
+            wtInterface = new CRUDInterface(view);
             wtInterface.html("#contenedor");
         });
 
@@ -75,7 +75,7 @@
                 }
             };
             wtInterface = null;
-            wtInterface = new CRUDInterface;
+            wtInterface = new CRUDInterface(view);
             wtInterface.html("#contenedor");
         });
     });
