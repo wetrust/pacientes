@@ -109,6 +109,11 @@
                     </div>
                 </div>
                 <div class="col-2">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Buscar</h5>
+                        </div>
+                    </div>
                     <div class="btn-group-vertical" role="group">
                         <button type="button" class="btn btn-primary">Nuevo</button>
                         <button type="button" class="btn btn-secondary d-none">Modificar</button>
