@@ -42,25 +42,22 @@
                                 </div>
                                 <div class="form-group col-md-4">
                                 <label for="inputPassword4">Prevision</label>
-                                <select id="inputState" class="form-control">
+                                <select id="prevision" class="form-control">
                                     <option selected>Elegir...</option>
-                                    <option>...</option>
                                 </select>
                                 </div>
                             </div>
                             <div class="form-row">
                                 <div class="form-group col-md-4">
                                 <label for="inputEmail4">Ciudad</label>
-                                <select id="inputState" class="form-control">
+                                <select id="ciudad" class="form-control">
                                     <option selected>Elegir...</option>
-                                    <option>...</option>
                                 </select>
                                 </div>
                                 <div class="form-group col-md-4">
                                 <label for="inputPassword4">Lugar de control</label>
-                                <select id="inputState" class="form-control">
+                                <select id="lugar" class="form-control">
                                     <option selected>Elegir...</option>
-                                    <option>...</option>
                                 </select>
                                 </div>
                             </div>
@@ -164,3 +161,57 @@
         </div>
     </div>
 </div>
+<script>
+    $(document).ready(function(){
+        loadData();
+    });
+
+    function loadData(){
+
+        let args = {
+            action: "get"
+        }
+
+        $.post("<?php echo Config::get('URL'); ?>ciudad/api", args).done(function(data){
+            $('#ciudad').empty();
+            if (Object.keys(data).length > 0) {
+                for (let i = 0; i < data.length; i++) {
+                    let response = '<option value="' + data[i][Object.keys(data[i])[0]] + '">';
+                    for (var col in data[i]) {
+                        response += data[i][col];
+                    }
+                    response += '</option>';
+                    $('#ciudad').append(response);
+                }
+            }
+        });
+
+        $.post("<?php echo Config::get('URL'); ?>prevision/api", args).done(function(data){
+            $('#prevision').empty();
+            if (Object.keys(data).length > 0) {
+                for (let i = 0; i < data.length; i++) {
+                    let response = '<option value="' + data[i][Object.keys(data[i])[0]] + '">';
+                    for (var col in data[i]) {
+                        response += data[i][col];
+                    }
+                    response += '</option>';
+                    $('#prevision').append(response);
+                }
+            }
+        });
+
+        $.post("<?php echo Config::get('URL'); ?>lugar/api", args).done(function(data){
+            $('#lugar').empty();
+            if (Object.keys(data).length > 0) {
+                for (let i = 0; i < data.length; i++) {
+                    let response = '<option value="' + data[i][Object.keys(data[i])[0]] + '">';
+                    for (var col in data[i]) {
+                        response += data[i][col];
+                    }
+                    response += '</option>';
+                    $('#lugar').append(response);
+                }
+            }
+        });
+    }
+</script>
