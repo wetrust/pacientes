@@ -21,29 +21,29 @@
                             <div class="form-row">
                                 <div class="form-group col-md-4">
                                 <label for="inputEmail4">RUT</label>
-                                <input type="text" class="form-control" id="inputEmail4">
+                                <input type="text" class="form-control" id="inputEmail4" disabled>
                                 </div>
                                 <div class="form-group col-md-4">
                                 <label for="inputPassword4">Nombre</label>
-                                <input type="text" class="form-control" id="inputPassword4">
+                                <input type="text" class="form-control" id="inputPassword4" disabled>
                                 </div>
                                 <div class="form-group col-md-4">
                                 <label for="inputEmail4">Apellidos</label>
-                                <input type="text" class="form-control" id="inputEmail4">
+                                <input type="text" class="form-control" id="inputEmail4" disabled>
                                 </div>
                             </div>
                             <div class="form-row">
                                 <div class="form-group col-md-4">
                                 <label for="inputPassword4">Teléfono</label>
-                                <input type="number" class="form-control" id="inputPassword4">
+                                <input type="number" class="form-control" id="inputPassword4" disabled>
                                 </div>
                                 <div class="form-group col-md-4">
                                 <label for="inputEmail4">Email</label>
-                                <input type="email" class="form-control" id="inputEmail4">
+                                <input type="email" class="form-control" id="inputEmail4" disabled>
                                 </div>
                                 <div class="form-group col-md-4">
                                 <label for="inputPassword4">Prevision</label>
-                                <select id="prevision" class="form-control">
+                                <select id="prevision" class="form-control" disabled>
                                     <option selected>Elegir...</option>
                                 </select>
                                 </div>
@@ -51,13 +51,13 @@
                             <div class="form-row">
                                 <div class="form-group col-md-4">
                                 <label for="inputEmail4">Ciudad</label>
-                                <select id="ciudad" class="form-control">
+                                <select id="ciudad" class="form-control" disabled>
                                     <option selected>Elegir...</option>
                                 </select>
                                 </div>
                                 <div class="form-group col-md-4">
                                 <label for="inputPassword4">Lugar de control</label>
-                                <select id="lugar" class="form-control">
+                                <select id="lugar" class="form-control" disabled>
                                     <option selected>Elegir...</option>
                                 </select>
                                 </div>
@@ -66,19 +66,19 @@
                                 <div class="form-group col-md-4">
                                 <label for="inputEmail4">Profesional referente</label>
                                 <div class="form-check">
-                                <input class="form-check-input" type="radio" name="referentes" id="gridRadios1" value="medico" checked>
+                                <input class="form-check-input" type="radio" name="referentes" id="gridRadios1" value="medico" checked disabled>
                                 <label class="form-check-label" for="gridRadios1">
                                     Médico
                                 </label>
                                 </div>
                                 <div class="form-check">
-                                <input class="form-check-input" type="radio" name="referentes" id="gridRadios2" value="matrona">
+                                <input class="form-check-input" type="radio" name="referentes" id="gridRadios2" value="matrona" disabled>
                                 <label class="form-check-label" for="gridRadios2">
                                     Matrona
                                 </label>
                                 </div>
                                 <div class="form-check disabled">
-                                <input class="form-check-input" type="radio" name="referentes" id="gridRadios3" value="otros">
+                                <input class="form-check-input" type="radio" name="referentes" id="gridRadios3" value="otros" disabled>
                                 <label class="form-check-label" for="gridRadios3">
                                     Otros
                                 </label>
@@ -86,13 +86,13 @@
                                 </div>
                                 <div class="form-group col-md-4">
                                 <label for="inputPassword4">Nombre del profesional</label>
-                                <select id="profesional" class="form-control">
+                                <select id="profesional" class="form-control" disabled>
                                     <option selected>Elegir...</option>
                                 </select>
                                 </div>
                                 <div class="form-group col-md-4">
                                 <label for="inputEmail4">Acompañantes</label>
-                                <select id="inputState" class="form-control">
+                                <select id="inputState" class="form-control" disabled>
                                     <option selected>Elegir...</option>
                                     <option value="0">0</option>
                                     <option value="1">1</option>
