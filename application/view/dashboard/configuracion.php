@@ -6,6 +6,8 @@
                 <button type="button" class="btn btn-secondary" id="ciudad">Ciudades</button>
                 <button type="button" class="btn btn-secondary" id="prevision">Prevision</button>
                 <button type="button" class="btn btn-secondary" id="lugar">Lugar de control</button>
+                <button type="button" class="btn btn-secondary" id="medicos">Médicos</button>
+                <button type="button" class="btn btn-secondary" id="matronas">Matronas</button>
             </div>
             <div id="contenedor">
             </div>
@@ -70,6 +72,48 @@
                     },
                     lugar_name: {
                         name: "Lugar",
+                        type: "text"
+                    }
+                }
+            };
+            wtInterface = null;
+            wtInterface = new CRUDInterface(view);
+            wtInterface.html("#contenedor");
+        });
+
+        $("#medicos").on("click", function(){
+            $("#contenedor").empty();
+            _api = "<?php echo Config::get('URL'); ?>medicos/api";
+            view = {
+                titulo: "Médicos",
+                inputs: {
+                    medico_id: {
+                        name: "#",
+                        type: "hidden"
+                    },
+                    medico_name: {
+                        name: "Medico",
+                        type: "text"
+                    }
+                }
+            };
+            wtInterface = null;
+            wtInterface = new CRUDInterface(view);
+            wtInterface.html("#contenedor");
+        });
+
+        $("#matronas").on("click", function(){
+            $("#contenedor").empty();
+            _api = "<?php echo Config::get('URL'); ?>matronas/api";
+            view = {
+                titulo: "Matronas",
+                inputs: {
+                    medico_id: {
+                        name: "#",
+                        type: "hidden"
+                    },
+                    medico_name: {
+                        name: "Matrona",
                         type: "text"
                     }
                 }
