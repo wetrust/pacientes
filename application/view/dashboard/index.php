@@ -18,31 +18,29 @@
                         <div class="card-body">
                             <h5 class="card-title">Pacientes</h5>
                             <div class="form-row">
-                                <div class="form-group col-md-6">
+                                <div class="form-group col-md-4">
                                 <label for="inputEmail4">RUT</label>
-                                <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+                                <input type="text" class="form-control" id="inputEmail4">
                                 </div>
-                                <div class="form-group col-md-6">
+                                <div class="form-group col-md-4">
                                 <label for="inputPassword4">Nombre</label>
-                                <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
+                                <input type="text" class="form-control" id="inputPassword4">
                                 </div>
-                            </div>
-                            <div class="form-row">
-                                <div class="form-group col-md-6">
+                                <div class="form-group col-md-4">
                                 <label for="inputEmail4">Apellidos</label>
-                                <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
-                                </div>
-                                <div class="form-group col-md-6">
-                                <label for="inputPassword4">Teléfono</label>
-                                <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
+                                <input type="text" class="form-control" id="inputEmail4">
                                 </div>
                             </div>
                             <div class="form-row">
-                                <div class="form-group col-md-6">
-                                <label for="inputEmail4">Email</label>
-                                <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+                                <div class="form-group col-md-4">
+                                <label for="inputPassword4">Teléfono</label>
+                                <input type="number" class="form-control" id="inputPassword4">
                                 </div>
-                                <div class="form-group col-md-6">
+                                <div class="form-group col-md-4">
+                                <label for="inputEmail4">Email</label>
+                                <input type="email" class="form-control" id="inputEmail4">
+                                </div>
+                                <div class="form-group col-md-4">
                                 <label for="inputPassword4">Prevision</label>
                                 <select id="inputState" class="form-control">
                                     <option selected>Choose...</option>
@@ -51,43 +49,43 @@
                                 </div>
                             </div>
                             <div class="form-row">
-                                <div class="form-group col-md-6">
+                                <div class="form-group col-md-4">
                                 <label for="inputEmail4">Ciudad</label>
                                 <select id="inputState" class="form-control">
                                     <option selected>Choose...</option>
                                     <option>...</option>
                                 </select>
                                 </div>
-                                <div class="form-group col-md-6">
+                                <div class="form-group col-md-4">
                                 <label for="inputPassword4">Lugar de control</label>
                                 <select id="inputState" class="form-control">
                                     <option selected>Choose...</option>
                                     <option>...</option>
                                 </select>
                                 </div>
-                            </div>
-                            <div class="form-row">
-                                <div class="form-group col-md-6">
+                                <div class="form-group col-md-4">
                                 <label for="inputEmail4">Profesional referente</label>
                                 <div class="form-check">
                                 <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
                                 <label class="form-check-label" for="gridRadios1">
-                                    First radio
+                                    Médico
                                 </label>
                                 </div>
                                 <div class="form-check">
                                 <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
                                 <label class="form-check-label" for="gridRadios2">
-                                    Second radio
+                                    Matrona
                                 </label>
                                 </div>
                                 <div class="form-check disabled">
                                 <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" value="option3" disabled>
                                 <label class="form-check-label" for="gridRadios3">
-                                    Third disabled radio
+                                    Otros
                                 </label>
                                 </div>
                                 </div>
+                            </div>
+                            <div class="form-row">
                                 <div class="form-group col-md-6">
                                 <label for="inputPassword4">Nombre del profesional</label>
                                 <select id="inputState" class="form-control">
@@ -95,22 +93,12 @@
                                     <option>...</option>
                                 </select>
                                 </div>
-                            </div>
-                            <div class="form-row">
                                 <div class="form-group col-md-6">
                                 <label for="inputEmail4">Acompañantes</label>
                                 <select id="inputState" class="form-control">
                                     <option selected>Choose...</option>
                                     <option>...</option>
                                 </select>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="form-check">
-                                <input class="form-check-input" type="checkbox" id="gridCheck">
-                                <label class="form-check-label" for="gridCheck">
-                                    Check me out
-                                </label>
                                 </div>
                             </div>
                         </div>
