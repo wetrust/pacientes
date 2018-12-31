@@ -13,7 +13,7 @@
     </div>
 </div>
 <script>
-    var _api, view;
+    var _api, view, wtInterface;
 
     $(document).ready(function(){
         $("#ciudad").on("click", function(){
@@ -32,6 +32,8 @@
                     }
                 }
             };
+            wtInterface = NULL;
+            wtInterface = new CRUDInterface;
             wtInterface.html("#contenedor");
         });
 
@@ -51,6 +53,8 @@
                     }
                 }
             };
+            wtInterface = NULL;
+            wtInterface = new CRUDInterface;
             wtInterface.html("#contenedor");
         });
 
@@ -70,6 +74,8 @@
                     }
                 }
             };
+            wtInterface = NULL;
+            wtInterface = new CRUDInterface;
             wtInterface.html("#contenedor");
         });
     });
