@@ -20,7 +20,6 @@
     </style>
 </head>
 <body>
-    <!-- navbar -->
     <nav class="navbar navbar-expand-lg flex-column flex-md-row navbar-dark sticky-top bg-primary shadow">
         <div class="container">
             <a class="navbar-brand" href="<?php echo Config::get('URL'); ?>">Pacientes</a>

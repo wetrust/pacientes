@@ -1,23 +1,21 @@
 <div class="container-fluid">
     <div class="row flex-xl-nowrap">
-        <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+        <div class="col-12 col-md-3 col-xl-2 border-right bg-white">
+            <hr>
             <ul class="nav flex-column">
                 <li class="nav-item">
-                    <a class="nav-link" data-toggle="tab" href="#nav-home" role="tab" >Pacientes datos iniciales</a>
+                    <a class="nav-link text-dark" data-toggle="tab" href="#nav-home" role="tab"><strong>Pacientes</strong></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" data-toggle="tab" href="#nav-clinico" role="tab">Datos Clínicos</a>
+                    <a class="nav-link text-dark" data-toggle="tab" href="#nav-profile" role="tab"><strong>Reservas</strong></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" data-toggle="tab" href="#nav-profile" role="tab">Reservas de atención</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" data-toggle="tab" href="#nav-contact" role="tab">Resumen</a>
+                    <a class="nav-link text-dark" data-toggle="tab" href="#nav-contact" role="tab"><strong>Reporte</strong></a>
                 </li>
             </ul>
         </div>
-        <div class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5">
-            <h1>Registro de pacientes</h1>
+        <div class="col-12 col-md-9 col-xl-10 py-md-3 pl-md-5">
+            <h1>Pacientes</h1>
             <hr>
             <!-- echo out the system feedback (error and success messages) -->
             <?php $this->renderFeedbackMessages(); ?>
