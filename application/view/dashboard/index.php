@@ -19,23 +19,29 @@
             <?php $this->renderFeedbackMessages(); ?>
             <div class="tab-content" id="nav-tabContent">
                 <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-                    <h1>Pacientes</h1>
+                    <div class="row">
+                        <div class="col-6">
+                            <h1>Pacientes</h1>
+                        </div>
+                        <div class="col-6">
+                        </div>
+                    </div>
                     <hr>
                     <ul class="nav my-2">
                         <li class="nav-item">
-                            <button type="button" id="paciente.nuevo" class="btn btn-primary">Nuevo</button>
+                            <button type="button" id="paciente.nuevo" class="btn btn-primary mx-1">Nuevo</button>
                         </li>
                         <li class="nav-item">
-                        <button type="button" id="paciente.modificar" class="btn btn-secondary d-none">Modificar</button>
+                        <button type="button" id="paciente.modificar" class="btn btn-secondary mx-1 d-none">Modificar</button>
                         </li>
                         <li class="nav-item">
-                            <button type="button" id="paciente.guardar" class="btn btn-secondary d-none">Guardar</button>
+                            <button type="button" id="paciente.guardar" class="btn btn-secondary mx-1 d-none">Guardar</button>
                         </li>
                         <li class="nav-item">
-                            <button type="button" id="paciente.cancelar" class="btn btn-secondary d-none">Cancelar</button>
+                            <button type="button" id="paciente.cancelar" class="btn btn-secondary mx-1 d-none">Cancelar</button>
                         </li>
                         <li class="nav-item">
-                            <button type="button" id="paciente.eliminar" class="btn btn-secondary d-none">Eliminar</button>
+                            <button type="button" id="paciente.eliminar" class="btn btn-secondary mx-1 d-none">Eliminar</button>
                         </li>                
                     </ul>
                     <div class="card">
