@@ -154,24 +154,6 @@
                                         </div>
                                     </div>
                                     <div class="form-row">
-                                        <div class="form-group col-md-4">
-                                        <label for="tallamaterna">Talla materna</label>
-                                        <select id="tallamaterna" class="form-control" disabled>
-                                            <option selected>Elegir...</option>
-                                        </select>
-                                        </div>
-                                        <div class="form-group col-md-4">
-                                        <label for="pesomaterno">Peso materno</label>
-                                        <select id="pesomaterno" class="form-control" disabled>
-                                            <option selected>Elegir...</option>
-                                        </select>
-                                        </div>
-                                        <div class="form-group col-md-4">
-                                        <label for="imc">IMC</label>
-                                        <input type="text" class="form-control" id="imc" disabled>
-                                        </div>
-                                    </div>
-                                    <div class="form-row">
                                         <div class="form-group col-md-4 d-none">
                                         <label for="inputEmail4">Fecha de nacimiento</label>
                                         <input type="date" class="form-control" id="nacimiento" disabled>
@@ -195,6 +177,37 @@
                                             <option>9</option>
                                             <option>10</option>
                                         </select>
+                                        </div>
+                                        <div class="form-group col-md-4">
+                                        <label for="partos">Partos</label>
+                                        <select id="partos" class="form-control" disabled>
+                                            <option>0</option>
+                                            <option>1</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                            <option>4</option>
+                                            <option>5</option>
+                                            <option>6</option>
+                                            <option>7</option>
+                                        </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-group col-md-4">
+                                        <label for="tallamaterna">Talla materna</label>
+                                        <select id="tallamaterna" class="form-control" disabled>
+                                            <option selected>Elegir...</option>
+                                        </select>
+                                        </div>
+                                        <div class="form-group col-md-4">
+                                        <label for="pesomaterno">Peso materno</label>
+                                        <select id="pesomaterno" class="form-control" disabled>
+                                            <option selected>Elegir...</option>
+                                        </select>
+                                        </div>
+                                        <div class="form-group col-md-4">
+                                        <label for="imc">IMC</label>
+                                        <input type="text" class="form-control" id="imc" disabled>
                                         </div>
                                     </div>
                                 </div>
@@ -440,6 +453,7 @@
             $("#tallamaterna").attr("disabled", false).val("");
             $("#pesomaterno").attr("disabled", false).val("");
             $("#gestas").attr("disabled", false).val("");
+            $("#partos").attr("disabled", false).val("");
 
             $("#paciente\\.nuevo").addClass("d-none");
             $("#paciente\\.modificar").addClass("d-none");
@@ -468,6 +482,7 @@
             $("#tallamaterna").attr("disabled", false);
             $("#pesomaterno").attr("disabled", false);
             $("#gestas").attr("disabled", false);
+            $("#partos").attr("disabled", false);
 
             $("#paciente\\.nuevo").addClass("d-none");
             $("#paciente\\.modificar").addClass("d-none");
@@ -496,6 +511,7 @@
             $("#tallamaterna").attr("disabled", true);
             $("#pesomaterno").attr("disabled", true);
             $("#gestas").attr("disabled", true);
+            $("#partos").attr("disabled", true);
 
             $("#paciente\\.nuevo").removeClass("d-none");
             $("#paciente\\.modificar").removeClass("d-none");
@@ -584,6 +600,7 @@
                         $("#tallamaterna").val("");
                         $("#pesomaterno").val("");
                         $("#gestas").val("");
+                        $("#partos").val("");
 
                         $("#paciente\\.modificar").addClass("d-none");
                         $("#paciente\\.eliminar").addClass("d-none");
@@ -715,6 +732,7 @@
                     $("#tallamaterna").val("");
                     $("#pesomaterno").val("");
                     $("#gestas").val("");
+                    $("#partos").val("");
 
                     $("#paciente\\.modificar").addClass("d-none");
                     $("#paciente\\.eliminar").addClass("d-none");
