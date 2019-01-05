@@ -140,16 +140,6 @@
                                 <div class="card-body">
                                     <h5 class="card-title">Datos clinicos</h5>
                                     <div class="form-row">
-                                        <div class="form-group col-md-4 d-none">
-                                        <label for="inputEmail4">Fecha de nacimiento</label>
-                                        <input type="date" class="form-control" id="nacimiento" disabled>
-                                        </div>
-                                        <div class="form-group col-md-4">
-                                        <label for="inputPassword4">Edad Materna</label>
-                                        <select id="edad" class="form-control" disabled></select>
-                                        </div>
-                                    </div>
-                                    <div class="form-row">
                                         <div class="form-group col-md-4">
                                         <label for="inputEmail4">FUR Referida</label>
                                         <input type="date" class="form-control" id="fur" disabled>
@@ -182,6 +172,14 @@
                                         </div>
                                     </div>
                                     <div class="form-row">
+                                        <div class="form-group col-md-4 d-none">
+                                        <label for="inputEmail4">Fecha de nacimiento</label>
+                                        <input type="date" class="form-control" id="nacimiento" disabled>
+                                        </div>
+                                        <div class="form-group col-md-4">
+                                        <label for="inputPassword4">Edad Materna</label>
+                                        <select id="edad" class="form-control" disabled></select>
+                                        </div>
                                         <div class="form-group col-md-4">
                                         <label for="gestas">Gestas previas</label>
                                         <select id="gestas" class="form-control" disabled>
