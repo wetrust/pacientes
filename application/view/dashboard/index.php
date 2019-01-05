@@ -146,8 +146,7 @@
                                         </div>
                                         <div class="form-group col-md-4">
                                         <label for="inputPassword4">Edad Materna</label>
-                                        <input type="number" class="form-control" id="edad" list="edades" disabled>
-                                        <datalist id="edades">
+                                        <select id="edad" class="form-control" disabled>
                                             <option value="10">
                                             <option value="11">
                                             <option value="12">
@@ -199,7 +198,7 @@
                                             <option value="58">
                                             <option value="59">
                                             <option value="60">
-                                        </datalist>
+                                        </select>
                                         </div>
                                     </div>
                                     <div class="form-row">
@@ -669,7 +668,7 @@
             FPP = ((FUM.getTime() + (unasemana * 40)));
             FPP = new Date(FPP);
             $("#eg").val(EdadGestacional + " semanas");
-            let fppdata =  FPP.getFullYear() + '-' + (FPP.getMonth() +1) + '-' +  ("0" + FPP.getDate()).slice("-2");
+            let fppdata =  FPP.getFullYear() + '-' + ("0" + (FPP.getMonth() +1)).slice("-2") + '-' +  ("0" + FPP.getDate()).slice("-2");
             $("#fpp").val(fppdata);
         });
         
