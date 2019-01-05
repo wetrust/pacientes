@@ -611,6 +611,7 @@
             FPP = ((FUM.getTime() + (unasemana * 40)));
             FPP = new Date(FPP);
             $("#eg").val(EdadGestacional + " semanas");
+            let fppdata = FPP.getDate() + '-' +(FPP.getMonth() +1) + '-' + FPP.getFullYear();
             $("#fpp").val(FPP.getDate() + '-' +(FPP.getMonth() +1) + '-' + FPP.getFullYear());
         });
         
