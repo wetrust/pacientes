@@ -293,17 +293,17 @@
                                     <div class="row">
                                         <div class="col-6">
                                             <form>
-                                                <div class="form-group row">
-                                                    <label for="filtro.ecografista" class="col-3">Ecografista</label>
-                                                    <select id="filtro.ecografista" class="form-control col-9"></select>
+                                                <div class="form-group">
+                                                    <label for="filtro.ecografista">Ecografista</label>
+                                                    <select id="filtro.ecografista" class="form-control"></select>
                                                 </div>
-                                                <div class="form-group row">
-                                                    <label for="filtro.cancelacion" class="col-3">Cancelación</label>
-                                                    <select id="filtro.cancelacion" class="form-control col-9"></select>
+                                                <div class="form-group">
+                                                    <label for="filtro.cancelacion">Cancelación</label>
+                                                    <select id="filtro.cancelacion" class="form-control"></select>
                                                 </div>
-                                                <div class="form-group row">
-                                                    <label for="filtro.prevision" class="col-3">Prevision</label>
-                                                    <select id="filtro.prevision" class="form-control col-9"></select>
+                                                <div class="form-group">
+                                                    <label for="filtro.prevision">Prevision</label>
+                                                    <select id="filtro.prevision" class="form-control"></select>
                                                 </div>
                                             </form>
                                         </div>
