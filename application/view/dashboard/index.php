@@ -254,10 +254,13 @@
                             <table class="table table-striped table-hover">
                                 <thead>
                                     <tr>
-                                    <th scope="col">#</th>
-                                    <th scope="col">RUT</th>
-                                    <th scope="col">Nombre</th>
-                                    <th scope="col">Apellidos</th>
+                                        <th scope="col">#</th>
+                                        <th scope="col">RUT</th>
+                                        <th scope="col">Nombre</th>
+                                        <th scope="col">Apellidos</th>
+                                        <th scope="col">FUR</th>
+                                        <th scope="col">EG</th>
+                                        <th scope="col">FPP</th> 
                                     </tr>
                                 </thead>
                                 <tbody id="horas.tabla">
@@ -709,7 +712,7 @@
             $('#pacientes\\.tabla').empty();
             if (Object.keys(data).length > 0) {
                 $.each(data, function(index, element){
-                    let response = '<tr data-id="' + element.paciente_id +'"><td>'+element.paciente_id+'</td><td>'+element.paciente_rut+'</td><td>'+element.paciente_nombre+'</td><td>'+element.paciente_apellido+'</td></tr>';
+                    let response = '<tr data-id="' + element.paciente_id +'"><td>'+element.paciente_id+'</td><td>'+element.paciente_rut+'</td><td>'+element.paciente_nombre+'</td><td>'+element.paciente_apellido+'</td><td>' + element.paciente_fur +'</td><td>'+ element.paciente_eg +'</td><td>'+ element.paciente_fpp +'</td></tr>';
                     $('#pacientes\\.tabla').append(response);
                 });
 
