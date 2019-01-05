@@ -234,13 +234,13 @@
                 </div>
                 <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
                     <div class="row">
-                        <div class="col-6">
+                        <div class="col-8">
                             <h1>Horas de atención</h1>
                         </div>
-                        <div class="col-6">
+                        <div class="col-4">
                             <div class="card">
-                                <div class="card-body">
-                                    <div class="form-group row">
+                                <div class="card-body p-2">
+                                    <div class="form-group row mb-0">
                                         <label for="inputPassword" class="col-sm-2 col-form-label">Fecha</label>
                                         <div class="col-sm-10">
                                             <input type="date" class="form-control" id="horas.busqueda.fecha">
