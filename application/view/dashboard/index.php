@@ -500,6 +500,9 @@
                     $("#profesional").val("");
                     $("#acompanantes").val("");
 
+                    $("#paciente\\.modificar").addClass("d-none");
+                    $("#paciente\\.eliminar").addClass("d-none");
+
                     $.post("<?php echo Config::get('URL'); ?>pacientes/api", send).done(function(data){
                         if (Object.keys(data).length > 0) {
                             $("#rut").val(data.paciente_rut);
@@ -512,6 +515,8 @@
                             $("#lugar").val(data.paciente_lugar);
                             $("#profesional").val(data.paciente_profesional);
                             $("#acompanantes").val(data.paciente_acompanantes);
+                            $("#paciente\\.modificar").removeClass("d-none");
+                            $("#paciente\\.eliminar").removeClass("d-none");
                         }
                     });
                 })
