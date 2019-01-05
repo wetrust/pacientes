@@ -265,27 +265,29 @@
                     </ul>
                     <div class="card">
                         <div class="card-body">
-                            <table class="table table-striped table-hover">
-                                <thead>
-                                    <tr>
-                                        <th scope="col">Fecha</th>
-                                        <th scope="col">Hora</th>
-                                        <th scope="col">Ecografista</th>
-                                        <th scope="col">Nombre</th>
-                                        <th scope="col">Apellido</th>
-                                        <th scope="col">RUT</th>
-                                        <th scope="col">Ciudad</th>
-                                        <th scope="col">Motivo de atención</th>
-                                        <th scope="col">Previsión</th>
-                                        <th scope="col">Modalidad</th>
-                                        <th scope="col">Situación final</th>
-                                        <th scope="col">Cancelado</th>
-                                        <th scope="col">Prof. Ref.</th>
-                                    </tr>
-                                </thead>
-                                <tbody id="reporte.tabla">
-                                </tbody>
-                            </table>
+                            <div class="table-responsive">
+                                <table class="table table-striped table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Fecha</th>
+                                            <th scope="col">Hora</th>
+                                            <th scope="col">Ecografista</th>
+                                            <th scope="col">Nombre</th>
+                                            <th scope="col">Apellido</th>
+                                            <th scope="col">RUT</th>
+                                            <th scope="col">Ciudad</th>
+                                            <th scope="col">Motivo de atención</th>
+                                            <th scope="col">Previsión</th>
+                                            <th scope="col">Modalidad</th>
+                                            <th scope="col">Situación final</th>
+                                            <th scope="col">Cancelado</th>
+                                            <th scope="col">Prof. Ref.</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="reporte.tabla">
+                                    </tbody>
+                                </table>
+                            </div>
                             <div class="row">
                                 <div class="col-6">
                                     <div class="row">
@@ -543,7 +545,7 @@
 
         $("#paciente\\.eliminar").on("click", function(){
             $("#dialog\\.title").html("Eliminar");
-            $("#dialog\\.body").html("<p>¿Está seguro de eliminar a " + $("#nombre").val() + " " $("#apellido").val()+ "?</p>");
+            $("#dialog\\.body").html("<p>¿Está seguro de eliminar a " + $("#nombre").val() + " " + $("#apellido").val()+ "?</p>");
             $("#dialog\\.footer").html('<button type="button" class="btn btn-warning" id="dialog.eliminar">ELIMINAR</button>');
             $("#dialog\\.eliminar").on("click", function(){
                 paciente_id = $("#rut").val();
