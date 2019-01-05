@@ -530,6 +530,15 @@
                 paciente_lugar: $("#lugar").val(),
                 paciente_profesional: $("#profesional").val(),
                 paciente_acompanantes: $("#acompanantes").val(),
+                paciente_fur: $("#fur").val(),
+                paciente_eg: $("#eg").val(),
+                paciente_fpp: $("#fpp").val(),
+                paciente_edadmaterna: $("#edad").val(),
+                paciente_gestasprevias: $("#gestas").val(),
+                paciente_partos: $("#partos").val(),
+                paciente_talla: $("#tallamaterna").val(),
+                paciente_peso: $("#pesomaterno").val(),
+                paciente_imc: $("#imc").val()
             }
             
             $.post("<?php echo Config::get('URL'); ?>pacientes/api", args).done(function(data){
@@ -749,6 +758,17 @@
                             $("#lugar").val(data.paciente_lugar);
                             $("#profesional").val(data.paciente_profesional);
                             $("#acompanantes").val(data.paciente_acompanantes);
+
+                            $("#fur").val(data.paciente_fur);
+                            $("#eg").val(data.paciente_eg);
+                            $("#fpp").val(data.paciente_fpp);
+                            $("#edad").val(data.paciente_edadmaterna);
+                            $("#gestas").val(data.paciente_gestasprevias);
+                            $("#partos").val(data.paciente_partos);
+                            $("#tallamaterna").val(data.paciente_talla);
+                            $("#pesomaterno").val(data.paciente_peso);
+                            $("#imc").val(data.paciente_imc);
+
                             $("#paciente\\.modificar").removeClass("d-none");
                             $("#paciente\\.eliminar").removeClass("d-none");
                         }
