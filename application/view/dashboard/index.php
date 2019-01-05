@@ -21,7 +21,7 @@
                 <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
                     <h1>Pacientes</h1>
                     <hr>
-                    <ul class="nav">
+                    <ul class="nav my-2">
                         <li class="nav-item">
                             <button type="button" id="paciente.nuevo" class="btn btn-primary">Nuevo</button>
                         </li>
@@ -38,14 +38,14 @@
                             <button type="button" id="paciente.eliminar" class="btn btn-secondary d-none">Eliminar</button>
                         </li>                
                     </ul>
-                            <div class="card">
-                                <div class="card-body">
-                                    <div class="form-row">
-                                        <div class="form-group col-md-4">
-                                        <label for="inputEmail4">RUT</label>
-                                        <input type="text" class="form-control" id="rut" disabled>
-                                        </div>
-                                        <div class="form-group col-md-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="form-row">
+                                <div class="form-group col-md-4">
+                                    <label for="inputEmail4">RUT</label>
+                                    <input type="text" class="form-control" id="rut" disabled>
+                                </div>
+                                <div class="form-group col-md-4">
                                         <label for="inputPassword4">Nombre</label>
                                         <input type="text" class="form-control" id="nombre" disabled>
                                         </div>
