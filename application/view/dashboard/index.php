@@ -109,20 +109,20 @@
                     </div>
                     <div class="card">
                         <div class="card-body">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">RUT</th>
+                                    <th scope="col">Nombre</th>
+                                    <th scope="col">Apellidos</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="pacientes.tabla">
+                                </tbody>
+                            </table>
                         </div>
                     </div>
-                    <table class="table">
-                        <thead>
-                            <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">RUT</th>
-                            <th scope="col">Nombre</th>
-                            <th scope="col">Apellidos</th>
-                            </tr>
-                        </thead>
-                        <tbody id="pacientes.tabla">
-                        </tbody>
-                    </table>
                 </div>
                 <div class="col-2">
                     <div class="card">
@@ -466,7 +466,7 @@
             action: "get"
         }
 
-        $.post("<?php echo Config::get('URL'); ?>lugar/api", send).done(function(data){
+        $.post("<?php echo Config::get('URL'); ?>pacientes/api", send).done(function(data){
             $('#pacientes\\.tabla').empty();
             if (Object.keys(data).length > 0) {
                 $.each(data, function(index, element){
