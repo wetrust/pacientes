@@ -14,7 +14,7 @@ class PacienteModel
     {
         $database = DatabaseFactory::getFactory()->getConnection();
 
-        $sql = "SELECT paciente_rut,paciente_nombre,paciente_apellido,paciente_telefono,paciente_email,paciente_prevision,paciente_ciudad,paciente_lugar,paciente_profesional,paciente_acompanantes FROM pacientes";
+        $sql = "SELECT paciente_id, paciente_rut,paciente_nombre,paciente_apellido,paciente_telefono,paciente_email,paciente_prevision,paciente_ciudad,paciente_lugar,paciente_profesional,paciente_acompanantes FROM pacientes";
         $query = $database->prepare($sql);
         $query->execute();
 
