@@ -221,43 +221,125 @@
                 <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
                     <h1>Horas de atención</h1>
                     <hr>
-                    <div class="row pt-2">
-                        <div class="col-10">
-                            <div class="card">
-                                <div class="card-body">
-                                    <h5 class="card-title">Horas de atención</h5>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-2">
-                            <div class="btn-group-vertical" role="group">
-                                <button type="button" class="btn btn-primary">Nuevo</button>
-                                <button type="button" class="btn btn-secondary d-none">Modificar</button>
-                                <button type="button" class="btn btn-secondary d-none">Guardar</button>
-                                <button type="button" class="btn btn-secondary d-none">Cancelar</button>
-                                <button type="button" class="btn btn-secondary d-none">Eliminar</button>
-                            </div>
+                    <ul class="nav my-2">
+                        <li class="nav-item">
+                            <button type="button" id="horas.nuevo" class="btn btn-primary mx-1">Nuevo</button>
+                        </li>
+                        <li class="nav-item">
+                        <button type="button" id="horas.modificar" class="btn btn-secondary mx-1 d-none">Modificar</button>
+                        </li>
+                        <li class="nav-item">
+                            <button type="button" id="horas.guardar" class="btn btn-secondary mx-1 d-none">Guardar</button>
+                        </li>
+                        <li class="nav-item">
+                            <button type="button" id="horas.cancelar" class="btn btn-secondary mx-1 d-none">Cancelar</button>
+                        </li>
+                        <li class="nav-item">
+                            <button type="button" id="horas.eliminar" class="btn btn-secondary mx-1 d-none">Eliminar</button>
+                        </li>                
+                    </ul>
+                    <div class="card">
+                        <div class="card-body">
+                            <table class="table table-striped table-hover">
+                                <thead>
+                                    <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">RUT</th>
+                                    <th scope="col">Nombre</th>
+                                    <th scope="col">Apellidos</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="horas.tabla">
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                 </div>
                 <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
                     <h1>Reportes</h1>
                     <hr>
-                    <div class="row pt-2">
-                        <div class="col-10">
-                            <div class="card">
-                                <div class="card-body">
-                                    <h5 class="card-title">Resumen</h5>
+                    <ul class="nav my-2">
+                        <li class="nav-item">
+                            <button type="button" id="horas.nuevo" class="btn btn-primary mx-1">Imprimir</button>
+                        </li>               
+                    </ul>
+                    <div class="card">
+                        <div class="card-body">
+                            <table class="table table-striped table-hover">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Fecha</th>
+                                        <th scope="col">Hora</th>
+                                        <th scope="col">Ecografista</th>
+                                        <th scope="col">Nombre</th>
+                                        <th scope="col">Apellido</th>
+                                        <th scope="col">RUT</th>
+                                        <th scope="col">Ciudad</th>
+                                        <th scope="col">Motivo de atención</th>
+                                        <th scope="col">Previsión</th>
+                                        <th scope="col">Modalidad</th>
+                                        <th scope="col">Situación final</th>
+                                        <th scope="col">Cancelado</th>
+                                        <th scope="col">Prof. Ref.</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="reporte.tabla">
+                                </tbody>
+                            </table>
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <form>
+                                                <div class="form-group row">
+                                                    <label for="filtro.ecografista" class="col-3">Ecografista</label>
+                                                    <select id="filtro.ecografista" class="form-control col-9"></select>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label for="filtro.cancelacion" class="col-3">Cancelación</label>
+                                                    <select id="filtro.cancelacion" class="form-control col-9"></select>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label for="filtro.prevision" class="col-3">Prevision</label>
+                                                    <select id="filtro.prevision" class="form-control col-9"></select>
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <div class="col-6">
+                                            <form>
+                                                <div class="form-group">
+                                                    <label for="filtro.ecografista">Ganancias en el periodo</label>
+                                                    <select id="filtro.ecografista" class="form-control"></select>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label for="filtro.cancelacion">Tipo de profesional referente</label>
+                                                    <select id="filtro.cancelacion" class="form-control">
+                                                        <option value="medico">Médico</option>
+                                                        <option value="matrona">Matrona</option>
+                                                    </select>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label for="filtro.prevision">Nombre profesional referente</label>
+                                                    <select id="filtro.prevision" class="form-control"></select>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="col-2">
-                            <div class="btn-group-vertical" role="group">
-                                <button type="button" class="btn btn-primary">Nuevo</button>
-                                <button type="button" class="btn btn-secondary d-none">Modificar</button>
-                                <button type="button" class="btn btn-secondary d-none">Guardar</button>
-                                <button type="button" class="btn btn-secondary d-none">Cancelar</button>
-                                <button type="button" class="btn btn-secondary d-none">Eliminar</button>
+                                <div class="col-6">
+                                    <table class="table table-striped table-hover">
+                                        <thead>
+                                            <tr>
+                                            <th scope="col">Modalidad de pago</th>
+                                            <th scope="col">N° de acciones</th>
+                                            <th scope="col">Total</th>
+                                            <th scope="col">Ad. Doppler</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="reporte.tabla.resumen">
+                                        </tbody>
+                                    </table>
+                                </div>
                             </div>
                         </div>
                     </div>
