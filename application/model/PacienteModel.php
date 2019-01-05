@@ -31,9 +31,9 @@ class PacienteModel
     {
         $database = DatabaseFactory::getFactory()->getConnection();
 
-        $sql = "SELECT user_id, paciente_id, paciente_text FROM pacientes WHERE user_id = :user_id AND paciente_id = :paciente_id LIMIT 1";
+        $sql = "SELECT paciente_id, paciente_rut,paciente_nombre,paciente_apellido,paciente_telefono,paciente_email,paciente_prevision,paciente_ciudad,paciente_lugar,paciente_profesional,paciente_acompanantes FROM pacientes WHERE paciente_id = :paciente_id LIMIT 1";
         $query = $database->prepare($sql);
-        $query->execute(array(':user_id' => Session::get('user_id'), ':paciente_id' => $paciente_id));
+        $query->execute(array(':paciente_id' => $paciente_id));
 
         // fetch() is the PDO method that gets a single result
         return $query->fetch();

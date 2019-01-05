@@ -474,9 +474,47 @@
             $('#pacientes\\.tabla').empty();
             if (Object.keys(data).length > 0) {
                 $.each(data, function(index, element){
-                    let response = '<tr><td>'+element.paciente_id+'</td><td>'+element.paciente_rut+'</td><td>'+element.paciente_nombre+'</td><td>'+element.paciente_apellido+'</td></tr>';
+                    let response = '<tr data-id="' + element.paciente_id +'"><td>'+element.paciente_id+'</td><td>'+element.paciente_rut+'</td><td>'+element.paciente_nombre+'</td><td>'+element.paciente_apellido+'</td></tr>';
                     $('#pacientes\\.tabla').append(response);
                 });
+
+                $('#pacientes\\.tabla > tr').on("click", function(){
+                    var paciente_id = $(this).data(id);
+                    let send = {
+                        action: "read",
+                        paciente_rut: paciente_id
+                    }
+
+                    //vaciar los inputs
+                    $("#rut").val("");
+                    $("#nombre").val("");
+                    $("#apellido").val("");
+                    $("#telefono").val("");
+                    $("#email").val("");
+                    $("#prevision").val("");
+                    $("#ciudad").val("");
+                    $("#lugar").val("");
+                    $("#gridRadios1");
+                    $("#gridRadios2");
+                    $("#gridRadios3");
+                    $("#profesional").val("");
+                    $("#acompanantes").val("");
+
+                    $.post("<?php echo Config::get('URL'); ?>pacientes/api", send).done(function(data){
+                        if (Object.keys(data).length > 0) {
+                            $("#rut").val(data.paciente_rut);
+                            $("#nombre").val(data.paciente_nombre);
+                            $("#apellido").val(data.paciente_apellido);
+                            $("#telefono").val(data.paciente_telefono);
+                            $("#email").val(data.paciente_email);
+                            $("#prevision").val(data.paciente_prevision);
+                            $("#ciudad").val(data.paciente_ciudad);
+                            $("#lugar").val(data.paciente_lugar);
+                            $("#profesional").val(data.paciente_profesional);
+                            $("#acompanantes").val(data.paciente_acompanantes);
+                        }
+                    });
+                })
             }
         });
     }

@@ -29,7 +29,7 @@ class PacientesController extends Controller
                 $resultado = PacienteModel::updatePaciente(Request::post('ciudad_id'), Request::post('ciudad_name'));
                 break;
             case "read":
-                $resultado = PacienteModel::getPaciente(Request::post('ciudad_id'));
+                $resultado = PacienteModel::getPaciente(Request::post('paciente_rut'));
                 break;
         }
         return $this->View->renderJSON($resultado);
