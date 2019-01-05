@@ -1,20 +1,26 @@
 <div class="container-fluid">
     <div class="row flex-xl-nowrap">
         <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+            <ul class="nav flex-column">
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="tab" href="#nav-home" role="tab" >Pacientes datos iniciales</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="tab" href="#nav-clinico" role="tab">Datos Clínicos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="tab" href="#nav-profile" role="tab">Reservas de atención</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="tab" href="#nav-contact" role="tab">Resumen</a>
+                </li>
+            </ul>
         </div>
-        <div class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+        <div class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5">
             <h1>Registro de pacientes</h1>
             <hr>
             <!-- echo out the system feedback (error and success messages) -->
             <?php $this->renderFeedbackMessages(); ?>
-            <nav>
-                <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                    <a class="nav-item nav-link shadow-sm border mr-2 active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Pacientes datos iniciales</a>
-                    <a class="nav-item nav-link shadow-sm border mr-2" id="nav-clinico-tab" data-toggle="tab" href="#nav-clinico" role="tab" aria-controls="nav-clinico" aria-selected="true">Datos Clínicos</a>
-                    <a class="nav-item nav-link shadow-sm border mr-2" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Reservas de atención</a>
-                    <a class="nav-item nav-link shadow-sm border" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Resumen</a>
-                </div>
-            </nav>
             <div class="tab-content" id="nav-tabContent">
                 <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
                     <div class="row pt-2">
