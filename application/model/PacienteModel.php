@@ -53,9 +53,9 @@ class PacienteModel
 
         $database = DatabaseFactory::getFactory()->getConnection();
 
-        $sql = "INSERT INTO pacientes (paciente_rut,paciente_nombre,paciente_apellido,paciente_telefono,paciente_email,paciente_prevision,paciente_ciudad,paciente_lugar,paciente_profesional,paciente_acompanantes, user_id) VALUES (:paciente_rut,:paciente_nombre,:paciente_apellido,:paciente_telefono,:paciente_email,:paciente_prevision,:paciente_ciudad,:paciente_lugar,:paciente_profesional,:paciente_acompanantes, :user_id)";
+        $sql = "INSERT INTO pacientes (paciente_rut,paciente_nombre,paciente_apellido,paciente_telefono,paciente_email,paciente_prevision,paciente_ciudad,paciente_lugar,paciente_profesional,paciente_acompanantes, user_id) VALUES (:paciente_rut,:paciente_nombre,:paciente_apellido,:paciente_telefono,:paciente_email,:paciente_prevision,:paciente_ciudad,:paciente_lugar,:paciente_profesional,:paciente_acompanantes)";
         $query = $database->prepare($sql);
-        $query->execute(array(':paciente_rut' => $paciente_rut,':paciente_nombre' => $paciente_nombre,':paciente_apellido' => $paciente_apellido,':paciente_telefono' => $paciente_telefono,':paciente_email' => $paciente_email,':paciente_prevision' => $paciente_prevision,':paciente_ciudad' => $paciente_ciudad,':paciente_lugar' => $paciente_lugar,':paciente_profesional' => $paciente_profesional,':paciente_acompanantes' => $paciente_acompanantes, ':user_id' => Session::get('user_id')));
+        $query->execute(array(':paciente_rut' => $paciente_rut,':paciente_nombre' => $paciente_nombre,':paciente_apellido' => $paciente_apellido,':paciente_telefono' => $paciente_telefono,':paciente_email' => $paciente_email,':paciente_prevision' => $paciente_prevision,':paciente_ciudad' => $paciente_ciudad,':paciente_lugar' => $paciente_lugar,':paciente_profesional' => $paciente_profesional,':paciente_acompanantes' => $paciente_acompanantes));
 
         if ($query->rowCount() == 1) {
             return true;
