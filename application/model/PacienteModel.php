@@ -14,7 +14,7 @@ class PacienteModel
     {
         $database = DatabaseFactory::getFactory()->getConnection();
 
-        $sql = "SELECT paciente_id, paciente_rut,paciente_nombre,paciente_apellido,paciente_telefono,paciente_email,paciente_prevision,paciente_ciudad,paciente_lugar,paciente_profesional,paciente_acompanantes FROM pacientes LIMIT 20";
+        $sql = "SELECT * FROM pacientes LIMIT 20";
         $query = $database->prepare($sql);
         $query->execute();
 
@@ -31,7 +31,7 @@ class PacienteModel
     {
         $database = DatabaseFactory::getFactory()->getConnection();
 
-        $sql = "SELECT paciente_id, paciente_rut,paciente_nombre,paciente_apellido,paciente_telefono,paciente_email,paciente_prevision,paciente_ciudad,paciente_lugar,paciente_profesional,paciente_acompanantes FROM pacientes WHERE paciente_id = :paciente_id LIMIT 1";
+        $sql = "SELECT * FROM pacientes WHERE paciente_id = :paciente_id LIMIT 1";
         $query = $database->prepare($sql);
         $query->execute(array(':paciente_id' => $paciente_id));
 

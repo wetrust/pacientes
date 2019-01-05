@@ -221,6 +221,9 @@
                                             <th scope="col">RUT</th>
                                             <th scope="col">Nombre</th>
                                             <th scope="col">Apellidos</th>
+                                            <th scope="col">FUR</th>
+                                            <th scope="col">EG</th>
+                                            <th scope="col">FPP</th> 
                                             </tr>
                                         </thead>
                                         <tbody id="pacientes.tabla">
@@ -258,9 +261,6 @@
                                         <th scope="col">RUT</th>
                                         <th scope="col">Nombre</th>
                                         <th scope="col">Apellidos</th>
-                                        <th scope="col">FUR</th>
-                                        <th scope="col">EG</th>
-                                        <th scope="col">FPP</th> 
                                     </tr>
                                 </thead>
                                 <tbody id="horas.tabla">
