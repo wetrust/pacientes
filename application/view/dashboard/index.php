@@ -585,7 +585,46 @@
             });
             $("#dialog").modal("show");
         });
+
+        $("#nacimiento").on("change", function(){
+            var FExamen, FUM, EdadGestacional;
+            var undia = 1000 * 60 * 60 * 24;
+            var unasemana = undia * 7;
+            var unano = undia * 365;
+            
+            FUM = new Date($(this).val());
+            FExamen = new Date();
+            
+            EdadGestacional = ((FExamen.getTime() - FUM.getTime()) / unano).toFixed(0);
+            $("#edad").val(EdadGestacional + " años");
+        });
+
+        $("#fur").on("change", function(){
+            var FExamen, FUM, EdadGestacional;
+            var undia = 1000 * 60 * 60 * 24;
+            var unasemana = undia * 7;
+            
+            FUM = new Date($(this).val());
+            FExamen = new Date();
+            
+            EdadGestacional = ((FExamen.getTime() - FUM.getTime()) / unasemana).toFixed(1);
+            FPP = ((FUM.getTime() + (unasemana * 40));
+            $("#eg").val(EdadGestacional + " semanas");
+            $("#fpp").val(FPP.getDate() + '-' +(FPP.getMonth() +1) + '-' + FPP.getFullYear());
+        });
         
+        $("#tallamaterna").on("click", function(){
+            $('#imc').val(imc($("#tallamaterna").val(), $('#pesomaterno').val()) + ' kl/m2');
+        }).on("change", function(){
+            $('#imc').val(imc($("#tallamaterna").val(), $('#pesomaterno').val()) + ' kl/m2');
+        });
+
+        $("#pesomaterno").on("click", function(){
+            $('#imc').val(imc($("#tallamaterna").val(), $('#pesomaterno').val()) + ' kl/m2');
+        }).on("change", function(){
+            $('#imc').val(imc($("#tallamaterna").val(), $('#pesomaterno').val()) + ' kl/m2');
+        });
+
     });
 
     function loadData(){
@@ -685,8 +724,14 @@
                             $("#paciente\\.eliminar").removeClass("d-none");
                         }
                     });
-                })
+                });
             }
         });
+    }
+
+    function imc(talla, peso) {
+        var tallapeso = peso / Math.pow(talla, 2);
+        var IMC = tallapeso * 10000;
+        return IMC.toFixed(1);
     }
 </script>
