@@ -142,50 +142,49 @@
                                     <div class="form-row">
                                         <div class="form-group col-md-4">
                                         <label for="inputEmail4">Fecha de nacimiento</label>
-                                        <input type="date" class="form-control" id="inputEmail4" disabled>
+                                        <input type="date" class="form-control" id="nacimiento" disabled>
                                         </div>
                                         <div class="form-group col-md-4">
                                         <label for="inputPassword4">Edad Materna</label>
-                                        <input type="text" class="form-control" id="inputPassword4" disabled>
+                                        <input type="text" class="form-control" id="edad" disabled>
                                         </div>
                                     </div>
                                     <div class="form-row">
                                         <div class="form-group col-md-4">
                                         <label for="inputEmail4">FUR Referida</label>
-                                        <input type="date" class="form-control" id="inputEmail4" disabled>
+                                        <input type="date" class="form-control" id="fur" disabled>
                                         </div>
                                         <div class="form-group col-md-4">
                                         <label for="inputPassword4">Edad Gestacional</label>
-                                        <input type="number" class="form-control" id="inputPassword4" disabled>
+                                        <input type="number" class="form-control" id="eg" disabled>
                                         </div>
                                         <div class="form-group col-md-4">
                                         <label for="inputPassword4">Fecha probable de parto</label>
-                                        <input type="date" class="form-control" id="inputEmail4" disabled>
+                                        <input type="date" class="form-control" id="fpp" disabled>
                                         </div>
                                     </div>
                                     <div class="form-row">
                                         <div class="form-group col-md-4">
-                                        <label for="inputEmail4">Talla materna</label>
+                                        <label for="tallamaterna">Talla materna</label>
                                         <select id="tallamaterna" class="form-control" disabled>
                                             <option selected>Elegir...</option>
                                         </select>
                                         </div>
                                         <div class="form-group col-md-4">
-                                        <label for="inputPassword4">Peso materno</label>
+                                        <label for="pesomaterno">Peso materno</label>
                                         <select id="pesomaterno" class="form-control" disabled>
                                             <option selected>Elegir...</option>
                                         </select>
                                         </div>
                                         <div class="form-group col-md-4">
-                                        <label for="inputEmail4">IMC</label>
-                                        <input type="text" class="form-control" id="inputEmail4" disabled>
+                                        <label for="imc">IMC</label>
+                                        <input type="text" class="form-control" id="imc" disabled>
                                         </div>
                                     </div>
                                     <div class="form-row">
                                         <div class="form-group col-md-4">
-                                        <label for="inputPassword4">Gestas previas</label>
-                                        <select id="inputState" class="form-control" disabled>
-                                            <option selected>Elegir...</option>
+                                        <label for="gestas">Gestas previas</label>
+                                        <select id="gestas" class="form-control" disabled>
                                             <option>0</option>
                                             <option>1</option>
                                             <option>2</option>
@@ -267,6 +266,20 @@
         </div>
     </div>
 </div>
+<div class="modal" tabindex="-1" role="dialog" id="dialog">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="dialog.title"></h5>
+      </div>
+      <div class="modal-body" id="dialog.body">
+      </div>
+      <div class="modal-footer" id="dialog.footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
 <script>
     var args = {
         action: "get"
@@ -334,6 +347,12 @@
             $("#profesional").attr("disabled", false).val("");
             $("#acompanantes").attr("disabled", false).val("");
 
+            $("#nacimiento").attr("disabled", false).val("");
+            $("#fur").attr("disabled", false).val("");
+            $("#tallamaterna").attr("disabled", false).val("");
+            $("#pesomaterno").attr("disabled", false).val("");
+            $("#gestas").attr("disabled", false).val("");
+
             $("#paciente\\.nuevo").addClass("d-none");
             $("#paciente\\.modificar").addClass("d-none");
             $("#paciente\\.guardar").removeClass("d-none");
@@ -355,6 +374,12 @@
             $("#profesional").attr("disabled", false);
             $("#acompanantes").attr("disabled", false);
 
+            $("#nacimiento").attr("disabled", false);
+            $("#fur").attr("disabled", false);
+            $("#tallamaterna").attr("disabled", false);
+            $("#pesomaterno").attr("disabled", false);
+            $("#gestas").attr("disabled", false);
+
             $("#paciente\\.nuevo").addClass("d-none");
             $("#paciente\\.modificar").addClass("d-none");
             $("#paciente\\.guardar").removeClass("d-none");
@@ -375,6 +400,12 @@
             $("#gridRadios3").attr("disabled", true);
             $("#profesional").attr("disabled", true);
             $("#acompanantes").attr("disabled", true);
+
+            $("#nacimiento").attr("disabled", true);
+            $("#fur").attr("disabled", true);
+            $("#tallamaterna").attr("disabled", true);
+            $("#pesomaterno").attr("disabled", true);
+            $("#gestas").attr("disabled", true);
 
             $("#paciente\\.nuevo").removeClass("d-none");
             $("#paciente\\.modificar").removeClass("d-none");
@@ -416,10 +447,59 @@
             $("#profesional").attr("disabled", true);
             $("#acompanantes").attr("disabled", true);
 
+            $("#nacimiento").attr("disabled", true);
+            $("#fur").attr("disabled", true);
+            $("#tallamaterna").attr("disabled", true);
+            $("#pesomaterno").attr("disabled", true);
+            $("#gestas").attr("disabled", true);
+
             $("#paciente\\.nuevo").removeClass("d-none");
             $("#paciente\\.modificar").removeClass("d-none");
             $("#paciente\\.guardar").addClass("d-none");
             $("#paciente\\.cancelar").addClass("d-none");
+        });
+
+        $("#paciente\\.eliminar").on("click", function(){
+            $("#dialog\\.title").html("Eliminar");
+            $("#dialog\\.body").html("<p>¿Está seguro de eliminar a " + $("#nombre").val() + " " $("#apellido").val()+ "?</p>");
+            $("#dialog\\.footer").html('<button type="button" class="btn btn-warning" id="dialog.eliminar">ELIMINAR</button>');
+            $("#dialog\\.eliminar").on("click", function(){
+                paciente_id = $("#rut").val();
+
+                let send = {
+                    action: "delete",
+                    paciente_rut: paciente_id
+                }
+
+                $.post("<?php echo Config::get('URL'); ?>pacientes/api", send).done(function(data){
+                    if (Object.keys(data).length > 0) {
+                        $("#rut").val("");
+                        $("#nombre").val("");
+                        $("#apellido").val("");
+                        $("#telefono").val("");
+                        $("#email").val("");
+                        $("#prevision").val("");
+                        $("#ciudad").val("");
+                        $("#lugar").val("");
+                        $("#gridRadios1");
+                        $("#gridRadios2");
+                        $("#gridRadios3");
+                        $("#profesional").val("");
+                        $("#acompanantes").val("");
+
+                        $("#nacimiento").val("");
+                        $("#fur").val("");
+                        $("#tallamaterna").val("");
+                        $("#pesomaterno").val("");
+                        $("#gestas").val("");
+
+                        $("#paciente\\.modificar").addClass("d-none");
+                        $("#paciente\\.eliminar").addClass("d-none");
+                    }
+                });
+
+            });
+            $("#dialog").modal("show");
         });
         
     });
@@ -495,6 +575,12 @@
                     $("#gridRadios3");
                     $("#profesional").val("");
                     $("#acompanantes").val("");
+
+                    $("#nacimiento").val("");
+                    $("#fur").val("");
+                    $("#tallamaterna").val("");
+                    $("#pesomaterno").val("");
+                    $("#gestas").val("");
 
                     $("#paciente\\.modificar").addClass("d-none");
                     $("#paciente\\.eliminar").addClass("d-none");

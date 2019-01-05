@@ -31,6 +31,9 @@ class PacientesController extends Controller
             case "read":
                 $resultado = PacienteModel::getPaciente(Request::post('paciente_rut'));
                 break;
+            case "delete":
+                $resultado = PacienteModel::deletePaciente(Request::post('paciente_rut'));
+                break;
         }
         return $this->View->renderJSON($resultado);
     }
