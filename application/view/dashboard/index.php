@@ -142,7 +142,7 @@
                                     <div class="form-row">
                                         <div class="form-group col-md-4">
                                         <label for="inputEmail4">Fecha de nacimiento</label>
-                                        <input type="date" class="form-control" id="inputEmail4">
+                                        <input type="date" class="form-control" id="inputEmail4" disabled>
                                         </div>
                                         <div class="form-group col-md-4">
                                         <label for="inputPassword4">Edad Materna</label>
@@ -152,7 +152,7 @@
                                     <div class="form-row">
                                         <div class="form-group col-md-4">
                                         <label for="inputEmail4">FUR Referida</label>
-                                        <input type="date" class="form-control" id="inputEmail4">
+                                        <input type="date" class="form-control" id="inputEmail4" disabled>
                                         </div>
                                         <div class="form-group col-md-4">
                                         <label for="inputPassword4">Edad Gestacional</label>
@@ -160,31 +160,31 @@
                                         </div>
                                         <div class="form-group col-md-4">
                                         <label for="inputPassword4">Fecha probable de parto</label>
-                                        <input type="date" class="form-control" id="inputEmail4">
-                                        </div>
-                                    </div>
-                                    <div class="form-row">
-                                        <div class="form-group col-md-4">
-                                        <label for="inputEmail4">Talla materna</label>
-                                        <select id="tallamaterna" class="form-control">
-                                            <option selected>Elegir...</option>
-                                        </select>
-                                        </div>
-                                        <div class="form-group col-md-4">
-                                        <label for="inputPassword4">Peso materno</label>
-                                        <select id="pesomaterno" class="form-control">
-                                            <option selected>Elegir...</option>
-                                        </select>
-                                        </div>
-                                        <div class="form-group col-md-4">
-                                        <label for="inputEmail4">IMC</label>
                                         <input type="date" class="form-control" id="inputEmail4" disabled>
                                         </div>
                                     </div>
                                     <div class="form-row">
                                         <div class="form-group col-md-4">
+                                        <label for="inputEmail4">Talla materna</label>
+                                        <select id="tallamaterna" class="form-control" disabled>
+                                            <option selected>Elegir...</option>
+                                        </select>
+                                        </div>
+                                        <div class="form-group col-md-4">
+                                        <label for="inputPassword4">Peso materno</label>
+                                        <select id="pesomaterno" class="form-control" disabled>
+                                            <option selected>Elegir...</option>
+                                        </select>
+                                        </div>
+                                        <div class="form-group col-md-4">
+                                        <label for="inputEmail4">IMC</label>
+                                        <input type="text" class="form-control" id="inputEmail4" disabled>
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-group col-md-4">
                                         <label for="inputPassword4">Gestas previas</label>
-                                        <select id="inputState" class="form-control">
+                                        <select id="inputState" class="form-control" disabled>
                                             <option selected>Elegir...</option>
                                             <option>0</option>
                                             <option>1</option>
