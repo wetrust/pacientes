@@ -479,7 +479,7 @@
                 });
 
                 $('#pacientes\\.tabla > tr').on("click", function(){
-                    var paciente_id = $(this).data(id);
+                    var paciente_id = $(this).data("id");
                     let send = {
                         action: "read",
                         paciente_rut: paciente_id
