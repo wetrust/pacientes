@@ -107,22 +107,6 @@
                             </div>
                         </div>
                     </div>
-                    <div class="card mt-2">
-                        <div class="card-body">
-                            <table class="table table-striped table-hover">
-                                <thead>
-                                    <tr>
-                                    <th scope="col">#</th>
-                                    <th scope="col">RUT</th>
-                                    <th scope="col">Nombre</th>
-                                    <th scope="col">Apellidos</th>
-                                    </tr>
-                                </thead>
-                                <tbody id="pacientes.tabla">
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
                 </div>
                 <div class="col-2">
                     <div class="card">
@@ -139,6 +123,26 @@
                                 <button type="button" id="paciente.cancelar" class="btn btn-secondary d-none">Cancelar</button>
                                 <button type="button" id="paciente.eliminar" class="btn btn-secondary d-none">Eliminar</button>
                             </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="card mt-2">
+                        <div class="card-body">
+                            <table class="table table-striped table-hover">
+                                <thead>
+                                    <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">RUT</th>
+                                    <th scope="col">Nombre</th>
+                                    <th scope="col">Apellidos</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="pacientes.tabla">
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                 </div>
