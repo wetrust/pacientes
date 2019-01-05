@@ -15,17 +15,31 @@
             </ul>
         </div>
         <div class="col-12 col-md-9 col-xl-10 py-md-3 pl-md-5">
-            <h1>Pacientes</h1>
-            <hr>
             <!-- echo out the system feedback (error and success messages) -->
             <?php $this->renderFeedbackMessages(); ?>
             <div class="tab-content" id="nav-tabContent">
                 <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-                    <div class="row pt-2">
-                        <div class="col-10">
+                    <h1>Pacientes</h1>
+                    <hr>
+                    <ul class="nav">
+                        <li class="nav-item">
+                            <button type="button" id="paciente.nuevo" class="btn btn-primary">Nuevo</button>
+                        </li>
+                        <li class="nav-item">
+                        <button type="button" id="paciente.modificar" class="btn btn-secondary d-none">Modificar</button>
+                        </li>
+                        <li class="nav-item">
+                            <button type="button" id="paciente.guardar" class="btn btn-secondary d-none">Guardar</button>
+                        </li>
+                        <li class="nav-item">
+                            <button type="button" id="paciente.cancelar" class="btn btn-secondary d-none">Cancelar</button>
+                        </li>
+                        <li class="nav-item">
+                            <button type="button" id="paciente.eliminar" class="btn btn-secondary d-none">Eliminar</button>
+                        </li>                
+                    </ul>
                             <div class="card">
                                 <div class="card-body">
-                                    <h5 class="card-title">Pacientes</h5>
                                     <div class="form-row">
                                         <div class="form-group col-md-4">
                                         <label for="inputEmail4">RUT</label>
@@ -115,26 +129,6 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-2">
-                            <div class="card">
-                                <div class="card-body">
-                                    <h5 class="card-title">Buscar</h5>
-                                </div>
-                            </div>
-                            <div class="card mt-2">
-                                <div class="card-body">
-                                    <div class="btn-group-vertical" role="group">
-                                        <button type="button" id="paciente.nuevo" class="btn btn-primary">Nuevo</button>
-                                        <button type="button" id="paciente.modificar" class="btn btn-secondary d-none">Modificar</button>
-                                        <button type="button" id="paciente.guardar" class="btn btn-secondary d-none">Guardar</button>
-                                        <button type="button" id="paciente.cancelar" class="btn btn-secondary d-none">Cancelar</button>
-                                        <button type="button" id="paciente.eliminar" class="btn btn-secondary d-none">Eliminar</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                     <div class="row">
                         <div class="col-12">
                             <div class="card mt-2">
@@ -157,6 +151,8 @@
                     </div>
                 </div>
                 <div class="tab-pane fade" id="nav-clinico" role="tabpanel" aria-labelledby="nav-clinico-tab">
+                    <h1>Horas de atención</h1>
+                    <hr>
                     <div class="row pt-2">
                         <div class="col-10">
                             <div class="card">
@@ -238,6 +234,8 @@
                     </div>
                 </div>
                 <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+                    <h1>Horas de atención</h1>
+                    <hr>
                     <div class="row pt-2">
                         <div class="col-10">
                             <div class="card">
@@ -258,6 +256,8 @@
                     </div>
                 </div>
                 <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+                    <h1>Reportes</h1>
+                    <hr>
                     <div class="row pt-2">
                         <div class="col-10">
                             <div class="card">
