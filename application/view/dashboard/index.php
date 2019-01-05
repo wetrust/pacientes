@@ -608,7 +608,7 @@
             FExamen = new Date();
             
             EdadGestacional = ((FExamen.getTime() - FUM.getTime()) / unasemana).toFixed(1);
-            FPP = ((FUM.getTime() + (unasemana * 40));
+            FPP = ((FUM.getTime() + (unasemana * 40)));
             $("#eg").val(EdadGestacional + " semanas");
             $("#fpp").val(FPP.getDate() + '-' +(FPP.getMonth() +1) + '-' + FPP.getFullYear());
         });
