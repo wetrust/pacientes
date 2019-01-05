@@ -276,7 +276,7 @@
                                             <th scope="col">Apellido</th>
                                             <th scope="col">RUT</th>
                                             <th scope="col">Ciudad</th>
-                                            <th scope="col">Motivo de atención</th>
+                                            <th scope="col">Motivo atención</th>
                                             <th scope="col">Previsión</th>
                                             <th scope="col">Modalidad</th>
                                             <th scope="col">Situación final</th>
@@ -288,59 +288,63 @@
                                     </tbody>
                                 </table>
                             </div>
-                            <div class="row">
-                                <div class="col-6">
-                                    <div class="row">
-                                        <div class="col-6">
-                                            <form>
-                                                <div class="form-group">
-                                                    <label for="filtro.ecografista">Ecografista</label>
-                                                    <select id="filtro.ecografista" class="form-control"></select>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label for="filtro.cancelacion">Cancelación</label>
-                                                    <select id="filtro.cancelacion" class="form-control"></select>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label for="filtro.prevision">Prevision</label>
-                                                    <select id="filtro.prevision" class="form-control"></select>
-                                                </div>
-                                            </form>
-                                        </div>
-                                        <div class="col-6">
-                                            <form>
-                                                <div class="form-group">
-                                                    <label for="filtro.ecografista">Ganancias en el periodo</label>
-                                                    <select id="filtro.ecografista" class="form-control"></select>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label for="filtro.cancelacion">Tipo de profesional referente</label>
-                                                    <select id="filtro.cancelacion" class="form-control">
-                                                        <option value="medico">Médico</option>
-                                                        <option value="matrona">Matrona</option>
-                                                    </select>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label for="filtro.prevision">Nombre profesional referente</label>
-                                                    <select id="filtro.prevision" class="form-control"></select>
-                                                </div>
-                                            </form>
+                        </div>
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <form>
+                                                    <div class="form-group">
+                                                        <label for="filtro.ecografista">Ecografista</label>
+                                                        <select id="filtro.ecografista" class="form-control"></select>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="filtro.cancelacion">Cancelación</label>
+                                                        <select id="filtro.cancelacion" class="form-control"></select>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="filtro.prevision">Prevision</label>
+                                                        <select id="filtro.prevision" class="form-control"></select>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                            <div class="col-6">
+                                                <form>
+                                                    <div class="form-group">
+                                                        <label for="filtro.ecografista">Ganancias en el periodo</label>
+                                                        <input type="number" class="form-control" id="filtro.ecografista" disabled>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="filtro.cancelacion">Tipo de profesional referente</label>
+                                                        <select id="filtro.cancelacion" class="form-control">
+                                                            <option value="medico">Médico</option>
+                                                            <option value="matrona">Matrona</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="filtro.prevision">Nombre profesional referente</label>
+                                                        <select id="filtro.prevision" class="form-control"></select>
+                                                    </div>
+                                                </form>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="col-6">
-                                    <table class="table table-striped table-hover">
-                                        <thead>
-                                            <tr>
-                                            <th scope="col">Modalidad de pago</th>
-                                            <th scope="col">N° de acciones</th>
-                                            <th scope="col">Total</th>
-                                            <th scope="col">Ad. Doppler</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody id="reporte.tabla.resumen">
-                                        </tbody>
-                                    </table>
+                                    <div class="col-6">
+                                        <table class="table table-striped table-hover">
+                                            <thead>
+                                                <tr>
+                                                <th scope="col">Modalidad de pago</th>
+                                                <th scope="col">N° de acciones</th>
+                                                <th scope="col">Total</th>
+                                                <th scope="col">Ad. Doppler</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="reporte.tabla.resumen">
+                                            </tbody>
+                                        </table>
+                                    </div>
                                 </div>
                             </div>
                         </div>
