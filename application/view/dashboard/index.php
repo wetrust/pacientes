@@ -156,7 +156,7 @@
                                         </div>
                                         <div class="form-group col-md-4">
                                         <label for="inputPassword4">Edad Gestacional</label>
-                                        <input type="number" class="form-control" id="eg" disabled>
+                                        <input type="text" class="form-control" id="eg" disabled>
                                         </div>
                                         <div class="form-group col-md-4">
                                         <label for="inputPassword4">Fecha probable de parto</label>
