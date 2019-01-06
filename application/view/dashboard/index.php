@@ -954,7 +954,7 @@
 
         var send = {
             action: "get",
-            hora_fecha: ("#horas\\.busqueda\\.fecha").val()
+            hora_fecha: $("#horas\\.busqueda\\.fecha").val()
         }
 
         $.post("<?php echo Config::get('URL'); ?>pacientes/api", send).done(function(data){
