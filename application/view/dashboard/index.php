@@ -275,7 +275,7 @@
                                 <div class="form-row">
                                     <div class="form-group col-md-4">
                                     <label for="inputEmail4">RUT</label>
-                                    <input type="date" class="form-control" id="horas.rut">
+                                    <input type="text" class="form-control" id="horas.rut">
                                     </div>
                                     <div class="form-group col-md-4">
                                     <label for="inputPassword4">Nombre</label>
@@ -283,7 +283,7 @@
                                     </div>
                                     <div class="form-group col-md-4">
                                     <label for="inputPassword4">Apellido</label>
-                                    <input type="date" class="form-control" id="horas.apellido" disabled>
+                                    <input type="text" class="form-control" id="horas.apellido" disabled>
                                     </div>
                                 </div>
                                 <div class="form-row">
