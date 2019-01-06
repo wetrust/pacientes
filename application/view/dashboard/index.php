@@ -270,18 +270,26 @@
                     </ul>
                     <div class="card">
                         <div class="card-body">
+                            <div class="table-responsive">
                             <table class="table table-striped table-hover">
                                 <thead>
                                     <tr>
                                         <th scope="col">#</th>
-                                        <th scope="col">RUT</th>
+                                        <th scope="col">Hora</th>
                                         <th scope="col">Nombre</th>
                                         <th scope="col">Apellidos</th>
+                                        <th scope="col">Prevision</th>
+                                        <th scope="col">Motivo Atencion</th>
+                                        <th scope="col">Ciudad</th>
+                                        <th scope="col">Situación</th>
+                                        <th scope="col">Ecografista</th>
+                                        <th scope="col">Valor cancelado</th>
                                     </tr>
                                 </thead>
                                 <tbody id="horas.tabla">
                                 </tbody>
                             </table>
+                            </div>
                         </div>
                     </div>
                 </div>
