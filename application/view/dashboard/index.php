@@ -241,8 +241,8 @@
                             <div class="card">
                                 <div class="card-body p-2">
                                     <div class="form-group row mb-0">
-                                        <label for="inputPassword" class="col-sm-2 col-form-label">Fecha</label>
-                                        <div class="col-sm-10">
+                                        <label for="inputPassword" class="col-sm-6 col-form-label">Fecha</label>
+                                        <div class="col-sm-6">
                                             <input type="date" class="form-control" id="horas.busqueda.fecha">
                                         </div>
                                     </div>
