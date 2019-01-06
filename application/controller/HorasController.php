@@ -21,7 +21,7 @@ class HorasController extends Controller
         switch ($accion) {
             case "get":
                 $resultado = HoraModel::getAllHoras(Request::post('hora_fecha'));
-                break;s
+                break;
             case "new":
                 $resultado = HoraModel::createHora(Request::post('hora_rut'), Request::post('hora_fecha'), Request::post('hora_atencion'), Request::post('hora_tipo'), Request::post('hora_hora'),Request::post('hora_cancelacion'),Request::post('hora_cancelado'),Request::post('hora_adicional'), Request::post('hora_situacion'), Request::post('hora_ecografista'));
                 break;

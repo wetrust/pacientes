@@ -792,10 +792,10 @@
             var undia = 1000 * 60 * 60 * 24;
             var unasemana = undia * 7;
             var unano = undia * 365;
-            
+
             FUM = new Date($(this).val());
             FExamen = new Date();
-            
+
             EdadGestacional = ((FExamen.getTime() - FUM.getTime()) / unano).toFixed(0);
             $("#edad").val(EdadGestacional + " años");
         });
@@ -804,10 +804,10 @@
             var FExamen, FUM, EdadGestacional;
             var undia = 1000 * 60 * 60 * 24;
             var unasemana = undia * 7;
-            
+
             FUM = new Date($(this).val());
             FExamen = new Date();
-            
+
             EdadGestacional = ((FExamen.getTime() - FUM.getTime()) / unasemana).toFixed(1);
             FPP = ((FUM.getTime() + (unasemana * 40)));
             FPP = new Date(FPP);
@@ -815,7 +815,7 @@
             let fppdata =  FPP.getFullYear() + '-' + ("0" + (FPP.getMonth() +1)).slice("-2") + '-' +  ("0" + FPP.getDate()).slice("-2");
             $("#fpp").val(fppdata);
         });
-        
+
         $("#tallamaterna").on("click", function(){
             $('#imc').val(imc($("#tallamaterna").val(), $('#pesomaterno').val()) + ' kl/m2');
         }).on("change", function(){
@@ -827,7 +827,6 @@
         }).on("change", function(){
             $('#imc').val(imc($("#tallamaterna").val(), $('#pesomaterno').val()) + ' kl/m2');
         });
-
 
         //horas
         $("#horas\\.nuevo").on("click", function(){
@@ -848,6 +847,7 @@
             $("#horas\\.situacion").val("");
             $("#horas\\.ecografista").val("");
         });
+
         $("#horas\\.modificar").on("click", function(){
             $("#horas\\.nuevo").addClass("d-none");
             $("#horas\\.modificar").addClass("d-none");
@@ -857,6 +857,7 @@
 
             $("#horas\\.formulario").removeClass("d-none");
         });
+
         $("#horas\\.guardar").on("click", function(){
             $("#horas\\.nuevo").removeClass("d-none");
             $("#horas\\.guardar").addClass("d-none");
@@ -877,7 +878,7 @@
                 hora_situacion: $("#horas\\.situacion").val(),
                 hora_ecografista: $("#horas\\.ecografista").val()
             }
-            
+
             $.post("<?php echo Config::get('URL'); ?>horas/api", args).done(function(data){
                 $("#horas\\.atencion").val("");
                 $("#horas\\.tipo").val("");
@@ -890,6 +891,7 @@
                 tablaHoras();
             });
         });
+
         $("#horas\\.cancelar").on("click", function(){
             $("#horas\\.nuevo").removeClass("d-none");
             $("#horas\\.guardar").addClass("d-none");
@@ -906,8 +908,10 @@
             $("#horas\\.situacion").val("");
             $("#horas\\.ecografista").val("");
         });
+
         $("#horas\\.eliminar").on("click", function(){
         });
+
     });
 
     function loadData(){
