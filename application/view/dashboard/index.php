@@ -863,7 +863,7 @@
             $("#horas\\.guardar").addClass("d-none");
             $("#horas\\.cancelar").addClass("d-none");
 
-            $("#horas\\.formulario").removeClass("d-none");
+            $("#horas\\.formulario").addClass("d-none");
 
             let args = {
                 action: "new",
@@ -897,7 +897,7 @@
             $("#horas\\.guardar").addClass("d-none");
             $("#horas\\.cancelar").addClass("d-none");
 
-            $("#horas\\.formulario").removeClass("d-none");
+            $("#horas\\.formulario").addClass("d-none");
 
             $("#horas\\.atencion").val("");
             $("#horas\\.tipo").val("");
