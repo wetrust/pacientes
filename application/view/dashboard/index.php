@@ -241,8 +241,8 @@
                             <div class="card">
                                 <div class="card-body p-2">
                                     <div class="form-group row mb-0">
-                                        <label for="inputPassword" class="col-sm-6 col-form-label">Fecha</label>
-                                        <div class="col-sm-6">
+                                        <label for="inputPassword" class="col-sm-5 col-form-label">Fecha</label>
+                                        <div class="col-sm-7">
                                             <input type="date" class="form-control" id="horas.busqueda.fecha">
                                         </div>
                                     </div>
@@ -297,7 +297,7 @@
                                         <option value="Ginecológica TV">Ginecológica TV</option>
                                         <option value="Ginecológica Abd">Ginecológica Abd</option>
                                     </select>
-                                    </div>Стелла Джанни — Небо
+                                    </div>
                                     <div class="form-group col-md-4">
                                     <label for="inputPassword4">Tipo de ecografía</label>
                                     <select id="horas.tipo" class="form-control">
