@@ -275,7 +275,7 @@
                                 <div class="form-row">
                                     <div class="form-group col-md-4">
                                     <label for="inputEmail4">RUT</label>
-                                    <input type="date" class="form-control" id="horas.rut" disabled>
+                                    <input type="date" class="form-control" id="horas.rut">
                                     </div>
                                     <div class="form-group col-md-4">
                                     <label for="inputPassword4">Nombre</label>
@@ -289,11 +289,27 @@
                                 <div class="form-row">
                                     <div class="form-group col-md-4">
                                     <label for="inputEmail4">Atencion de tipo</label>
-                                    <input type="date" class="form-control" id="horas.atencion" disabled>
-                                    </div>
+                                    <select id="horas.atencion" class="form-control">
+                                        <option value="Obstétrica">Obstétrica</option>
+                                        <option value="Obstétrica Abto.">Obstétrica Abto.</option>
+                                        <option value="Obstétrica Doppler">Obstétrica Doppler</option>
+                                        <option value="Obstétrica 3D 4D">Obstétrica 3D 4D</option>
+                                        <option value="Ginecológica TV">Ginecológica TV</option>
+                                        <option value="Ginecológica Abd">Ginecológica Abd</option>
+                                    </select>
+                                    </div>Стелла Джанни — Небо
                                     <div class="form-group col-md-4">
                                     <label for="inputPassword4">Tipo de ecografía</label>
-                                    <input type="text" class="form-control" id="horas.tipo" disabled>
+                                    <select id="horas.tipo" class="form-control">
+                                        <option value="Confirmación de Embarazo">Confirmación de Embarazo</option>
+                                        <option value="Eco. Evaluación de 1er Trimestre">Eco. Evaluación de 1er Trimestre</option>
+                                        <option value="Eco. Evaluación de 2° - 3° Trimestre">Eco. Evaluación de 2° - 3° Trimestre</option>
+                                        <option value="Doppler Materno/Fetal">Doppler Materno/Fetal</option>
+                                        <option value="Ecografía 3D 4D">Ecografía 3D 4D</option>
+                                        <option value="Completar Visión 3D de Eco Previa">Completar Visión 3D de Eco Previa</option>
+                                        <option value="Evaluación de. Examenes">Evaluación de. Examenes</option>
+                                        <option value="Eco Ginecologica">Eco Ginecologica</option>
+                                    </select>
                                     </div>
                                     <div class="form-group col-md-4">
                                     <label for="horas.hora">Hora de atención</label>
