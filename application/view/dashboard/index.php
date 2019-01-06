@@ -253,7 +253,7 @@
                     <hr>
                     <ul class="nav my-2">
                         <li class="nav-item">
-                            <button type="button" id="horas.nuevo" class="btn btn-primary mx-1">Nuevo</button>
+                            <button type="button" id="horas.nuevo" class="btn btn-primary mx-1">Reservar hora</button>
                         </li>
                         <li class="nav-item">
                         <button type="button" id="horas.modificar" class="btn btn-secondary mx-1 d-none">Modificar</button>
@@ -270,6 +270,61 @@
                     </ul>
                     <div class="card">
                         <div class="card-body">
+                            <div class="d-none" id="horas.formulario">
+                                <h5 class="card-title">Reserva de horas</h5>
+                                <div class="form-row">
+                                    <div class="form-group col-md-4">
+                                    <label for="inputEmail4">RUT</label>
+                                    <input type="date" class="form-control" id="horas.rut" disabled>
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                    <label for="inputPassword4">Nombre</label>
+                                    <input type="text" class="form-control" id="horas.nombre" disabled>
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                    <label for="inputPassword4">Apellido</label>
+                                    <input type="date" class="form-control" id="horas.apellido" disabled>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group col-md-4">
+                                    <label for="inputEmail4">Atencion de tipo</label>
+                                    <input type="date" class="form-control" id="horas.atencion" disabled>
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                    <label for="inputPassword4">Tipo de ecografía</label>
+                                    <input type="text" class="form-control" id="horas.tipo" disabled>
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                    <label for="inputPassword4">Hora de atención</label>
+                                    <input type="date" class="form-control" id="horas.hora" disabled>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group col-md-4">
+                                    <label for="inputEmail4">Cancelacion</label>
+                                    <input type="date" class="form-control" id="horas.cancelacion" disabled>
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                    <label for="inputPassword4">Valor cancelado</label>
+                                    <input type="text" class="form-control" id="horas.cancelado" disabled>
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                    <label for="inputPassword4">Ad. Doppler</label>
+                                    <input type="date" class="form-control" id="horas.adicional" disabled>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group col-md-4">
+                                    <label for="inputEmail4">Situación final</label>
+                                    <input type="date" class="form-control" id="horas.situacion" disabled>
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                    <label for="inputPassword4">Ecografista Dr.(a)</label>
+                                    <input type="text" class="form-control" id="horas.ecografista" disabled>
+                                    </div>
+                                </div>
+                            </div>
                             <div class="table-responsive">
                             <table class="table table-striped table-hover">
                                 <thead>
@@ -426,6 +481,11 @@
             let option = '<option val="' + i + '">' + i + '</option>';
             $("#pesomaterno").append(option);
         }
+
+        let fecha = new Date();
+        fecha =  fecha.getFullYear() + '-' + ("0" + (fecha.getMonth() +1)).slice("-2") + '-' +  ("0" + fecha.getDate()).slice("-2");
+        $("#horas\\.busqueda\\.fecha").val(fecha);
+        tablaHoras();
 
         $("input[name='referentes']").on("click", function(){
             if ($(this).val() == "medico"){
@@ -688,6 +748,86 @@
             $('#imc').val(imc($("#tallamaterna").val(), $('#pesomaterno').val()) + ' kl/m2');
         });
 
+
+        //horas
+        $("#horas\\.nuevo").on("click", function(){
+            $("#horas\\.nuevo").addClass("d-none");
+            $("#horas\\.modificar").addClass("d-none");
+            $("#horas\\.guardar").removeClass("d-none");
+            $("#horas\\.cancelar").removeClass("d-none");
+            $("#horas\\.eliminar").addClass("d-none");
+
+            $("#horas\\.formulario").removeClass("d-none");
+
+            $("#horas\\.atencion").val("");
+            $("#horas\\.tipo").val("");
+            $("#horas\\.hora").val("");
+            $("#horas\\.cancelacion").val("");
+            $("#horas\\.cancelado").val("");
+            $("#horas\\.adicional").val("");
+            $("#horas\\.situacion").val("");
+            $("#horas\\.ecografista").val("");
+        });
+        $("#horas\\.modificar").on("click", function(){
+            $("#horas\\.nuevo").addClass("d-none");
+            $("#horas\\.modificar").addClass("d-none");
+            $("#horas\\.guardar").removeClass("d-none");
+            $("#horas\\.cancelar").removeClass("d-none");
+            $("#horas\\.eliminar").addClass("d-none");
+
+            $("#horas\\.formulario").removeClass("d-none");
+        });
+        $("#horas\\.guardar").on("click", function(){
+            $("#horas\\.nuevo").removeClass("d-none");
+            $("#horas\\.guardar").addClass("d-none");
+            $("#horas\\.cancelar").addClass("d-none");
+
+            $("#horas\\.formulario").removeClass("d-none");
+
+            let args = {
+                action: "new",
+                hora_rut: $("#hora\\.rut").val(),
+                hora_fecha: $("#horas\\.busqueda\\.fecha").val(),
+                hora_atencion: $("#horas\\.atencion").val(),
+                hora_tipo: $("#horas\\.tipo").val(),
+                hora_hora: $("#horas\\.hora").val(),
+                hora_cancelacion: $("#horas\\.cancelacion").val(),
+                hora_cancelado: $("#horas\\.cancelado").val(),
+                hora_adicional: $("#horas\\.adicional").val(),
+                hora_situacion: $("#horas\\.situacion").val(),
+                hora_ecografista: $("#horas\\.ecografista").val()
+            }
+            
+            $.post("<?php echo Config::get('URL'); ?>horas/api", args).done(function(data){
+                $("#horas\\.atencion").val("");
+                $("#horas\\.tipo").val("");
+                $("#horas\\.hora").val("");
+                $("#horas\\.cancelacion").val("");
+                $("#horas\\.cancelado").val("");
+                $("#horas\\.adicional").val("");
+                $("#horas\\.situacion").val("");
+                $("#horas\\.ecografista").val("");
+                tablaHoras();
+            });
+        });
+        $("#horas\\.cancelar").on("click", function(){
+            $("#horas\\.nuevo").removeClass("d-none");
+            $("#horas\\.guardar").addClass("d-none");
+            $("#horas\\.cancelar").addClass("d-none");
+
+            $("#horas\\.formulario").removeClass("d-none");
+
+            $("#horas\\.atencion").val("");
+            $("#horas\\.tipo").val("");
+            $("#horas\\.hora").val("");
+            $("#horas\\.cancelacion").val("");
+            $("#horas\\.cancelado").val("");
+            $("#horas\\.adicional").val("");
+            $("#horas\\.situacion").val("");
+            $("#horas\\.ecografista").val("");
+        });
+        $("#horas\\.eliminar").on("click", function(){
+        });
     });
 
     function loadData(){
@@ -798,6 +938,105 @@
 
                             $("#paciente\\.modificar").removeClass("d-none");
                             $("#paciente\\.eliminar").removeClass("d-none");
+
+                            //para hora
+                            $("#horas\\.rut").val(data.paciente_rut);
+                            $("#horas\\.nombre").val(data.paciente_nombre);
+                            $("#horas\\.apellido").val(data.paciente_apellido);
+                        }
+                    });
+                });
+            }
+        });
+    }
+
+    function tablaHoras(){
+
+        var send = {
+            action: "get"
+            hora_fecha: ("#horas\\.busqueda\\.fecha").val()
+        }
+
+        $.post("<?php echo Config::get('URL'); ?>pacientes/api", send).done(function(data){
+            $('#horas\\.tabla').empty();
+            if (Object.keys(data).length > 0) {
+                $.each(data, function(index, element){
+                    let response = '<tr data-id="' + element.hora_id +'"><td>'+element.hora_id+'</td><td>'+element.hora_hora+'</td><td></td><td></td><td></td><td></td><td></td><td>'+ element.hora_situacion +'</td><td>'+element.hora_ecografista+'</td></tr>';
+                    $('#horas\\.tabla).append(response);
+                });
+
+                $('#horas\\.tabla > tr').on("click", function(){
+                    var paciente_id = $(this).data("id");
+                    let send = {
+                        action: "read",
+                        hora_id: hora_id
+                    }
+
+                    //vaciar los inputs
+                    $("#horas\\.atencion").val("");
+                    $("#horas\\.tipo").val("");
+                    $("#horas\\.hora").val("");
+                    $("#horas\\.cancelacion").val("");
+                    $("#horas\\.cancelado").val("");
+                    $("#horas\\.adicional").val("");
+                    $("#horas\\.situacion").val("");
+                    $("#horas\\.ecografista").val("");
+
+                    $("#horas\\.modificar").addClass("d-none");
+                    $("#horas\\.eliminar").addClass("d-none");
+
+                    $.post("<?php echo Config::get('URL'); ?>pacientes/api", send).done(function(data){
+                        if (Object.keys(data).length > 0) {
+                            let send = {
+                                action: "read",
+                                paciente_rut: data.hora_rut
+                            }
+
+                            $.post("<?php echo Config::get('URL'); ?>pacientes/api", send).done(function(datA){
+                                if (Object.keys(data).length > 0) {
+                                    $("#rut").val(datA.paciente_rut);
+                                    $("#nombre").val(datA.paciente_nombre);
+                                    $("#apellido").val(datA.paciente_apellido);
+                                    $("#telefono").val(datA.paciente_telefono);
+                                    $("#email").val(datA.paciente_email);
+                                    $("#prevision").val(datA.paciente_prevision);
+                                    $("#ciudad").val(datA.paciente_ciudad);
+                                    $("#lugar").val(datA.paciente_lugar);
+                                    $("#profesional").val(datA.paciente_profesional);
+                                    $("#acompanantes").val(datA.paciente_acompanantes);
+
+                                    $("#fur").val(datA.paciente_fur);
+                                    $("#eg").val(datA.paciente_eg);
+                                    $("#fpp").val(datA.paciente_fpp);
+                                    $("#edad").val(datA.paciente_edadmaterna);
+                                    $("#gestas").val(datA.paciente_gestasprevias);
+                                    $("#partos").val(datA.paciente_partos);
+                                    $("#tallamaterna").val(datA.paciente_talla);
+                                    $("#pesomaterno").val(datA.paciente_peso);
+                                    $("#imc").val(datA.paciente_imc);
+
+                                    $("#paciente\\.modificar").removeClass("d-none");
+                                    $("#paciente\\.eliminar").removeClass("d-none");
+
+                                    //para hora
+                                    $("#horas\\.rut").val(datA.paciente_rut);
+                                    $("#horas\\.nombre").val(datA.paciente_nombre);
+                                    $("#horas\\.apellido").val(datA.paciente_apellido);
+                                }
+                            });
+
+                            $("#horas\\.busqueda\\.fecha").val(data.hora_fecha);
+                            $("#horas\\.atencion").val(data.hora_atencion);
+                            $("#horas\\.tipo").val(data.hora_tipo);
+                            $("#horas\\.hora").val(data.hora_hora);
+                            $("#horas\\.cancelacion").val(data.hora_cancelacion);
+                            $("#horas\\.cancelado").val(data.hora_cancelado);
+                            $("#horas\\.adicional").val(data.hora_adicional);
+                            $("#horas\\.situacion").val(data.hora_situacion);
+                            $("#horas\\.ecografista").val(data.hora_ecografista);
+
+                            $("#horas\\.modificar").removeClass("d-none");
+                            $("#horas\\.eliminar").removeClass("d-none");
                         }
                     });
                 });
