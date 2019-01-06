@@ -953,7 +953,7 @@
     function tablaHoras(){
 
         var send = {
-            action: "get"
+            action: "get",
             hora_fecha: ("#horas\\.busqueda\\.fecha").val()
         }
 
