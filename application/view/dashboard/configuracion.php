@@ -8,6 +8,7 @@
                 <button type="button" class="btn btn-secondary" id="lugar">Lugar de control</button>
                 <button type="button" class="btn btn-secondary" id="medicos">Médicos</button>
                 <button type="button" class="btn btn-secondary" id="matronas">Matronas</button>
+                <button type="button" class="btn btn-secondary" id="ecografistas">Ecografistas</button>
             </div>
             <div id="contenedor">
             </div>
@@ -114,6 +115,27 @@
                     },
                     matrona_name: {
                         name: "Matrona",
+                        type: "text"
+                    }
+                }
+            };
+            wtInterface = null;
+            wtInterface = new CRUDInterface(view);
+            wtInterface.html("#contenedor");
+        });
+
+        $("#ecografistas").on("click", function(){
+            $("#contenedor").empty();
+            _api = "<?php echo Config::get('URL'); ?>ecografista/api";
+            view = {
+                titulo: "Ecografistas",
+                inputs: {
+                    ecografista_id: {
+                        name: "#",
+                        type: "hidden"
+                    },
+                    ecografista_name: {
+                        name: "Ecografistas",
                         type: "text"
                     }
                 }
