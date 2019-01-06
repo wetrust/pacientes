@@ -957,7 +957,7 @@
             hora_fecha: $("#horas\\.busqueda\\.fecha").val()
         }
 
-        $.post("<?php echo Config::get('URL'); ?>pacientes/api", send).done(function(data){
+        $.post("<?php echo Config::get('URL'); ?>horas/api", send).done(function(data){
             $('#horas\\.tabla').empty();
             if (Object.keys(data).length > 0) {
                 $.each(data, function(index, element){
