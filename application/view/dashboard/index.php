@@ -962,7 +962,7 @@
             if (Object.keys(data).length > 0) {
                 $.each(data, function(index, element){
                     let response = '<tr data-id="' + element.hora_id +'"><td>'+element.hora_id+'</td><td>'+element.hora_hora+'</td><td></td><td></td><td></td><td></td><td></td><td>'+ element.hora_situacion +'</td><td>'+element.hora_ecografista+'</td></tr>';
-                    $('#horas\\.tabla).append(response);
+                    $('#horas\\.tabla').append(response);
                 });
 
                 $('#horas\\.tabla > tr').on("click", function(){
