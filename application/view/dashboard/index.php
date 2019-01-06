@@ -296,32 +296,96 @@
                                     <input type="text" class="form-control" id="horas.tipo" disabled>
                                     </div>
                                     <div class="form-group col-md-4">
-                                    <label for="inputPassword4">Hora de atención</label>
-                                    <input type="date" class="form-control" id="horas.hora" disabled>
+                                    <label for="horas.hora">Hora de atención</label>
+                                    <select id="horas.hora" class="form-control">
+                                        <option value="08:00:00">08:00</option>
+                                        <option value="08:15:00">08:15</option>
+                                        <option value="08:30:00">08:30</option>
+                                        <option value="08:45:00">08:45</option>
+                                        <option value="08:00:00">09:00</option>
+                                        <option value="08:15:00">09:15</option>
+                                        <option value="08:30:00">09:30</option>
+                                        <option value="08:45:00">09:45</option>
+                                        <option value="08:00:00">10:00</option>
+                                        <option value="08:15:00">10:15</option>
+                                        <option value="08:30:00">10:30</option>
+                                        <option value="08:45:00">10:45</option>
+                                        <option value="08:00:00">11:00</option>
+                                        <option value="08:15:00">11:15</option>
+                                        <option value="08:30:00">11:30</option>
+                                        <option value="08:45:00">11:45</option>
+                                        <option value="08:00:00">12:00</option>
+                                        <option value="08:15:00">12:15</option>
+                                        <option value="08:30:00">12:30</option>
+                                        <option value="08:45:00">12:45</option>
+                                        <option value="08:00:00">13:00</option>
+                                        <option value="08:15:00">13:15</option>
+                                        <option value="08:30:00">13:30</option>
+                                        <option value="08:45:00">13:45</option>
+                                        <option value="08:00:00">14:00</option>
+                                        <option value="08:15:00">14:15</option>
+                                        <option value="08:30:00">14:30</option>
+                                        <option value="08:45:00">14:45</option>
+                                        <option value="08:00:00">15:00</option>
+                                        <option value="08:15:00">15:15</option>
+                                        <option value="08:30:00">15:30</option>
+                                        <option value="08:45:00">15:45</option>
+                                        <option value="08:00:00">16:00</option>
+                                        <option value="08:15:00">16:15</option>
+                                        <option value="08:30:00">16:30</option>
+                                        <option value="08:45:00">16:45</option>
+                                        <option value="08:00:00">17:00</option>
+                                        <option value="08:15:00">17:15</option>
+                                        <option value="08:30:00">17:30</option>
+                                        <option value="08:45:00">17:45</option>
+                                        <option value="08:00:00">18:00</option>
+                                        <option value="08:15:00">18:15</option>
+                                        <option value="08:30:00">18:30</option>
+                                        <option value="08:45:00">18:45</option>
+                                        <option value="08:00:00">19:00</option>
+                                        <option value="08:15:00">19:15</option>
+                                        <option value="08:30:00">19:30</option>
+                                        <option value="08:45:00">19:45</option>
+                                        <option value="08:00:00">20:00</option>
+                                    </select>
                                     </div>
                                 </div>
                                 <div class="form-row">
                                     <div class="form-group col-md-4">
-                                    <label for="inputEmail4">Cancelacion</label>
-                                    <input type="date" class="form-control" id="horas.cancelacion" disabled>
+                                    <label for="horas.cancelacion">Cancelacion</label>
+                                    <select id="horas.cancelacion" class="form-control">
+                                        <option value="Bono Isapre">Bono Isapre</option>
+                                        <option value="Bono Fonasa">Bono Fonasa</option>
+                                        <option value="Bono Electrónico">Bono Electrónico</option>
+                                        <option value="Efectivo">Efectivo</option>
+                                        <option value="Exenta">Exenta</option>
+                                        <option value="Garantía">Garantía</option>
+                                        <option value="Pendiente">Pendiente</option>
+                                        <option value="Repetición sin costo">Repetición sin costo</option>
+                                    </select>
                                     </div>
                                     <div class="form-group col-md-4">
                                     <label for="inputPassword4">Valor cancelado</label>
-                                    <input type="text" class="form-control" id="horas.cancelado" disabled>
+                                    <input type="number" class="form-control" id="horas.cancelado">
                                     </div>
                                     <div class="form-group col-md-4">
                                     <label for="inputPassword4">Ad. Doppler</label>
-                                    <input type="date" class="form-control" id="horas.adicional" disabled>
+                                    <input type="number" class="form-control" id="horas.adicional">
                                     </div>
                                 </div>
                                 <div class="form-row">
                                     <div class="form-group col-md-4">
                                     <label for="inputEmail4">Situación final</label>
-                                    <input type="date" class="form-control" id="horas.situacion" disabled>
+                                    <select id="horas.situacion" class="form-control">
+                                        <option value="Atendida">Atendida</option>
+                                        <option value="Confirmada">Confirmada</option>
+                                        <option value="En reserva">En reserva</option>
+                                        <option value="No asistió">No asistió</option>
+                                    </select>
                                     </div>
                                     <div class="form-group col-md-4">
                                     <label for="inputPassword4">Ecografista Dr.(a)</label>
-                                    <input type="text" class="form-control" id="horas.ecografista" disabled>
+                                    <select class="form-control" id="horas.ecografista"></select>
                                     </div>
                                 </div>
                             </div>
@@ -862,6 +926,16 @@
                     response += '</option>';
                     $('#lugar').append(response);
                 }
+            }
+        });
+
+        $.post("<?php echo Config::get('URL'); ?>ecografista/api", args).done(function(data){
+            $('#horas\\.ecografista').empty();
+            if (Object.keys(data).length > 0) {
+                $.each(data, function(index, element){
+                    let response = '<option value="' + element.ecografista_id + '">' + element.ecografista_name + '</option>';
+                    $('#horas\\.ecografista').append(response);
+                });
             }
         });
     }
