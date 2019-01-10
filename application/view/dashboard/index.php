@@ -865,7 +865,7 @@
 
             $("#horas\\.formulario").addClass("d-none");
 
-            let args = {
+            let envio = {
                 action: "new",
                 hora_rut: $("#hora\\.rut").val(),
                 hora_fecha: $("#horas\\.busqueda\\.fecha").val(),
@@ -879,7 +879,7 @@
                 hora_ecografista: $("#horas\\.ecografista").val()
             }
 
-            $.post("<?php echo Config::get('URL'); ?>horas/api", args).done(function(data){
+            $.post("<?php echo Config::get('URL'); ?>horas/api", envio).done(function(data){
                 $("#horas\\.atencion").val("");
                 $("#horas\\.tipo").val("");
                 $("#horas\\.hora").val("");
