@@ -867,7 +867,7 @@
 
             let envio = {
                 action: "new",
-                hora_rut: $("#hora\\.rut").val(),
+                hora_rut: $("#horas\\.rut").val(),
                 hora_fecha: $("#horas\\.busqueda\\.fecha").val(),
                 hora_atencion: $("#horas\\.atencion").val(),
                 hora_tipo: $("#horas\\.tipo").val(),
