@@ -1055,7 +1055,7 @@
             $('#horas\\.tabla').empty();
             if (Object.keys(data).length > 0) {
                 $.each(data, function(index, element){
-                    let response = '<tr data-id="' + element.hora_id +'"><td>'+element.hora_id+'</td><td>'+element.hora_hora+'</td><td></td><td></td><td></td><td></td><td></td><td>'+ element.hora_situacion +'</td><td>'+element.hora_ecografista+'</td></tr>';
+                    let response = '<tr data-id="' + element.hora_id +'"><td>'+element.hora_id+'</td><td>'+element.hora_hora+'</td><td>' + element.paciente_nombre +'</td><td>' + element.paciente_apellido +'</td><td>' + element.paciente_prevision +'</td><td>' + element.hora_atencion +'</td><td>' + element.paciente_ciudad +'</td><td>'+ element.hora_situacion +'</td><td>'+element.ecografista_name+'</td><td>'+element.hora_cancelado+'</td></tr>';
                     $('#horas\\.tabla').append(response);
                 });
 

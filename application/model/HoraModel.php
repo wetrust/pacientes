@@ -1,20 +1,13 @@
 <?php
 
-/**
- * HoraModel
- * This is basically a simple CRUD (Create/Read/Update/Delete) demonstration.
- */
 class HoraModel
 {
-    /**
-     * Get all horas (horas are just example data that the user has created)
-     * @return array an array with several objects (the results)
-     */
+
     public static function getAllHoras($hora_fecha)
     {
         $database = DatabaseFactory::getFactory()->getConnection();
 
-        $sql = "SELECT * FROM horas WHERE hora_fecha = :hora_fecha";
+        $sql = "SELECT H.hora_id, H.hora_rut, H.hora_hora, A.paciente_nombre, A.paciente_apellido, A.paciente_prevision, H.hora_atencion, A.paciente_ciudad,  H.hora_situacion, E.ecografista_name, H.hora_cancelado FROM horas H INNER JOIN pacientes A ON H.hora_rut = A.paciente_rut INNER JOIN ecografistas E ON H.hora_ecografista = E.ecografista_id WHERE H.hora_fecha = :hora_fecha";
         $query = $database->prepare($sql);
         $query->execute(array(':hora_fecha' => $hora_fecha));
 
