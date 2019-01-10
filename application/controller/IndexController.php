@@ -17,6 +17,6 @@ class IndexController extends Controller
      */
     public function index()
     {
-        $this->View->render('index/index');
+        Redirect::to('dashboard/index');
     }
 }
