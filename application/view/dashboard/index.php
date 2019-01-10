@@ -829,6 +829,11 @@
         });
 
         //horas
+
+        $("#horas\\.busqueda\\.fecha").on("change", function(){
+            tablaHoras();
+        });
+
         $("#horas\\.nuevo").on("click", function(){
             $("#horas\\.nuevo").addClass("d-none");
             $("#horas\\.modificar").addClass("d-none");
