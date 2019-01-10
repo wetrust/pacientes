@@ -27,8 +27,8 @@
                             <div class="card">
                                 <div class="card-body p-2">
                                     <div class="form-group row mb-0">
-                                        <label for="paciente.busqueda" class="col-sm-6 col-form-label">Buscar paciente (RUT o Apellido)</label>
-                                        <div class="col-sm-6">
+                                        <label for="paciente.busqueda" class="col-sm-7 col-form-label">Buscar paciente (RUT o Apellido)</label>
+                                        <div class="col-sm-5">
                                             <input type="text" class="form-control" id="paciente.busqueda">
                                         </div>
                                     </div>
