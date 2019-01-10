@@ -47,7 +47,6 @@ class HoraModel
     public static function createHora($hora_rut, $hora_fecha, $hora_atencion, $hora_tipo, $hora_hora, $hora_cancelacion, $hora_cancelado, $hora_adicional, $hora_situacion, $hora_ecografista)
     {
         if (!$hora_fecha || strlen($hora_fecha) == 0) {
-            Session::add('feedback_negative', Text::get('FEEDBACK_NOTE_CREATION_FAILED'));
             return false;
         }
 
@@ -61,8 +60,6 @@ class HoraModel
             return true;
         }
 
-        // default return
-        Session::add('feedback_negative', Text::get('FEEDBACK_NOTE_CREATION_FAILED'));
         return false;
     }
 
