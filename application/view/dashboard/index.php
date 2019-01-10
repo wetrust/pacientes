@@ -20,10 +20,20 @@
             <div class="tab-content" id="nav-tabContent">
                 <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
                     <div class="row">
-                        <div class="col-6">
+                        <div class="col-8">
                             <h1>Pacientes</h1>
                         </div>
-                        <div class="col-6">
+                        <div class="col-4">
+                            <div class="card">
+                                <div class="card-body p-2">
+                                    <div class="form-group row mb-0">
+                                        <label for="paciente.busqueda" class="col-sm-5 col-form-label">Buscar paciente</label>
+                                        <div class="col-sm-7">
+                                            <input type="text" class="form-control" id="paciente.busqueda">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <hr>
