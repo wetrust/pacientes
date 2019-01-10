@@ -20,10 +20,10 @@
             <div class="tab-content" id="nav-tabContent">
                 <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
                     <div class="row">
-                        <div class="col-7">
+                        <div class="col-6">
                             <h1>Pacientes</h1>
                         </div>
-                        <div class="col-5">
+                        <div class="col-6">
                             <div class="card">
                                 <div class="card-body p-2">
                                     <div class="form-group row mb-0">
