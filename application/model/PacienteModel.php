@@ -130,7 +130,7 @@ class PacienteModel
 
         $sql = "SELECT paciente_id, paciente_rut, paciente_apellido FROM pacientes WHERE paciente_rut LIKE :paciente_rut";
         $query = $database->prepare($sql);
-        $query->execute(array(':paciente_rut' => $paciente_rut));
+        $query->execute(array(':paciente_rut' => '%'.$paciente_rut));
 
         if ($query->rowCount() == 1) {
             $resultado->data = $query->fetchAll();
@@ -152,7 +152,7 @@ class PacienteModel
 
         $sql = "SELECT paciente_id, paciente_rut, paciente_apellido FROM pacientes WHERE paciente_apellido LIKE :paciente_apellido";
         $query = $database->prepare($sql);
-        $query->execute(array(':paciente_apellido' => $paciente_apellido));
+        $query->execute(array(':paciente_apellido' => '%'.$paciente_apellido));
 
         if ($query->rowCount() == 1) {
             $resultado->data = $query->fetchAll();
