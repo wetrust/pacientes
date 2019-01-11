@@ -611,6 +611,16 @@
 
         $("#paciente\\.busqueda").on("change", function(){
             let contenido = $("#paciente\\.busqueda").val();
+            if (contenido.length > 0){
+                let tipo = contenido.substr(0,1);
+
+                if (typeof tipo == "string"){
+                    alert("texto");
+                }
+                else if (typeof tipo == "number"){
+                    alert("numero");
+                }
+            }
         });
 
         $("#paciente\\.nuevo").on("click", function(){
