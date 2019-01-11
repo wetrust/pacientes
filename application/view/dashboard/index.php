@@ -440,6 +440,30 @@
                     </div>
                 </div>
                 <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+                    <div class="row">
+                        <div class="col-6">
+                            <h1>Reportes</h1>
+                        </div>
+                        <div class="col-6">
+                            <div class="card">
+                                <div class="card-body p-2">
+                                    <div class="form-group row mb-0">
+                                        <label for="paciente.busqueda" class="col-sm-7 col-form-label">Periodo desde</label>
+                                        <div class="col-sm-5">
+                                            <input type="text" class="form-control" id="paciente.busqueda" list="paciente.busqueda.list">
+                                            <datalist id="paciente.busqueda.list"></datalist>
+                                        </div>
+                                        <label for="paciente.busqueda" class="col-sm-7 col-form-label">hasta</label>
+                                        <div class="col-sm-5">
+                                            <input type="text" class="form-control" id="paciente.busqueda" list="paciente.busqueda.list">
+                                            <datalist id="paciente.busqueda.list"></datalist>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
                     <h1>Reportes</h1>
                     <hr>
                     <ul class="nav my-2">
