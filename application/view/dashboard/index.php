@@ -448,15 +448,13 @@
                             <div class="card">
                                 <div class="card-body p-2">
                                     <div class="form-group row mb-0">
-                                        <label for="paciente.busqueda" class="col-sm-7 col-form-label">Periodo desde</label>
-                                        <div class="col-sm-5">
-                                            <input type="text" class="form-control" id="paciente.busqueda" list="paciente.busqueda.list">
-                                            <datalist id="paciente.busqueda.list"></datalist>
+                                        <label for="paciente.busqueda" class="col-sm-3 col-form-label">Periodo desde</label>
+                                        <div class="col-sm-3">
+                                            <input type="date" class="form-control" id="paciente.busqueda">
                                         </div>
-                                        <label for="paciente.busqueda" class="col-sm-7 col-form-label">hasta</label>
-                                        <div class="col-sm-5">
-                                            <input type="text" class="form-control" id="paciente.busqueda" list="paciente.busqueda.list">
-                                            <datalist id="paciente.busqueda.list"></datalist>
+                                        <label for="paciente.busqueda" class="col-sm-2 col-form-label">hasta</label>
+                                        <div class="col-sm-3">
+                                            <input type="date" class="form-control" id="paciente.busqueda">
                                         </div>
                                     </div>
                                 </div>
