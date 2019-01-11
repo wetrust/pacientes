@@ -128,7 +128,7 @@ class PacienteModel
         $resultado->response = false;
         $database = DatabaseFactory::getFactory()->getConnection();
 
-        $sql = "SELECT paciente_id, paciente_rut, paciente_apellido FROM pacientes WHERE paciente_rut = :paciente_rut";
+        $sql = "SELECT paciente_id, paciente_rut, paciente_apellido FROM pacientes WHERE paciente_rut LIKE :paciente_rut";
         $query = $database->prepare($sql);
         $query->execute(array(':paciente_rut' => $paciente_rut));
 
@@ -150,7 +150,7 @@ class PacienteModel
         $resultado->response = false;
         $database = DatabaseFactory::getFactory()->getConnection();
 
-        $sql = "SELECT paciente_id, paciente_rut, paciente_apellido FROM pacientes WHERE paciente_apellido = :paciente_apellido";
+        $sql = "SELECT paciente_id, paciente_rut, paciente_apellido FROM pacientes WHERE paciente_apellido LIKE :paciente_apellido";
         $query = $database->prepare($sql);
         $query->execute(array(':paciente_apellido' => $paciente_apellido));
 
