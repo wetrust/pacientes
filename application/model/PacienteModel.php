@@ -132,7 +132,7 @@ class PacienteModel
         $query = $database->prepare($sql);
         $query->execute(array(':paciente_rut' => '%'.$paciente_rut));
 
-        if ($query->rowCount() == 1) {
+        if ($query->rowCount() > 0) {
             $resultado->data = $query->fetchAll();
             $resultado->response = true;
         }
@@ -154,7 +154,7 @@ class PacienteModel
         $query = $database->prepare($sql);
         $query->execute(array(':paciente_apellido' => '%'.$paciente_apellido));
 
-        if ($query->rowCount() == 1) {
+        if ($query->rowCount() > 0) {
             $resultado->data = $query->fetchAll();
             $resultado->response = true;
         }
