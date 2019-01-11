@@ -128,9 +128,9 @@ class PacienteModel
         $resultado->response = false;
         $database = DatabaseFactory::getFactory()->getConnection();
 
-        $sql = "SELECT paciente_id, paciente_rut, paciente_apellido FROM pacientes WHERE paciente_rut LIKE :paciente_rut";
+        $sql = "SELECT paciente_id, paciente_rut, paciente_apellido FROM pacientes WHERE paciente_rut LIKE ? LIMIT 5";
         $query = $database->prepare($sql);
-        $query->execute(array(':paciente_rut' => '%'.$paciente_rut));
+        $query->execute(array($paciente_rut.'%'));
 
         if ($query->rowCount() > 0) {
             $resultado->data = $query->fetchAll();
@@ -150,9 +150,9 @@ class PacienteModel
         $resultado->response = false;
         $database = DatabaseFactory::getFactory()->getConnection();
 
-        $sql = "SELECT paciente_id, paciente_rut, paciente_apellido FROM pacientes WHERE paciente_apellido LIKE :paciente_apellido";
+        $sql = "SELECT paciente_id, paciente_rut, paciente_apellido FROM pacientes WHERE paciente_apellido LIKE ? LIMIT 5";
         $query = $database->prepare($sql);
-        $query->execute(array(':paciente_apellido' => '%'.$paciente_apellido));
+        $query->execute(array($paciente_apellido.'%'));
 
         if ($query->rowCount() > 0) {
             $resultado->data = $query->fetchAll();
