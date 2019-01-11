@@ -614,10 +614,10 @@
             if (contenido.length > 0){
                 let tipo = contenido.substr(0,1);
 
-                if (typeof tipo == "string"){
+                if (tipo == "0" || tipo == "1"|| tipo == "2" || tipo == "3" || tipo == "4" || tipo == "5" || tipo == "6" || tipo == "7" || tipo == "8" || tipo == "9"){
                     alert("texto");
                 }
-                else if (tipo == "0" || tipo == "1"|| tipo == "2" || tipo == "3" || tipo == "4" || tipo == "5" || tipo == "6" || tipo == "7" || tipo == "8" || tipo == "9"){
+                else if (typeof tipo == "string"){
                     alert("numero");
                 }
             }
