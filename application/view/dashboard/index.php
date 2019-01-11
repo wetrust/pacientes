@@ -463,8 +463,6 @@
                             </div>
                         </div>
                     </div>
-                    
-                    <h1>Reportes</h1>
                     <hr>
                     <ul class="nav my-2">
                         <li class="nav-item">
