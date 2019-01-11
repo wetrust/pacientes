@@ -124,7 +124,7 @@ class PacienteModel
             return false;
         }
 
-        $resultado = stdClass();
+        $resultado = new stdClass();
         $resultado->response = false;
         $database = DatabaseFactory::getFactory()->getConnection();
 
@@ -146,7 +146,7 @@ class PacienteModel
             return false;
         }
 
-        $resultado = stdClass();
+        $resultado = new stdClass();
         $resultado->response = false;
         $database = DatabaseFactory::getFactory()->getConnection();
 
