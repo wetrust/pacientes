@@ -448,13 +448,13 @@
                             <div class="card">
                                 <div class="card-body p-2">
                                     <div class="form-group row mb-0">
-                                        <label for="paciente.busqueda" class="col-sm-3 col-form-label">Periodo desde</label>
+                                        <label for="filtro.desde" class="col-sm-3 col-form-label">Periodo desde</label>
                                         <div class="col-sm-3">
-                                            <input type="date" class="form-control" id="paciente.busqueda">
+                                            <input type="date" class="form-control" id="filtro.desde">
                                         </div>
-                                        <label for="paciente.busqueda" class="col-sm-2 col-form-label">hasta</label>
+                                        <label for="filtro.hasta" class="col-sm-2 col-form-label">hasta</label>
                                         <div class="col-sm-3">
-                                            <input type="date" class="form-control" id="paciente.busqueda">
+                                            <input type="date" class="form-control" id="filtro.hasta">
                                         </div>
                                     </div>
                                 </div>
@@ -596,6 +596,8 @@
         let fecha = new Date();
         fecha =  fecha.getFullYear() + '-' + ("0" + (fecha.getMonth() +1)).slice("-2") + '-' +  ("0" + fecha.getDate()).slice("-2");
         $("#horas\\.busqueda\\.fecha").val(fecha);
+        $("#filtro\\.desde").val(fecha);
+        $("#filtro\\.hasta").val(fecha);
         tablaHoras();
 
         $("input[name='referentes']").on("click", function(){
