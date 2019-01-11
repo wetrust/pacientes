@@ -624,7 +624,7 @@
                     $.post("<?php echo Config::get('URL'); ?>pacientes/api", enviar).done(function(respuesta){
                         $("#paciente\\.busqueda\\.list").empty();
                         if (respuesta.response == true){
-                            $.each(data, function(index, element){
+                            $.each(respuesta.data, function(index, element){
                                 let response = '<option value="' + element.paciente_rut + '"></option>';
                                 $('#paciente\\.busqueda\\.list').append(response);
                             });
@@ -640,7 +640,7 @@
                     $.post("<?php echo Config::get('URL'); ?>pacientes/api", enviar).done(function(respuesta){
                         $("#paciente\\.busqueda\\.list").empty();
                         if (respuesta.response == true){
-                            $.each(data, function(index, element){
+                            $.each(respuesta.data, function(index, element){
                                 let response = '<option value="' + element.paciente_apellido + '"></option>';
                                 $('#paciente\\.busqueda\\.list').append(response);
                             });
