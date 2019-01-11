@@ -137,7 +137,7 @@ class PacienteModel
             $resultado->response = true;
         }
 
-        return $resultado
+        return $resultado;
     }
 
     public static function buscarPacienteApellido($paciente_apellido)
@@ -159,6 +159,6 @@ class PacienteModel
             $resultado->response = true;
         }
 
-        return $resultado
+        return $resultado;
     }
 }
