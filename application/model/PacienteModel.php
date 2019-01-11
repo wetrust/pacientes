@@ -117,4 +117,48 @@ class PacienteModel
         Session::add('feedback_negative', Text::get('FEEDBACK_NOTE_DELETION_FAILED'));
         return false;
     }
+
+    public static function buscarPacienteRut($paciente_rut)
+    {
+        if (!$paciente_rut) {
+            return false;
+        }
+
+        $resultado = stdClass();
+        $resultado->response = false;
+        $database = DatabaseFactory::getFactory()->getConnection();
+
+        $sql = "SELECT paciente_id, paciente_rut, paciente_apellido FROM pacientes WHERE paciente_rut = :paciente_rut";
+        $query = $database->prepare($sql);
+        $query->execute(array(':paciente_rut' => $paciente_rut));
+
+        if ($query->rowCount() == 1) {
+            $resultado->data = $query->fetchAll();
+            $resultado->response = true;
+        }
+
+        return $resultado
+    }
+
+    public static function buscarPacienteApellido($paciente_apellido)
+    {
+        if (!$paciente_apellido) {
+            return false;
+        }
+
+        $resultado = stdClass();
+        $resultado->response = false;
+        $database = DatabaseFactory::getFactory()->getConnection();
+
+        $sql = "SELECT paciente_id, paciente_rut, paciente_apellido FROM pacientes WHERE paciente_apellido = :paciente_apellido";
+        $query = $database->prepare($sql);
+        $query->execute(array(':paciente_apellido' => $paciente_apellido));
+
+        if ($query->rowCount() == 1) {
+            $resultado->data = $query->fetchAll();
+            $resultado->response = true;
+        }
+
+        return $resultado
+    }
 }

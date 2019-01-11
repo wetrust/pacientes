@@ -29,7 +29,8 @@
                                     <div class="form-group row mb-0">
                                         <label for="paciente.busqueda" class="col-sm-7 col-form-label">Buscar paciente (RUT o Apellido)</label>
                                         <div class="col-sm-5">
-                                            <input type="text" class="form-control" id="paciente.busqueda">
+                                            <input type="text" class="form-control" id="paciente.busqueda" list="paciente.busqueda.list">
+                                            <datalist id="paciente.busqueda.list"></datalist>
                                         </div>
                                     </div>
                                 </div>
@@ -609,16 +610,43 @@
 
         $("#gridRadios1").trigger("click");
 
-        $("#paciente\\.busqueda").on("change", function(){
+        $("#paciente\\.busqueda").on("keyup", function(e){
             let contenido = $("#paciente\\.busqueda").val();
             if (contenido.length > 0){
                 let tipo = contenido.substr(0,1);
 
                 if (tipo == "0" || tipo == "1"|| tipo == "2" || tipo == "3" || tipo == "4" || tipo == "5" || tipo == "6" || tipo == "7" || tipo == "8" || tipo == "9"){
                     alert("numero");
+                    let enviar = {
+                        action: "rut",
+                        paciente_rut: $("#paciente\\.busqueda").val()
+                    }
+
+                    $.post("<?php echo Config::get('URL'); ?>pacientes/api", enviar).done(function(respuesta){
+                        $("#paciente\\.busqueda\\.list").empty();
+                        if (respuesta.response == true){
+                            $.each(data, function(index, element){
+                                let response = '<option value="' + element.paciente_rut + '"></option>';
+                                $('#paciente\\.busqueda\\.list').append(response);
+                            });
+                        }
+                    });
                 }
                 else if (typeof tipo == "string"){
-                    alert("texto");
+                    let enviar = {
+                        action: "apellido",
+                        paciente_apellido: $("#paciente\\.busqueda").val()
+                    }
+
+                    $.post("<?php echo Config::get('URL'); ?>pacientes/api", enviar).done(function(respuesta){
+                        $("#paciente\\.busqueda\\.list").empty();
+                        if (respuesta.response == true){
+                            $.each(data, function(index, element){
+                                let response = '<option value="' + element.paciente_apellido + '"></option>';
+                                $('#paciente\\.busqueda\\.list').append(response);
+                            });
+                        }
+                    });
                 }
             }
         });
