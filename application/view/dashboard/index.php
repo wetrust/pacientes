@@ -616,7 +616,6 @@
                 let tipo = contenido.substr(0,1);
 
                 if (tipo == "0" || tipo == "1"|| tipo == "2" || tipo == "3" || tipo == "4" || tipo == "5" || tipo == "6" || tipo == "7" || tipo == "8" || tipo == "9"){
-                    alert("numero");
                     let enviar = {
                         action: "rut",
                         paciente_rut: $("#paciente\\.busqueda").val()
