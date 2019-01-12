@@ -1,6 +1,6 @@
 <div class="container-fluid">
     <div class="row flex-xl-nowrap">
-        <div class="col-12 col-md-3 col-xl-2 border-right bg-white">
+        <div class="col-12 col-md-2 col-xl-2 border-right bg-white">
             <hr>
             <ul class="nav flex-column">
                 <li class="nav-item">
@@ -14,7 +14,7 @@
                 </li>
             </ul>
         </div>
-        <div class="col-12 col-md-9 col-xl-10 py-md-3 pl-md-5">
+        <div class="col-12 col-md-10 col-xl-10 py-md-3 pl-md-5">
             <!-- echo out the system feedback (error and success messages) -->
             <?php $this->renderFeedbackMessages(); ?>
             <div class="tab-content" id="nav-tabContent">
