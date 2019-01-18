@@ -31,7 +31,7 @@ class TemporalModel
     {
         $database = DatabaseFactory::getFactory()->getConnection();
 
-        $sql = "SELECT temporal_id, temporal_name, temporal_motivo, temporal_patologia, temporal_profesional, temporal_edad FROM temporales WHERE temporal_id = :temporal_id LIMIT 1";
+        $sql = "SELECT temporal_id, temporal_name, temporal_motivo, temporal_patologia, temporal_profesional, temporal_edad, temporal_fur,temporal_semanas,temporal_dias,temporal_fpp FROM temporales WHERE temporal_id = :temporal_id LIMIT 1";
         $query = $database->prepare($sql);
         $query->execute(array(':temporal_id' => $temporal_id));
 
@@ -43,7 +43,7 @@ class TemporalModel
     {
         $database = DatabaseFactory::getFactory()->getConnection();
 
-        $sql = "SELECT temporal_id, temporal_name, temporal_motivo, temporal_patologia, temporal_profesional, temporal_edad FROM temporales WHERE temporal_id = :temporal_id LIMIT 1";
+        $sql = "SELECT temporal_id, temporal_name, temporal_motivo, temporal_patologia, temporal_profesional, temporal_edad, temporal_fur, temporal_semanas, temporal_dias, temporal_fpp FROM temporales WHERE temporal_id = :temporal_id LIMIT 1";
         $query = $database->prepare($sql);
         $query->execute(array(':temporal_id' => $temporal_id));
 
@@ -60,7 +60,7 @@ class TemporalModel
      * @param string $temporal_text temporal text that will be created
      * @return bool feedback (was the temporal created properly ?)
      */
-    public static function createTemporal($temporal_id, $temporal_name, $temporal_motivo, $temporal_patologia, $temporal_profesional, $temporal_edad)
+    public static function createTemporal($temporal_id, $temporal_name, $temporal_motivo, $temporal_patologia, $temporal_profesional, $temporal_edad, $temporal_fur, $temporal_semanas, $temporal_dias, $temporal_fpp)
     {
         if (!$temporal_id || strlen($temporal_id) == 0) {
             Session::add('feedback_negative', Text::get('FEEDBACK_NOTE_CREATION_FAILED'));
@@ -70,15 +70,15 @@ class TemporalModel
         $temporal = self::checkTemporal($temporal_id);
 
         if ($temporal){
-            return self::updateTemporal($temporal_id, $temporal_name, $temporal_motivo, $temporal_patologia, $temporal_profesional, $temporal_edad);
+            return self::updateTemporal($temporal_id, $temporal_name, $temporal_motivo, $temporal_patologia, $temporal_profesional, $temporal_edad, $temporal_fur, $temporal_semanas, $temporal_dias, $temporal_fpp);
         }
         else{
         
             $database = DatabaseFactory::getFactory()->getConnection();
 
-            $sql = "INSERT INTO temporales (temporal_id, temporal_name, temporal_motivo, temporal_patologia, temporal_profesional, temporal_edad) VALUES (:temporal_id, :temporal_name, :temporal_motivo, :temporal_patologia, :temporal_profesional, :temporal_edad)";
+            $sql = "INSERT INTO temporales (temporal_id, temporal_name, temporal_motivo, temporal_patologia, temporal_profesional, temporal_edad, temporal_fur, temporal_semanas, temporal_dias, temporal_fpp) VALUES (:temporal_id, :temporal_name, :temporal_motivo, :temporal_patologia, :temporal_profesional, :temporal_edad, :temporal_fur, :temporal_semanas, :temporal_dias, :temporal_fpp)";
             $query = $database->prepare($sql);
-            $query->execute(array(':temporal_id' => $temporal_id, ':temporal_name' => $temporal_name, ':temporal_motivo' => $temporal_motivo, ':temporal_patologia' => $temporal_patologia, ':temporal_profesional' => $temporal_profesional, ':temporal_edad' => $temporal_edad));
+            $query->execute(array(':temporal_id' => $temporal_id, ':temporal_name' => $temporal_name, ':temporal_motivo' => $temporal_motivo, ':temporal_patologia' => $temporal_patologia, ':temporal_profesional' => $temporal_profesional, ':temporal_edad' => $temporal_edad, ':temporal_fur' => $temporal_fur, ':temporal_semanas' => $temporal_semanas, ':temporal_dias' => $temporal_dias, ':temporal_fpp' => $temporal_fpp));
 
             if ($query->rowCount() == 1) {
                 return true;
@@ -104,9 +104,9 @@ class TemporalModel
 
         $database = DatabaseFactory::getFactory()->getConnection();
 
-        $sql = "UPDATE temporales SET temporal_name = :temporal_name, temporal_motivo = :temporal_motivo, temporal_patologia = :temporal_patologia, temporal_profesional = :temporal_profesional, temporal_edad = :temporal_edad WHERE temporal_id = :temporal_id LIMIT 1";
+        $sql = "UPDATE temporales SET temporal_name = :temporal_name, temporal_motivo = :temporal_motivo, temporal_patologia = :temporal_patologia, temporal_profesional = :temporal_profesional, temporal_edad = :temporal_edad, temporal_fur = :temporal_fur, temporal_semanas = :temporal_semanas, temporal_dias = :temporal_dias, temporal_fpp = :temporal_fpp WHERE temporal_id = :temporal_id LIMIT 1";
         $query = $database->prepare($sql);
-        $query->execute(array(':temporal_id' => $temporal_id, ':temporal_name' => $temporal_name, ':temporal_motivo' => $temporal_motivo, ':temporal_patologia' => $temporal_patologia, ':temporal_profesional' => $temporal_profesional, ':temporal_edad' => $temporal_edad));
+        $query->execute(array(':temporal_id' => $temporal_id, ':temporal_name' => $temporal_name, ':temporal_motivo' => $temporal_motivo, ':temporal_patologia' => $temporal_patologia, ':temporal_profesional' => $temporal_profesional, ':temporal_edad' => $temporal_edad, ':temporal_fur' => $temporal_fur, ':temporal_semanas' => $temporal_semanas, ':temporal_dias' => $temporal_dias, ':temporal_fpp' => $temporal_fpp));
 
         if ($query->rowCount() == 1) {
             return true;

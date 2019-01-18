@@ -24,10 +24,10 @@ class TemporalController extends Controller
                 $resultado = TemporalModel::getAllLugares();
                 break;
             case "new":
-                $resultado = TemporalModel::createTemporal(Request::post('temporal_id'), Request::post('temporal_name'), Request::post('temporal_motivo'), Request::post('temporal_patologia'), Request::post('temporal_profesional'), Request::post('temporal_edad'));
+                $resultado = TemporalModel::createTemporal(Request::post('temporal_id'), Request::post('temporal_name'), Request::post('temporal_motivo'), Request::post('temporal_patologia'), Request::post('temporal_profesional'), Request::post('temporal_edad'),Request::post('temporal_fur'),Request::post('temporal_semanas'),Request::post('temporal_dias'),Request::post('temporal_fpp'));
                 break;
             case "set":
-                $resultado = TemporalModel::updateTemporal(Request::post('temporal_id'), Request::post('temporal_name'), Request::post('temporal_motivo'), Request::post('temporal_patologia'), Request::post('temporal_profesional'), Request::post('temporal_edad'));
+                $resultado = TemporalModel::updateTemporal(Request::post('temporal_id'), Request::post('temporal_name'), Request::post('temporal_motivo'), Request::post('temporal_patologia'), Request::post('temporal_profesional'), Request::post('temporal_edad'),Request::post('temporal_fur'),Request::post('temporal_semanas'),Request::post('temporal_dias'),Request::post('temporal_fpp'));
                 break;
             case "read":
                 $resultado = TemporalModel::getTemporal(Request::post('temporal_id'));
