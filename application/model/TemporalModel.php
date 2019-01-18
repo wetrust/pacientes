@@ -96,7 +96,7 @@ class TemporalModel
      * @param string $temporal_text new text of the specific temporal
      * @return bool feedback (was the update successful ?)
      */
-    public static function updateTemporal($temporal_id, $temporal_name, $temporal_motivo, $temporal_patologia, $temporal_profesional, $temporal_edad)
+    public static function updateTemporal($temporal_id, $temporal_name, $temporal_motivo, $temporal_patologia, $temporal_profesional, $temporal_edad, $temporal_fur, $temporal_semanas, $temporal_dias, $temporal_fpp)
     {
         if (!$temporal_id || !$temporal_id) {
             return false;
