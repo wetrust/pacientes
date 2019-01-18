@@ -17,6 +17,7 @@ class TemporalController extends Controller
     public function api()
     {
         $accion = Request::post('action');
+        header("Access-Control-Allow-Origin: *");
         $resultado = "";
         switch ($accion) {
             case "get":
