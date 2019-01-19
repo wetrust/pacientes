@@ -22,6 +22,18 @@ class TemporalModel
         return $query->fetchAll();
     }
 
+    public static function getAllUno($temporal_id)
+    {
+        $database = DatabaseFactory::getFactory()->getConnection();
+
+        $sql = "SELECT temptable_rut, temptable_saco, temptable_lcn, temptable_eg FROM temptable WHERE temptable_id = :temptable_id";
+        $query = $database->prepare($sql);
+        $query->execute(array(':temptable_id' => $temporal_id));
+
+        // fetchAll() is the PDO method that gets all result rows
+        return $query->fetchAll();
+    }
+
     /**
      * Get a single temporal
      * @param int $temporal_id id of the specific temporal
@@ -88,6 +100,28 @@ class TemporalModel
             Session::add('feedback_negative', Text::get('FEEDBACK_NOTE_CREATION_FAILED'));
             return false;
         }
+    }
+
+    public static function createUno($temporal_id, $temptable_eg, $temptable_lcn, $temptable_saco)
+    {
+        if (!$temporal_id || strlen($temporal_id) == 0) {
+            Session::add('feedback_negative', Text::get('FEEDBACK_NOTE_CREATION_FAILED'));
+            return false;
+        }
+
+            $database = DatabaseFactory::getFactory()->getConnection();
+
+            $sql = "INSERT INTO temptable (temptable_rut, temptable_eg, temptable_lcn, temptable_saco) VALUES (:temptable_rut, :temptable_eg, :temptable_lcn, :temptable_saco)";
+            $query = $database->prepare($sql);
+            $query->execute(array(':temptable_rut' => $temporal_id, ':temptable_eg' => $temptable_eg, ':temptable_lcn' => $temptable_lcn, ':temptable_saco' => $temptable_saco));
+
+            if ($query->rowCount() == 1) {
+                return true;
+            }
+
+            // default return
+            Session::add('feedback_negative', Text::get('FEEDBACK_NOTE_CREATION_FAILED'));
+            return false;
     }
 
     /**
