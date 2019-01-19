@@ -26,9 +26,9 @@ class TemporalModel
     {
         $database = DatabaseFactory::getFactory()->getConnection();
 
-        $sql = "SELECT temptable_rut, temptable_saco, temptable_lcn, temptable_eg FROM temptable WHERE temptable_id = :temptable_id";
+        $sql = "SELECT temptable_rut, temptable_saco, temptable_lcn, temptable_eg FROM temptable WHERE temptable_rut = :temptable_rut";
         $query = $database->prepare($sql);
-        $query->execute(array(':temptable_id' => $temporal_id));
+        $query->execute(array(':temptable_rut' => $temporal_id));
 
         // fetchAll() is the PDO method that gets all result rows
         return $query->fetchAll();
