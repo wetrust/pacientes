@@ -46,7 +46,7 @@ class TemporalModel
         return $query->fetchAll();
     }
 
-    public static function getAllDos($temporal_id)
+    public static function getAllTres($temporal_id)
     {
         $database = DatabaseFactory::getFactory()->getConnection();
 
