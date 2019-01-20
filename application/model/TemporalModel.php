@@ -158,6 +158,28 @@ class TemporalModel
             return false;
     }
 
+    public static function createTres($temptrestable_id,$temptrestable_eg,$temptrestable_utd,$temptrestable_uti, $temptrestable_put, $temptrestable_au, $temptrestable_cm,$temptrestable_cp,$temptrestable_dv,$temptrestable_acm)
+    {
+        if (!$temptrestable_id || strlen($temptrestable_id) == 0) {
+            Session::add('feedback_negative', Text::get('FEEDBACK_NOTE_CREATION_FAILED'));
+            return false;
+        }
+
+            $database = DatabaseFactory::getFactory()->getConnection();
+
+            $sql = "INSERT INTO temptrestable (temptrestable_id,temptrestable_eg,temptrestable_utd,temptrestable_uti,temptrestable_put, temptrestable_au, temptrestable_cm,temptrestable_cp,temptrestable_dv,temptrestable_acm) VALUES (:temptrestable_id,:temptrestable_eg,:temptrestable_utd,:temptrestable_uti, :temptrestable_put, :temptrestable_au, :temptrestable_cm,:temptrestable_cp,:temptrestable_dv,:temptrestable_acm)";
+            $query = $database->prepare($sql);
+            $query->execute(array(':temptrestable_id'=> $temptrestable_id,':temptrestable_eg'=> $temptrestable_eg,':temptrestable_utd'=> $temptrestable_utd,':temptrestable_uti'=> $temptrestable_uti,':temptrestable_put'=> $temptrestable_put, ':temptrestable_au'=> $temptrestable_au, ':temptrestable_cm'=> $temptrestable_cm,':temptrestable_cp'=> $temptrestable_cp,':temptrestable_dv'=> $temptrestable_dv,':temptrestable_acm' => $temptrestable_acm));
+
+            if ($query->rowCount() == 1) {
+                return true;
+            }
+
+            // default return
+            Session::add('feedback_negative', Text::get('FEEDBACK_NOTE_CREATION_FAILED'));
+            return false;
+    }
+
     /**
      * Update an existing temporal
      * @param int $temporal_id id of the specific temporal
