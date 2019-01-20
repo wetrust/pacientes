@@ -46,6 +46,17 @@ class TemporalModel
         return $query->fetchAll();
     }
 
+    public static function getAllDos($temporal_id)
+    {
+        $database = DatabaseFactory::getFactory()->getConnection();
+
+        $sql = "SELECT * FROM temptrestable WHERE temptrestable_id = :temptrestable_id";
+        $query = $database->prepare($sql);
+        $query->execute(array(':temptrestable_id' => $temporal_id));
+
+        // fetchAll() is the PDO method that gets all result rows
+        return $query->fetchAll();
+    }
     /**
      * Get a single temporal
      * @param int $temporal_id id of the specific temporal
