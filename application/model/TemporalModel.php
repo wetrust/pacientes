@@ -229,6 +229,26 @@ class TemporalModel
         return false;
     }
 
+    public static function updateUno($temporal_id, $temptable_id, $temptable_eg, $temptable_lcn, $temptable_saco)
+    {
+        if (!$temporal_id || !$temporal_id) {
+            return false;
+        }
+
+        $database = DatabaseFactory::getFactory()->getConnection();
+
+        $sql = "UPDATE temptable SET temptable_rut = :temptable_rut, temptable_eg = :temptable_eg, temptable_lcn = :temptable_lcn, temptable_saco = :temptable_saco WHERE temptable_id = :temptable_id LIMIT 1";
+        $query = $database->prepare($sql);
+        $query->execute(array(':temptable_rut' => $temporal_id, ':temptable_eg' => $temptable_eg, ':temptable_lcn' => $temptable_lcn, ':temptable_saco' => $temptable_saco, ':temptable_id' => $temptable_id));
+
+        if ($query->rowCount() == 1) {
+            return true;
+        }
+
+        Session::add('feedback_negative', Text::get('FEEDBACK_NOTE_EDITING_FAILED'));
+        return false;
+    }
+
     /**
      * Delete a specific temporal
      * @param int $temporal_id id of the temporal
