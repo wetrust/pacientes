@@ -83,7 +83,7 @@ class TemporalModel
         return $query->fetchAll();
     }
 
-    public static function getTres($temporal_id)
+    public static function getTres($temporal_id, $temptrestable_correlativo)
     {
         $database = DatabaseFactory::getFactory()->getConnection();
 
