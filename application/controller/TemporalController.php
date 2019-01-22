@@ -70,11 +70,14 @@ class TemporalController extends Controller
             case "get":
                 $resultado = TemporalModel::getAllDos(Request::post('temporal_id'));
                 break;
+            case "getOne":
+                $resultado = TemporalModel::getDos(Request::post('temporal_id'),Request::post('tempdostable_correlativo'));
+                break;
             case "new":
                 $resultado = TemporalModel::createDos(Request::post('tempdostable_id'), Request::post('tempdostable_eg'), Request::post('tempdostable_dbp'), Request::post('tempdostable_dof'), Request::post('tempdostable_cc'), Request::post('tempdostable_ca'), Request::post('tempdostable_lf'), Request::post('tempdostable_bvm'), Request::post('tempdostable_lh'), Request::post('tempdostable_cerebelo'), Request::post('tempdostable_pfe'), Request::post('tempdostable_egP50'), Request::post('tempdostable_presentacion'), Request::post('tempdostable_dorso'), Request::post('tempdostable_fcf'), Request::post('tempdostable_sexo'), Request::post('tempdostable_morfo'), Request::post('tempdostable_anatomia'), Request::post('tempdostable_ubicacion'), Request::post('tempdostable_incersion'), Request::post('tempdostable_grado'), Request::post('tempdostable_liq'), Request::post('tempdostable_cordon'), Request::post('tempdostable_vasos'), Request::post('tempdostable_comentario'), Request::post('tempdostable_comentarios'));
                 break;
             case "set":
-                $resultado = TemporalModel::updateTemporal(Request::post('temporal_id'), Request::post('temporal_name'), Request::post('temporal_motivo'), Request::post('temporal_patologia'), Request::post('temporal_profesional'), Request::post('temporal_edad'),Request::post('temporal_fur'),Request::post('temporal_semanas'),Request::post('temporal_dias'),Request::post('temporal_fpp'));
+                $resultado = TemporalModel::updateDos(Request::post('tempdostable_id'), Request::post('tempdostable_correlativo'),Request::post('tempdostable_eg'), Request::post('tempdostable_dbp'), Request::post('tempdostable_dof'), Request::post('tempdostable_cc'), Request::post('tempdostable_ca'), Request::post('tempdostable_lf'), Request::post('tempdostable_bvm'), Request::post('tempdostable_lh'), Request::post('tempdostable_cerebelo'), Request::post('tempdostable_pfe'), Request::post('tempdostable_egP50'), Request::post('tempdostable_presentacion'), Request::post('tempdostable_dorso'), Request::post('tempdostable_fcf'), Request::post('tempdostable_sexo'), Request::post('tempdostable_morfo'), Request::post('tempdostable_anatomia'), Request::post('tempdostable_ubicacion'), Request::post('tempdostable_incersion'), Request::post('tempdostable_grado'), Request::post('tempdostable_liq'), Request::post('tempdostable_cordon'), Request::post('tempdostable_vasos'), Request::post('tempdostable_comentario'), Request::post('tempdostable_comentarios'));
                 break;
             case "read":
                 $resultado = TemporalModel::getTemporal(Request::post('temporal_id'));

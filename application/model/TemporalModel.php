@@ -58,6 +58,18 @@ class TemporalModel
         return $query->fetchAll();
     }
 
+    public static function getDos($temporal_id, $tempdostable_correlativo)
+    {
+        $database = DatabaseFactory::getFactory()->getConnection();
+
+        $sql = "SELECT * FROM tempdostable WHERE tempdostable_id = :tempdostable_id AND tempdostable_correlativo = :tempdostable_correlativo";
+        $query = $database->prepare($sql);
+        $query->execute(array(':tempdostable_id' => $temporal_id, ':tempdostable_correlativo' => $tempdostable_correlativo));
+
+        // fetchAll() is the PDO method that gets all result rows
+        return $query->fetchAll();
+    }
+
     public static function getAllTres($temporal_id)
     {
         $database = DatabaseFactory::getFactory()->getConnection();
@@ -240,6 +252,26 @@ class TemporalModel
         $sql = "UPDATE temptable SET temptable_rut = :temptable_rut, temptable_eg = :temptable_eg, temptable_lcn = :temptable_lcn, temptable_saco = :temptable_saco WHERE temptable_id = :temptable_id LIMIT 1";
         $query = $database->prepare($sql);
         $query->execute(array(':temptable_rut' => $temporal_id, ':temptable_eg' => $temptable_eg, ':temptable_lcn' => $temptable_lcn, ':temptable_saco' => $temptable_saco, ':temptable_id' => $temptable_id));
+
+        if ($query->rowCount() == 1) {
+            return true;
+        }
+
+        Session::add('feedback_negative', Text::get('FEEDBACK_NOTE_EDITING_FAILED'));
+        return false;
+    }
+
+    public static function updateDos($tempdostable_id, $tempdostable_correlativo,$tempdostable_eg, $tempdostable_dbp, $tempdostable_dof, $tempdostable_cc, $tempdostable_ca, $tempdostable_lf, $tempdostable_bvm, $tempdostable_lh, $tempdostable_cerebelo, $tempdostable_pfe, $tempdostable_egP50, $tempdostable_presentacion, $tempdostable_dorso, $tempdostable_fcf, $tempdostable_sexo,$tempdostable_morfo, $tempdostable_anatomia, $tempdostable_ubicacion, $tempdostable_incersion, $tempdostable_grado, $tempdostable_liq, $tempdostable_cordon, $tempdostable_vasos, $tempdostable_comentario, $tempdostable_comentarios)
+    {
+        if (!$temporal_id || !$temporal_id) {
+            return false;
+        }
+
+        $database = DatabaseFactory::getFactory()->getConnection();
+
+        $sql = "UPDATE tempdostable SET tempdostable_id = :tempdostable_id, tempdostable_eg = :tempdostable_eg, tempdostable_dbp = :tempdostable_dbp, tempdostable_dof = :tempdostable_dof, tempdostable_cc = :tempdostable_cc, tempdostable_ca = :tempdostable_ca, tempdostable_lf = :tempdostable_lf, tempdostable_bvm = :tempdostable_bvm, tempdostable_lh = :tempdostable_lh, tempdostable_cerebelo = :tempdostable_cerebelo, tempdostable_pfe = :tempdostable_pfe, tempdostable_egP50 = :tempdostable_egP50, tempdostable_presentacion = :tempdostable_presentacion, tempdostable_dorso = :tempdostable_dorso, tempdostable_fcf = :tempdostable_fcf, tempdostable_sexo = :tempdostable_sexo, tempdostable_morfo = :tempdostable_morfo, tempdostable_anatomia = :tempdostable_anatomia, tempdostable_ubicacion = :tempdostable_ubicacion, tempdostable_incersion = :tempdostable_incersion, tempdostable_grado = :tempdostable_grado, tempdostable_liq = :tempdostable_liq, tempdostable_cordon = :tempdostable_cordon, tempdostable_vasos = :tempdostable_vasos, tempdostable_comentario = :tempdostable_comentario, tempdostable_comentarios = :tempdostable_comentarios WHERE tempdostable_correlativo = :tempdostable_correlativo  LIMIT 1";
+        $query = $database->prepare($sql);
+        $query->execute(array(':tempdostable_id' => $tempdostable_id, ':tempdostable_correlativo' => $tempdostable_correlativo, ':tempdostable_eg' => $tempdostable_eg, ':tempdostable_dbp' => $tempdostable_dbp, ':tempdostable_dof' => $tempdostable_dof, ':tempdostable_cc' => $tempdostable_cc, ':tempdostable_ca' => $tempdostable_ca, ':tempdostable_lf' => $tempdostable_lf, ':tempdostable_bvm' => $tempdostable_bvm, ':tempdostable_lh' => $tempdostable_lh, ':tempdostable_cerebelo' => $tempdostable_cerebelo, ':tempdostable_pfe' => $tempdostable_pfe, ':tempdostable_egP50' => $tempdostable_egP50, ':tempdostable_presentacion' => $tempdostable_presentacion, ':tempdostable_dorso' => $tempdostable_dorso, ':tempdostable_fcf' => $tempdostable_fcf, ':tempdostable_sexo' => $tempdostable_sexo, ':tempdostable_morfo' => $tempdostable_morfo, ':tempdostable_anatomia' => $tempdostable_anatomia, ':tempdostable_ubicacion' => $tempdostable_ubicacion, ':tempdostable_incersion' => $tempdostable_incersion, ':tempdostable_grado' => $tempdostable_grado, ':tempdostable_liq' => $tempdostable_liq, ':tempdostable_cordon' => $tempdostable_cordon, ':tempdostable_vasos' => $tempdostable_vasos, ':tempdostable_comentario' => $tempdostable_comentario, ':tempdostable_comentarios' => $tempdostable_comentarios));
 
         if ($query->rowCount() == 1) {
             return true;
