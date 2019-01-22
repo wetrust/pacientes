@@ -102,7 +102,7 @@ class TemporalController extends Controller
                 $resultado = TemporalModel::createTres(Request::post('temptrestable_id'),Request::post('temptrestable_eg'),Request::post('temptrestable_utd'),Request::post('temptrestable_uti'), Request::post('temptrestable_put'), Request::post('temptrestable_au'), Request::post('temptrestable_cm'),Request::post('temptrestable_cp'),Request::post('temptrestable_dv'),Request::post('temptrestable_acm'));
                 break;
             case "set":
-                $resultado = TemporalModel::updateTemporal(Request::post('temptrestable_id'),Request::post('temptrestable_correlativo'),Request::post('temptrestable_eg'),Request::post('temptrestable_utd'),Request::post('temptrestable_uti'), Request::post('temptrestable_put'), Request::post('temptrestable_au'), Request::post('temptrestable_cm'),Request::post('temptrestable_cp'),Request::post('temptrestable_dv'),Request::post('temptrestable_acm'));
+                $resultado = TemporalModel::updateTres(Request::post('temptrestable_id'),Request::post('temptrestable_correlativo'),Request::post('temptrestable_eg'),Request::post('temptrestable_utd'),Request::post('temptrestable_uti'), Request::post('temptrestable_put'), Request::post('temptrestable_au'), Request::post('temptrestable_cm'),Request::post('temptrestable_cp'),Request::post('temptrestable_dv'),Request::post('temptrestable_acm'));
                 break;
             case "read":
                 $resultado = TemporalModel::getTemporal(Request::post('temporal_id'));
