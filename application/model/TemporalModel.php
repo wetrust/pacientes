@@ -67,7 +67,7 @@ class TemporalModel
         $query->execute(array(':tempdostable_id' => $temporal_id, ':tempdostable_correlativo' => $tempdostable_correlativo));
 
         // fetchAll() is the PDO method that gets all result rows
-        return $query->fetchAll();
+        return $query->fetch();
     }
 
     public static function getAllTres($temporal_id)
