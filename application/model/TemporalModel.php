@@ -345,7 +345,7 @@ class TemporalModel
 
     public static function deleteUno($temptable_id)
     {
-        if (!$temporal_id) {
+        if (!$temptable_id) {
             return false;
         }
 
