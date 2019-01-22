@@ -70,6 +70,7 @@ class TemporalModel
         return $query->fetch();
     }
 
+
     public static function getAllTres($temporal_id)
     {
         $database = DatabaseFactory::getFactory()->getConnection();
@@ -80,6 +81,18 @@ class TemporalModel
 
         // fetchAll() is the PDO method that gets all result rows
         return $query->fetchAll();
+    }
+
+    public static function getTres($temporal_id)
+    {
+        $database = DatabaseFactory::getFactory()->getConnection();
+
+        $sql = "SELECT * FROM temptrestable WHERE temptrestable_id = :temptrestable_id AND temptrestable_correlativo = :temptrestable_correlativo";
+        $query = $database->prepare($sql);
+        $query->execute(array(':temptrestable_id' => $temporal_id, ':temptrestable_correlativo' => $temptrestable_correlativo));
+
+        // fetchAll() is the PDO method that gets all result rows
+        return $query->fetch();
     }
     /**
      * Get a single temporal
@@ -279,6 +292,29 @@ class TemporalModel
 
         Session::add('feedback_negative', Text::get('FEEDBACK_NOTE_EDITING_FAILED'));
         return false;
+    }
+
+
+    public static function updateTres($temptrestable_id,$temptrestable_correlativo,$temptrestable_eg,$temptrestable_utd,$temptrestable_uti, $temptrestable_put, $temptrestable_au, $temptrestable_cm,$temptrestable_cp,$temptrestable_dv,$temptrestable_acm)
+    {
+        if (!$temptrestable_id || strlen($temptrestable_id) == 0) {
+            Session::add('feedback_negative', Text::get('FEEDBACK_NOTE_CREATION_FAILED'));
+            return false;
+        }
+
+            $database = DatabaseFactory::getFactory()->getConnection();
+
+            $sql = "UPDATE temptrestable SET temptrestable_id = :temptrestable_id,temptrestable_eg = :temptrestable_eg,temptrestable_utd = :temptrestable_utd,temptrestable_uti = :temptrestable_uti,temptrestable_put = :temptrestable_put, temptrestable_au = :temptrestable_au, temptrestable_cm = :temptrestable_cm,temptrestable_cp = :temptrestable_cp,temptrestable_dv = :temptrestable_dv,temptrestable_acm = :temptrestable_acm WHERE temptrestable_correlativo = :temptrestable_correlativo";
+            $query = $database->prepare($sql);
+            $query->execute(array(':temptrestable_id'=> $temptrestable_id,':temptrestable_correlativo'=> $temptrestable_correlativo,':temptrestable_eg'=> $temptrestable_eg,':temptrestable_utd'=> $temptrestable_utd,':temptrestable_uti'=> $temptrestable_uti,':temptrestable_put'=> $temptrestable_put, ':temptrestable_au'=> $temptrestable_au, ':temptrestable_cm'=> $temptrestable_cm,':temptrestable_cp'=> $temptrestable_cp,':temptrestable_dv'=> $temptrestable_dv,':temptrestable_acm' => $temptrestable_acm));
+
+            if ($query->rowCount() == 1) {
+                return true;
+            }
+
+            // default return
+            Session::add('feedback_negative', Text::get('FEEDBACK_NOTE_CREATION_FAILED'));
+            return false;
     }
 
     /**
