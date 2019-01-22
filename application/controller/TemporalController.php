@@ -45,6 +45,9 @@ class TemporalController extends Controller
             case "get":
                 $resultado = TemporalModel::getAllUno(Request::post('temporal_id'));
                 break;
+            case "getOne":
+                $resultado = TemporalModel::getUno(Request::post('temporal_id'),Request::post('temptable_id'));
+                break;
             case "new":
                 $resultado = TemporalModel::createUno(Request::post('temporal_id'), Request::post('temptable_eg'), Request::post('temptable_lcn'), Request::post('temptable_saco'));
                 break;

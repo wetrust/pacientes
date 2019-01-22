@@ -26,12 +26,24 @@ class TemporalModel
     {
         $database = DatabaseFactory::getFactory()->getConnection();
 
-        $sql = "SELECT temptable_rut, temptable_saco, temptable_lcn, temptable_eg FROM temptable WHERE temptable_rut = :temptable_rut";
+        $sql = "SELECT * FROM temptable WHERE temptable_rut = :temptable_rut";
         $query = $database->prepare($sql);
         $query->execute(array(':temptable_rut' => $temporal_id));
 
         // fetchAll() is the PDO method that gets all result rows
         return $query->fetchAll();
+    }
+
+    public static function getUno($temporal_id,$temptable_id)
+    {
+        $database = DatabaseFactory::getFactory()->getConnection();
+
+        $sql = "SELECT temptable_rut, temptable_saco, temptable_lcn, temptable_eg FROM temptable WHERE temptable_rut = :temptable_rut and temptable_id = :temptable_id";
+        $query = $database->prepare($sql);
+        $query->execute(array(':temptable_rut' => $temporal_id, 'temptable_id' => $temptable_id));
+
+        // fetchAll() is the PDO method that gets all result rows
+        return $query->fetch();
     }
 
     public static function getAllDos($temporal_id)
