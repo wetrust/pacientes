@@ -57,6 +57,9 @@ class TemporalController extends Controller
             case "read":
                 $resultado = TemporalModel::getTemporal(Request::post('temporal_id'));
                 break;
+            case "del":
+                $resultado = TemporalModel::deleteUno(Request::post('temptable_id'));
+                break;
         }
         return $this->View->renderJSON($resultado);
     }
