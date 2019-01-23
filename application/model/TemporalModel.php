@@ -14,9 +14,9 @@ class TemporalModel
     {
         $database = DatabaseFactory::getFactory()->getConnection();
 
-        $sql = "SELECT user_id, temporal_id, temporal_text FROM temporales WHERE user_id = :user_id";
+        $sql = "SELECT temporal_id, temporal_name, temporal_motivo, temporal_patologia, temporal_profesional, temporal_edad, temporal_fur,temporal_semanas,temporal_dias,temporal_fpp FROM temporales";
         $query = $database->prepare($sql);
-        $query->execute(array(':user_id' => Session::get('user_id')));
+        $query->execute();
 
         // fetchAll() is the PDO method that gets all result rows
         return $query->fetchAll();
@@ -354,6 +354,48 @@ class TemporalModel
         $sql = "DELETE FROM temptable WHERE temptable_id = :temptable_id LIMIT 1";
         $query = $database->prepare($sql);
         $query->execute(array(':temptable_id' => $temptable_id));
+
+        if ($query->rowCount() == 1) {
+            return true;
+        }
+
+        // default return
+        Session::add('feedback_negative', Text::get('FEEDBACK_NOTE_DELETION_FAILED'));
+        return false;
+    }
+
+    public static function deleteDos($tempdostable_id)
+    {
+        if (!$tempdostable_id) {
+            return false;
+        }
+
+        $database = DatabaseFactory::getFactory()->getConnection();
+
+        $sql = "DELETE FROM tempdostable WHERE tempdostable_correlativo = :tempdostable_correlativo LIMIT 1";
+        $query = $database->prepare($sql);
+        $query->execute(array(':tempdostable_correlativo' => $tempdostable_id));
+
+        if ($query->rowCount() == 1) {
+            return true;
+        }
+
+        // default return
+        Session::add('feedback_negative', Text::get('FEEDBACK_NOTE_DELETION_FAILED'));
+        return false;
+    }
+
+    public static function deleteTres($temptrestable_id)
+    {
+        if (!$temptrestable_id) {
+            return false;
+        }
+
+        $database = DatabaseFactory::getFactory()->getConnection();
+
+        $sql = "DELETE FROM temptrestable WHERE temptrestable_correlativo = :temptrestable_correlativo LIMIT 1";
+        $query = $database->prepare($sql);
+        $query->execute(array(':temptrestable_correlativo' => $temptrestable_id));
 
         if ($query->rowCount() == 1) {
             return true;
