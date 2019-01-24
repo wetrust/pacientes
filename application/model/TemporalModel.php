@@ -217,7 +217,7 @@ class TemporalModel
 
             $sql = "INSERT INTO temptrestable (temptrestable_id,temptrestable_eg,temptrestable_utd,temptrestable_uti,temptrestable_put, temptrestable_au, temptrestable_cm,temptrestable_cp,temptrestable_dv,temptrestable_acm, temptrestable_fecha) VALUES (:temptrestable_id,:temptrestable_eg,:temptrestable_utd,:temptrestable_uti, :temptrestable_put, :temptrestable_au, :temptrestable_cm,:temptrestable_cp,:temptrestable_dv,:temptrestable_acm, :temptrestable_fecha)";
             $query = $database->prepare($sql);
-            $query->execute(array(':temptrestable_id'=> $temptrestable_id,':temptrestable_eg'=> $temptrestable_eg,':temptrestable_utd'=> $temptrestable_utd,':temptrestable_uti'=> $temptrestable_uti,':temptrestable_put'=> $temptrestable_put, ':temptrestable_au'=> $temptrestable_au, ':temptrestable_cm'=> $temptrestable_cm,':temptrestable_cp'=> $temptrestable_cp,':temptrestable_dv'=> $temptrestable_dv,':temptrestable_acm' => $temptrestable_acm,'$temptrestable_fecha' => $temptrestable_fecha));
+            $query->execute(array(':temptrestable_id'=> $temptrestable_id,':temptrestable_eg'=> $temptrestable_eg,':temptrestable_utd'=> $temptrestable_utd,':temptrestable_uti'=> $temptrestable_uti,':temptrestable_put'=> $temptrestable_put, ':temptrestable_au'=> $temptrestable_au, ':temptrestable_cm'=> $temptrestable_cm,':temptrestable_cp'=> $temptrestable_cp,':temptrestable_dv'=> $temptrestable_dv,':temptrestable_acm' => $temptrestable_acm,':temptrestable_fecha' => $temptrestable_fecha));
 
             if ($query->rowCount() == 1) {
                 return true;
