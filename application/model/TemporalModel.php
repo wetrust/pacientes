@@ -38,7 +38,7 @@ class TemporalModel
     {
         $database = DatabaseFactory::getFactory()->getConnection();
 
-        $sql = "SELECT temptable_rut, temptable_saco, temptable_lcn, temptable_eg FROM temptable WHERE temptable_rut = :temptable_rut and temptable_id = :temptable_id";
+        $sql = "SELECT temptable_rut, temptable_saco, temptable_lcn, temptable_eg, temptable_fecha FROM temptable WHERE temptable_rut = :temptable_rut and temptable_id = :temptable_id";
         $query = $database->prepare($sql);
         $query->execute(array(':temptable_rut' => $temporal_id, 'temptable_id' => $temptable_id));
 
@@ -162,7 +162,7 @@ class TemporalModel
         }
     }
 
-    public static function createUno($temporal_id, $temptable_eg, $temptable_lcn, $temptable_saco)
+    public static function createUno($temporal_id, $temptable_eg, $temptable_lcn, $temptable_saco, $temptable_fecha)
     {
         if (!$temporal_id || strlen($temporal_id) == 0) {
             Session::add('feedback_negative', Text::get('FEEDBACK_NOTE_CREATION_FAILED'));
@@ -171,9 +171,9 @@ class TemporalModel
 
             $database = DatabaseFactory::getFactory()->getConnection();
 
-            $sql = "INSERT INTO temptable (temptable_rut, temptable_eg, temptable_lcn, temptable_saco) VALUES (:temptable_rut, :temptable_eg, :temptable_lcn, :temptable_saco)";
+            $sql = "INSERT INTO temptable (temptable_rut, temptable_eg, temptable_lcn, temptable_saco, temptable_fecha) VALUES (:temptable_rut, :temptable_eg, :temptable_lcn, :temptable_saco, :temptable_fecha)";
             $query = $database->prepare($sql);
-            $query->execute(array(':temptable_rut' => $temporal_id, ':temptable_eg' => $temptable_eg, ':temptable_lcn' => $temptable_lcn, ':temptable_saco' => $temptable_saco));
+            $query->execute(array(':temptable_rut' => $temporal_id, ':temptable_eg' => $temptable_eg, ':temptable_lcn' => $temptable_lcn, ':temptable_saco' => $temptable_saco, ':temptable_fecha' => $temptable_fecha));
 
             if ($query->rowCount() == 1) {
                 return true;
@@ -184,7 +184,7 @@ class TemporalModel
             return false;
     }
 
-    public static function createDos($tempdostable_id, $tempdostable_eg, $tempdostable_dbp, $tempdostable_dof, $tempdostable_cc, $tempdostable_ca, $tempdostable_lf, $tempdostable_bvm, $tempdostable_lh, $tempdostable_cerebelo, $tempdostable_pfe, $tempdostable_egP50, $tempdostable_presentacion, $tempdostable_dorso, $tempdostable_fcf, $tempdostable_sexo, $tempdostable_morfo, $tempdostable_anatomia, $tempdostable_ubicacion, $tempdostable_incersion, $tempdostable_grado, $tempdostable_liq, $tempdostable_cordon, $tempdostable_vasos, $tempdostable_comentario, $tempdostable_comentarios)
+    public static function createDos($tempdostable_id, $tempdostable_eg, $tempdostable_dbp, $tempdostable_dof, $tempdostable_cc, $tempdostable_ca, $tempdostable_lf, $tempdostable_bvm, $tempdostable_lh, $tempdostable_cerebelo, $tempdostable_pfe, $tempdostable_egP50, $tempdostable_presentacion, $tempdostable_dorso, $tempdostable_fcf, $tempdostable_sexo, $tempdostable_morfo, $tempdostable_anatomia, $tempdostable_ubicacion, $tempdostable_incersion, $tempdostable_grado, $tempdostable_liq, $tempdostable_cordon, $tempdostable_vasos, $tempdostable_comentario, $tempdostable_comentarios, $tempdostable_fecha)
     {
         if (!$tempdostable_id || strlen($tempdostable_id) == 0) {
             Session::add('feedback_negative', Text::get('FEEDBACK_NOTE_CREATION_FAILED'));
@@ -193,9 +193,9 @@ class TemporalModel
 
             $database = DatabaseFactory::getFactory()->getConnection();
 
-            $sql = "INSERT INTO tempdostable (tempdostable_id, tempdostable_eg, tempdostable_dbp, tempdostable_dof, tempdostable_cc, tempdostable_ca, tempdostable_lf, tempdostable_bvm, tempdostable_lh, tempdostable_cerebelo, tempdostable_pfe, tempdostable_egP50, tempdostable_presentacion, tempdostable_dorso, tempdostable_fcf, tempdostable_sexo, tempdostable_morfo, tempdostable_anatomia, tempdostable_ubicacion, tempdostable_incersion, tempdostable_grado, tempdostable_liq, tempdostable_cordon, tempdostable_vasos, tempdostable_comentario, tempdostable_comentarios) VALUES (:tempdostable_id, :tempdostable_eg, :tempdostable_dbp, :tempdostable_dof, :tempdostable_cc, :tempdostable_ca, :tempdostable_lf, :tempdostable_bvm, :tempdostable_lh, :tempdostable_cerebelo, :tempdostable_pfe, :tempdostable_egP50, :tempdostable_presentacion, :tempdostable_dorso, :tempdostable_fcf, :tempdostable_sexo, :tempdostable_morfo, :tempdostable_anatomia, :tempdostable_ubicacion, :tempdostable_incersion, :tempdostable_grado, :tempdostable_liq, :tempdostable_cordon, :tempdostable_vasos, :tempdostable_comentario, :tempdostable_comentarios)";
+            $sql = "INSERT INTO tempdostable (tempdostable_id, tempdostable_eg, tempdostable_dbp, tempdostable_dof, tempdostable_cc, tempdostable_ca, tempdostable_lf, tempdostable_bvm, tempdostable_lh, tempdostable_cerebelo, tempdostable_pfe, tempdostable_egP50, tempdostable_presentacion, tempdostable_dorso, tempdostable_fcf, tempdostable_sexo, tempdostable_morfo, tempdostable_anatomia, tempdostable_ubicacion, tempdostable_incersion, tempdostable_grado, tempdostable_liq, tempdostable_cordon, tempdostable_vasos, tempdostable_comentario, tempdostable_comentarios, tempdostable_fecha) VALUES (:tempdostable_id, :tempdostable_eg, :tempdostable_dbp, :tempdostable_dof, :tempdostable_cc, :tempdostable_ca, :tempdostable_lf, :tempdostable_bvm, :tempdostable_lh, :tempdostable_cerebelo, :tempdostable_pfe, :tempdostable_egP50, :tempdostable_presentacion, :tempdostable_dorso, :tempdostable_fcf, :tempdostable_sexo, :tempdostable_morfo, :tempdostable_anatomia, :tempdostable_ubicacion, :tempdostable_incersion, :tempdostable_grado, :tempdostable_liq, :tempdostable_cordon, :tempdostable_vasos, :tempdostable_comentario, :tempdostable_comentarios, :tempdostable_fecha)";
             $query = $database->prepare($sql);
-            $query->execute(array(':tempdostable_id' => $tempdostable_id, ':tempdostable_eg' => $tempdostable_eg, ':tempdostable_dbp' => $tempdostable_dbp, ':tempdostable_dof' => $tempdostable_dof, ':tempdostable_cc' => $tempdostable_cc, ':tempdostable_ca' => $tempdostable_ca, ':tempdostable_lf' => $tempdostable_lf, ':tempdostable_bvm' => $tempdostable_bvm, ':tempdostable_lh' => $tempdostable_lh, ':tempdostable_cerebelo' => $tempdostable_cerebelo, ':tempdostable_pfe' => $tempdostable_pfe, ':tempdostable_egP50' => $tempdostable_egP50, ':tempdostable_presentacion' => $tempdostable_presentacion, ':tempdostable_dorso' => $tempdostable_dorso, ':tempdostable_fcf' => $tempdostable_fcf, ':tempdostable_sexo' => $tempdostable_sexo, ':tempdostable_morfo' => $tempdostable_morfo, ':tempdostable_anatomia' => $tempdostable_anatomia, ':tempdostable_ubicacion' => $tempdostable_ubicacion, ':tempdostable_incersion' => $tempdostable_incersion, ':tempdostable_grado' => $tempdostable_grado, ':tempdostable_liq' => $tempdostable_liq, ':tempdostable_cordon' => $tempdostable_cordon, ':tempdostable_vasos' => $tempdostable_vasos, ':tempdostable_comentario'=> $tempdostable_comentario, ':tempdostable_comentarios' => $tempdostable_comentarios));
+            $query->execute(array(':tempdostable_id' => $tempdostable_id, ':tempdostable_eg' => $tempdostable_eg, ':tempdostable_dbp' => $tempdostable_dbp, ':tempdostable_dof' => $tempdostable_dof, ':tempdostable_cc' => $tempdostable_cc, ':tempdostable_ca' => $tempdostable_ca, ':tempdostable_lf' => $tempdostable_lf, ':tempdostable_bvm' => $tempdostable_bvm, ':tempdostable_lh' => $tempdostable_lh, ':tempdostable_cerebelo' => $tempdostable_cerebelo, ':tempdostable_pfe' => $tempdostable_pfe, ':tempdostable_egP50' => $tempdostable_egP50, ':tempdostable_presentacion' => $tempdostable_presentacion, ':tempdostable_dorso' => $tempdostable_dorso, ':tempdostable_fcf' => $tempdostable_fcf, ':tempdostable_sexo' => $tempdostable_sexo, ':tempdostable_morfo' => $tempdostable_morfo, ':tempdostable_anatomia' => $tempdostable_anatomia, ':tempdostable_ubicacion' => $tempdostable_ubicacion, ':tempdostable_incersion' => $tempdostable_incersion, ':tempdostable_grado' => $tempdostable_grado, ':tempdostable_liq' => $tempdostable_liq, ':tempdostable_cordon' => $tempdostable_cordon, ':tempdostable_vasos' => $tempdostable_vasos, ':tempdostable_comentario'=> $tempdostable_comentario, ':tempdostable_comentarios' => $tempdostable_comentarios, ':tempdostable_fecha' => $tempdostable_fecha));
 
             if ($query->rowCount() == 1) {
                 return true;
@@ -206,7 +206,7 @@ class TemporalModel
             return false;
     }
 
-    public static function createTres($temptrestable_id,$temptrestable_eg,$temptrestable_utd,$temptrestable_uti, $temptrestable_put, $temptrestable_au, $temptrestable_cm,$temptrestable_cp,$temptrestable_dv,$temptrestable_acm)
+    public static function createTres($temptrestable_id,$temptrestable_eg,$temptrestable_utd,$temptrestable_uti, $temptrestable_put, $temptrestable_au, $temptrestable_cm,$temptrestable_cp,$temptrestable_dv,$temptrestable_acm, $temptrestable_fecha)
     {
         if (!$temptrestable_id || strlen($temptrestable_id) == 0) {
             Session::add('feedback_negative', Text::get('FEEDBACK_NOTE_CREATION_FAILED'));
@@ -215,9 +215,9 @@ class TemporalModel
 
             $database = DatabaseFactory::getFactory()->getConnection();
 
-            $sql = "INSERT INTO temptrestable (temptrestable_id,temptrestable_eg,temptrestable_utd,temptrestable_uti,temptrestable_put, temptrestable_au, temptrestable_cm,temptrestable_cp,temptrestable_dv,temptrestable_acm) VALUES (:temptrestable_id,:temptrestable_eg,:temptrestable_utd,:temptrestable_uti, :temptrestable_put, :temptrestable_au, :temptrestable_cm,:temptrestable_cp,:temptrestable_dv,:temptrestable_acm)";
+            $sql = "INSERT INTO temptrestable (temptrestable_id,temptrestable_eg,temptrestable_utd,temptrestable_uti,temptrestable_put, temptrestable_au, temptrestable_cm,temptrestable_cp,temptrestable_dv,temptrestable_acm, temptrestable_fecha) VALUES (:temptrestable_id,:temptrestable_eg,:temptrestable_utd,:temptrestable_uti, :temptrestable_put, :temptrestable_au, :temptrestable_cm,:temptrestable_cp,:temptrestable_dv,:temptrestable_acm, :temptrestable_fecha)";
             $query = $database->prepare($sql);
-            $query->execute(array(':temptrestable_id'=> $temptrestable_id,':temptrestable_eg'=> $temptrestable_eg,':temptrestable_utd'=> $temptrestable_utd,':temptrestable_uti'=> $temptrestable_uti,':temptrestable_put'=> $temptrestable_put, ':temptrestable_au'=> $temptrestable_au, ':temptrestable_cm'=> $temptrestable_cm,':temptrestable_cp'=> $temptrestable_cp,':temptrestable_dv'=> $temptrestable_dv,':temptrestable_acm' => $temptrestable_acm));
+            $query->execute(array(':temptrestable_id'=> $temptrestable_id,':temptrestable_eg'=> $temptrestable_eg,':temptrestable_utd'=> $temptrestable_utd,':temptrestable_uti'=> $temptrestable_uti,':temptrestable_put'=> $temptrestable_put, ':temptrestable_au'=> $temptrestable_au, ':temptrestable_cm'=> $temptrestable_cm,':temptrestable_cp'=> $temptrestable_cp,':temptrestable_dv'=> $temptrestable_dv,':temptrestable_acm' => $temptrestable_acm,'$temptrestable_fecha' => $temptrestable_fecha));
 
             if ($query->rowCount() == 1) {
                 return true;
@@ -254,7 +254,7 @@ class TemporalModel
         return false;
     }
 
-    public static function updateUno($temporal_id, $temptable_id, $temptable_eg, $temptable_lcn, $temptable_saco)
+    public static function updateUno($temporal_id, $temptable_id, $temptable_eg, $temptable_lcn, $temptable_saco, $temptable_fecha)
     {
         if (!$temporal_id || !$temporal_id) {
             return false;
@@ -262,9 +262,9 @@ class TemporalModel
 
         $database = DatabaseFactory::getFactory()->getConnection();
 
-        $sql = "UPDATE temptable SET temptable_rut = :temptable_rut, temptable_eg = :temptable_eg, temptable_lcn = :temptable_lcn, temptable_saco = :temptable_saco WHERE temptable_id = :temptable_id LIMIT 1";
+        $sql = "UPDATE temptable SET temptable_rut = :temptable_rut, temptable_eg = :temptable_eg, temptable_lcn = :temptable_lcn, temptable_saco = :temptable_saco, temptable_fecha = :temptable_fecha WHERE temptable_id = :temptable_id LIMIT 1";
         $query = $database->prepare($sql);
-        $query->execute(array(':temptable_rut' => $temporal_id, ':temptable_eg' => $temptable_eg, ':temptable_lcn' => $temptable_lcn, ':temptable_saco' => $temptable_saco, ':temptable_id' => $temptable_id));
+        $query->execute(array(':temptable_rut' => $temporal_id, ':temptable_eg' => $temptable_eg, ':temptable_lcn' => $temptable_lcn, ':temptable_saco' => $temptable_saco, ':temptable_id' => $temptable_id, ':temptable_fecha' => $temptable_fecha));
 
         if ($query->rowCount() == 1) {
             return true;
@@ -274,7 +274,7 @@ class TemporalModel
         return false;
     }
 
-    public static function updateDos($tempdostable_id, $tempdostable_correlativo,$tempdostable_eg, $tempdostable_dbp, $tempdostable_dof, $tempdostable_cc, $tempdostable_ca, $tempdostable_lf, $tempdostable_bvm, $tempdostable_lh, $tempdostable_cerebelo, $tempdostable_pfe, $tempdostable_egP50, $tempdostable_presentacion, $tempdostable_dorso, $tempdostable_fcf, $tempdostable_sexo,$tempdostable_morfo, $tempdostable_anatomia, $tempdostable_ubicacion, $tempdostable_incersion, $tempdostable_grado, $tempdostable_liq, $tempdostable_cordon, $tempdostable_vasos, $tempdostable_comentario, $tempdostable_comentarios)
+    public static function updateDos($tempdostable_id, $tempdostable_correlativo,$tempdostable_eg, $tempdostable_dbp, $tempdostable_dof, $tempdostable_cc, $tempdostable_ca, $tempdostable_lf, $tempdostable_bvm, $tempdostable_lh, $tempdostable_cerebelo, $tempdostable_pfe, $tempdostable_egP50, $tempdostable_presentacion, $tempdostable_dorso, $tempdostable_fcf, $tempdostable_sexo,$tempdostable_morfo, $tempdostable_anatomia, $tempdostable_ubicacion, $tempdostable_incersion, $tempdostable_grado, $tempdostable_liq, $tempdostable_cordon, $tempdostable_vasos, $tempdostable_comentario, $tempdostable_comentarios, $tempdostable_fecha)
     {
         if (!$temporal_id || !$temporal_id) {
             return false;
@@ -282,9 +282,9 @@ class TemporalModel
 
         $database = DatabaseFactory::getFactory()->getConnection();
 
-        $sql = "UPDATE tempdostable SET tempdostable_id = :tempdostable_id, tempdostable_eg = :tempdostable_eg, tempdostable_dbp = :tempdostable_dbp, tempdostable_dof = :tempdostable_dof, tempdostable_cc = :tempdostable_cc, tempdostable_ca = :tempdostable_ca, tempdostable_lf = :tempdostable_lf, tempdostable_bvm = :tempdostable_bvm, tempdostable_lh = :tempdostable_lh, tempdostable_cerebelo = :tempdostable_cerebelo, tempdostable_pfe = :tempdostable_pfe, tempdostable_egP50 = :tempdostable_egP50, tempdostable_presentacion = :tempdostable_presentacion, tempdostable_dorso = :tempdostable_dorso, tempdostable_fcf = :tempdostable_fcf, tempdostable_sexo = :tempdostable_sexo, tempdostable_morfo = :tempdostable_morfo, tempdostable_anatomia = :tempdostable_anatomia, tempdostable_ubicacion = :tempdostable_ubicacion, tempdostable_incersion = :tempdostable_incersion, tempdostable_grado = :tempdostable_grado, tempdostable_liq = :tempdostable_liq, tempdostable_cordon = :tempdostable_cordon, tempdostable_vasos = :tempdostable_vasos, tempdostable_comentario = :tempdostable_comentario, tempdostable_comentarios = :tempdostable_comentarios WHERE tempdostable_correlativo = :tempdostable_correlativo  LIMIT 1";
+        $sql = "UPDATE tempdostable SET tempdostable_id = :tempdostable_id, tempdostable_eg = :tempdostable_eg, tempdostable_dbp = :tempdostable_dbp, tempdostable_dof = :tempdostable_dof, tempdostable_cc = :tempdostable_cc, tempdostable_ca = :tempdostable_ca, tempdostable_lf = :tempdostable_lf, tempdostable_bvm = :tempdostable_bvm, tempdostable_lh = :tempdostable_lh, tempdostable_cerebelo = :tempdostable_cerebelo, tempdostable_pfe = :tempdostable_pfe, tempdostable_egP50 = :tempdostable_egP50, tempdostable_presentacion = :tempdostable_presentacion, tempdostable_dorso = :tempdostable_dorso, tempdostable_fcf = :tempdostable_fcf, tempdostable_sexo = :tempdostable_sexo, tempdostable_morfo = :tempdostable_morfo, tempdostable_anatomia = :tempdostable_anatomia, tempdostable_ubicacion = :tempdostable_ubicacion, tempdostable_incersion = :tempdostable_incersion, tempdostable_grado = :tempdostable_grado, tempdostable_liq = :tempdostable_liq, tempdostable_cordon = :tempdostable_cordon, tempdostable_vasos = :tempdostable_vasos, tempdostable_comentario = :tempdostable_comentario, tempdostable_comentarios = :tempdostable_comentarios, tempdostable_fecha = :tempdostable_fecha WHERE tempdostable_correlativo = :tempdostable_correlativo  LIMIT 1";
         $query = $database->prepare($sql);
-        $query->execute(array(':tempdostable_id' => $tempdostable_id, ':tempdostable_correlativo' => $tempdostable_correlativo, ':tempdostable_eg' => $tempdostable_eg, ':tempdostable_dbp' => $tempdostable_dbp, ':tempdostable_dof' => $tempdostable_dof, ':tempdostable_cc' => $tempdostable_cc, ':tempdostable_ca' => $tempdostable_ca, ':tempdostable_lf' => $tempdostable_lf, ':tempdostable_bvm' => $tempdostable_bvm, ':tempdostable_lh' => $tempdostable_lh, ':tempdostable_cerebelo' => $tempdostable_cerebelo, ':tempdostable_pfe' => $tempdostable_pfe, ':tempdostable_egP50' => $tempdostable_egP50, ':tempdostable_presentacion' => $tempdostable_presentacion, ':tempdostable_dorso' => $tempdostable_dorso, ':tempdostable_fcf' => $tempdostable_fcf, ':tempdostable_sexo' => $tempdostable_sexo, ':tempdostable_morfo' => $tempdostable_morfo, ':tempdostable_anatomia' => $tempdostable_anatomia, ':tempdostable_ubicacion' => $tempdostable_ubicacion, ':tempdostable_incersion' => $tempdostable_incersion, ':tempdostable_grado' => $tempdostable_grado, ':tempdostable_liq' => $tempdostable_liq, ':tempdostable_cordon' => $tempdostable_cordon, ':tempdostable_vasos' => $tempdostable_vasos, ':tempdostable_comentario' => $tempdostable_comentario, ':tempdostable_comentarios' => $tempdostable_comentarios));
+        $query->execute(array(':tempdostable_id' => $tempdostable_id, ':tempdostable_correlativo' => $tempdostable_correlativo, ':tempdostable_eg' => $tempdostable_eg, ':tempdostable_dbp' => $tempdostable_dbp, ':tempdostable_dof' => $tempdostable_dof, ':tempdostable_cc' => $tempdostable_cc, ':tempdostable_ca' => $tempdostable_ca, ':tempdostable_lf' => $tempdostable_lf, ':tempdostable_bvm' => $tempdostable_bvm, ':tempdostable_lh' => $tempdostable_lh, ':tempdostable_cerebelo' => $tempdostable_cerebelo, ':tempdostable_pfe' => $tempdostable_pfe, ':tempdostable_egP50' => $tempdostable_egP50, ':tempdostable_presentacion' => $tempdostable_presentacion, ':tempdostable_dorso' => $tempdostable_dorso, ':tempdostable_fcf' => $tempdostable_fcf, ':tempdostable_sexo' => $tempdostable_sexo, ':tempdostable_morfo' => $tempdostable_morfo, ':tempdostable_anatomia' => $tempdostable_anatomia, ':tempdostable_ubicacion' => $tempdostable_ubicacion, ':tempdostable_incersion' => $tempdostable_incersion, ':tempdostable_grado' => $tempdostable_grado, ':tempdostable_liq' => $tempdostable_liq, ':tempdostable_cordon' => $tempdostable_cordon, ':tempdostable_vasos' => $tempdostable_vasos, ':tempdostable_comentario' => $tempdostable_comentario, ':tempdostable_comentarios' => $tempdostable_comentarios, ':tempdostable_fecha' => $tempdostable_fecha));
 
         if ($query->rowCount() == 1) {
             return true;
@@ -295,7 +295,7 @@ class TemporalModel
     }
 
 
-    public static function updateTres($temptrestable_id,$temptrestable_correlativo,$temptrestable_eg,$temptrestable_utd,$temptrestable_uti, $temptrestable_put, $temptrestable_au, $temptrestable_cm,$temptrestable_cp,$temptrestable_dv,$temptrestable_acm)
+    public static function updateTres($temptrestable_id,$temptrestable_correlativo,$temptrestable_eg,$temptrestable_utd,$temptrestable_uti, $temptrestable_put, $temptrestable_au, $temptrestable_cm,$temptrestable_cp,$temptrestable_dv,$temptrestable_acm, $temptrestable_fecha)
     {
         if (!$temptrestable_id || strlen($temptrestable_id) == 0) {
             Session::add('feedback_negative', Text::get('FEEDBACK_NOTE_CREATION_FAILED'));
@@ -304,9 +304,9 @@ class TemporalModel
 
             $database = DatabaseFactory::getFactory()->getConnection();
 
-            $sql = "UPDATE temptrestable SET temptrestable_id = :temptrestable_id,temptrestable_eg = :temptrestable_eg,temptrestable_utd = :temptrestable_utd,temptrestable_uti = :temptrestable_uti,temptrestable_put = :temptrestable_put, temptrestable_au = :temptrestable_au, temptrestable_cm = :temptrestable_cm,temptrestable_cp = :temptrestable_cp,temptrestable_dv = :temptrestable_dv,temptrestable_acm = :temptrestable_acm WHERE temptrestable_correlativo = :temptrestable_correlativo";
+            $sql = "UPDATE temptrestable SET temptrestable_id = :temptrestable_id,temptrestable_eg = :temptrestable_eg,temptrestable_utd = :temptrestable_utd,temptrestable_uti = :temptrestable_uti,temptrestable_put = :temptrestable_put, temptrestable_au = :temptrestable_au, temptrestable_cm = :temptrestable_cm,temptrestable_cp = :temptrestable_cp,temptrestable_dv = :temptrestable_dv,temptrestable_acm = :temptrestable_acm, temptrestable_fecha = :temptrestable_fecha WHERE temptrestable_correlativo = :temptrestable_correlativo";
             $query = $database->prepare($sql);
-            $query->execute(array(':temptrestable_id'=> $temptrestable_id,':temptrestable_correlativo'=> $temptrestable_correlativo,':temptrestable_eg'=> $temptrestable_eg,':temptrestable_utd'=> $temptrestable_utd,':temptrestable_uti'=> $temptrestable_uti,':temptrestable_put'=> $temptrestable_put, ':temptrestable_au'=> $temptrestable_au, ':temptrestable_cm'=> $temptrestable_cm,':temptrestable_cp'=> $temptrestable_cp,':temptrestable_dv'=> $temptrestable_dv,':temptrestable_acm' => $temptrestable_acm));
+            $query->execute(array(':temptrestable_id'=> $temptrestable_id,':temptrestable_correlativo'=> $temptrestable_correlativo,':temptrestable_eg'=> $temptrestable_eg,':temptrestable_utd'=> $temptrestable_utd,':temptrestable_uti'=> $temptrestable_uti,':temptrestable_put'=> $temptrestable_put, ':temptrestable_au'=> $temptrestable_au, ':temptrestable_cm'=> $temptrestable_cm,':temptrestable_cp'=> $temptrestable_cp,':temptrestable_dv'=> $temptrestable_dv,':temptrestable_acm' => $temptrestable_acm, ':temptrestable_fecha' => $temptrestable_fecha));
 
             if ($query->rowCount() == 1) {
                 return true;
