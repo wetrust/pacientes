@@ -206,7 +206,7 @@ class TemporalModel
             return false;
     }
 
-    public static function createTres($temptrestable_id,$temptrestable_eg,$temptrestable_utd,$temptrestable_uti, $temptrestable_put, $temptrestable_au, $temptrestable_cm,$temptrestable_cp,$temptrestable_dv,$temptrestable_acm, $temptrestable_fecha)
+    public static function createTres($temptrestable_id,$temptrestable_eg,$temptrestable_utd,$temptrestable_uti, $temptrestable_put, $temptrestable_au, $temptrestable_cm,$temptrestable_cp,$temptrestable_dv,$temptrestable_acm, $temptrestable_fecha, $temptrestable_citadoppler)
     {
         if (!$temptrestable_id || strlen($temptrestable_id) == 0) {
             Session::add('feedback_negative', Text::get('FEEDBACK_NOTE_CREATION_FAILED'));
@@ -215,9 +215,9 @@ class TemporalModel
 
             $database = DatabaseFactory::getFactory()->getConnection();
 
-            $sql = "INSERT INTO temptrestable (temptrestable_id,temptrestable_eg,temptrestable_utd,temptrestable_uti,temptrestable_put, temptrestable_au, temptrestable_cm,temptrestable_cp,temptrestable_dv,temptrestable_acm, temptrestable_fecha) VALUES (:temptrestable_id,:temptrestable_eg,:temptrestable_utd,:temptrestable_uti, :temptrestable_put, :temptrestable_au, :temptrestable_cm,:temptrestable_cp,:temptrestable_dv,:temptrestable_acm, :temptrestable_fecha)";
+            $sql = "INSERT INTO temptrestable (temptrestable_id,temptrestable_eg,temptrestable_utd,temptrestable_uti,temptrestable_put, temptrestable_au, temptrestable_cm,temptrestable_cp,temptrestable_dv,temptrestable_acm, temptrestable_fecha, temptrestable_citadoppler) VALUES (:temptrestable_id,:temptrestable_eg,:temptrestable_utd,:temptrestable_uti, :temptrestable_put, :temptrestable_au, :temptrestable_cm,:temptrestable_cp,:temptrestable_dv,:temptrestable_acm, :temptrestable_fecha, :temptrestable_citadoppler)";
             $query = $database->prepare($sql);
-            $query->execute(array(':temptrestable_id'=> $temptrestable_id,':temptrestable_eg'=> $temptrestable_eg,':temptrestable_utd'=> $temptrestable_utd,':temptrestable_uti'=> $temptrestable_uti,':temptrestable_put'=> $temptrestable_put, ':temptrestable_au'=> $temptrestable_au, ':temptrestable_cm'=> $temptrestable_cm,':temptrestable_cp'=> $temptrestable_cp,':temptrestable_dv'=> $temptrestable_dv,':temptrestable_acm' => $temptrestable_acm,':temptrestable_fecha' => $temptrestable_fecha));
+            $query->execute(array(':temptrestable_id'=> $temptrestable_id,':temptrestable_eg'=> $temptrestable_eg,':temptrestable_utd'=> $temptrestable_utd,':temptrestable_uti'=> $temptrestable_uti,':temptrestable_put'=> $temptrestable_put, ':temptrestable_au'=> $temptrestable_au, ':temptrestable_cm'=> $temptrestable_cm,':temptrestable_cp'=> $temptrestable_cp,':temptrestable_dv'=> $temptrestable_dv,':temptrestable_acm' => $temptrestable_acm,':temptrestable_fecha' => $temptrestable_fecha, ':temptrestable_citadoppler' => $temptrestable_citadoppler));
 
             if ($query->rowCount() == 1) {
                 return true;
@@ -295,7 +295,7 @@ class TemporalModel
     }
 
 
-    public static function updateTres($temptrestable_id,$temptrestable_correlativo,$temptrestable_eg,$temptrestable_utd,$temptrestable_uti, $temptrestable_put, $temptrestable_au, $temptrestable_cm,$temptrestable_cp,$temptrestable_dv,$temptrestable_acm, $temptrestable_fecha)
+    public static function updateTres($temptrestable_id,$temptrestable_correlativo,$temptrestable_eg,$temptrestable_utd,$temptrestable_uti, $temptrestable_put, $temptrestable_au, $temptrestable_cm,$temptrestable_cp,$temptrestable_dv,$temptrestable_acm, $temptrestable_fecha, $temptrestable_citadoppler)
     {
         if (!$temptrestable_id || strlen($temptrestable_id) == 0) {
             Session::add('feedback_negative', Text::get('FEEDBACK_NOTE_CREATION_FAILED'));
@@ -304,9 +304,9 @@ class TemporalModel
 
             $database = DatabaseFactory::getFactory()->getConnection();
 
-            $sql = "UPDATE temptrestable SET temptrestable_id = :temptrestable_id,temptrestable_eg = :temptrestable_eg,temptrestable_utd = :temptrestable_utd,temptrestable_uti = :temptrestable_uti,temptrestable_put = :temptrestable_put, temptrestable_au = :temptrestable_au, temptrestable_cm = :temptrestable_cm,temptrestable_cp = :temptrestable_cp,temptrestable_dv = :temptrestable_dv,temptrestable_acm = :temptrestable_acm, temptrestable_fecha = :temptrestable_fecha WHERE temptrestable_correlativo = :temptrestable_correlativo";
+            $sql = "UPDATE temptrestable SET temptrestable_id = :temptrestable_id,temptrestable_eg = :temptrestable_eg,temptrestable_utd = :temptrestable_utd,temptrestable_uti = :temptrestable_uti,temptrestable_put = :temptrestable_put, temptrestable_au = :temptrestable_au, temptrestable_cm = :temptrestable_cm,temptrestable_cp = :temptrestable_cp,temptrestable_dv = :temptrestable_dv,temptrestable_acm = :temptrestable_acm, temptrestable_fecha = :temptrestable_fecha, temptrestable_citadoppler = :temptrestable_citadoppler WHERE temptrestable_correlativo = :temptrestable_correlativo";
             $query = $database->prepare($sql);
-            $query->execute(array(':temptrestable_id'=> $temptrestable_id,':temptrestable_correlativo'=> $temptrestable_correlativo,':temptrestable_eg'=> $temptrestable_eg,':temptrestable_utd'=> $temptrestable_utd,':temptrestable_uti'=> $temptrestable_uti,':temptrestable_put'=> $temptrestable_put, ':temptrestable_au'=> $temptrestable_au, ':temptrestable_cm'=> $temptrestable_cm,':temptrestable_cp'=> $temptrestable_cp,':temptrestable_dv'=> $temptrestable_dv,':temptrestable_acm' => $temptrestable_acm, ':temptrestable_fecha' => $temptrestable_fecha));
+            $query->execute(array(':temptrestable_id'=> $temptrestable_id,':temptrestable_correlativo'=> $temptrestable_correlativo,':temptrestable_eg'=> $temptrestable_eg,':temptrestable_utd'=> $temptrestable_utd,':temptrestable_uti'=> $temptrestable_uti,':temptrestable_put'=> $temptrestable_put, ':temptrestable_au'=> $temptrestable_au, ':temptrestable_cm'=> $temptrestable_cm,':temptrestable_cp'=> $temptrestable_cp,':temptrestable_dv'=> $temptrestable_dv,':temptrestable_acm' => $temptrestable_acm, ':temptrestable_fecha' => $temptrestable_fecha, ':temptrestable_citadoppler' => $temptrestable_citadoppler));
 
             if ($query->rowCount() == 1) {
                 return true;

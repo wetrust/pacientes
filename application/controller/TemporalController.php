@@ -108,10 +108,10 @@ class TemporalController extends Controller
                 $resultado = TemporalModel::getTres(Request::post('temporal_id'),Request::post('temptrestable_correlativo'));
                 break;
             case "new":
-                $resultado = TemporalModel::createTres(Request::post('temptrestable_id'),Request::post('temptrestable_eg'),Request::post('temptrestable_utd'),Request::post('temptrestable_uti'), Request::post('temptrestable_put'), Request::post('temptrestable_au'), Request::post('temptrestable_cm'),Request::post('temptrestable_cp'),Request::post('temptrestable_dv'),Request::post('temptrestable_acm'),Request::post('temptrestable_fecha'));
+                $resultado = TemporalModel::createTres(Request::post('temptrestable_id'),Request::post('temptrestable_eg'),Request::post('temptrestable_utd'),Request::post('temptrestable_uti'), Request::post('temptrestable_put'), Request::post('temptrestable_au'), Request::post('temptrestable_cm'),Request::post('temptrestable_cp'),Request::post('temptrestable_dv'),Request::post('temptrestable_acm'),Request::post('temptrestable_fecha'),Request::post('temptrestable_citadoppler'));
                 break;
             case "set":
-                $resultado = TemporalModel::updateTres(Request::post('temptrestable_id'),Request::post('temptrestable_correlativo'),Request::post('temptrestable_eg'),Request::post('temptrestable_utd'),Request::post('temptrestable_uti'), Request::post('temptrestable_put'), Request::post('temptrestable_au'), Request::post('temptrestable_cm'),Request::post('temptrestable_cp'),Request::post('temptrestable_dv'),Request::post('temptrestable_acm'),Request::post('temptrestable_fecha'));
+                $resultado = TemporalModel::updateTres(Request::post('temptrestable_id'),Request::post('temptrestable_correlativo'),Request::post('temptrestable_eg'),Request::post('temptrestable_utd'),Request::post('temptrestable_uti'), Request::post('temptrestable_put'), Request::post('temptrestable_au'), Request::post('temptrestable_cm'),Request::post('temptrestable_cp'),Request::post('temptrestable_dv'),Request::post('temptrestable_acm'),Request::post('temptrestable_fecha'),Request::post('temptrestable_citadoppler'));
                 break;
             case "read":
                 $resultado = TemporalModel::getTemporal(Request::post('temporal_id'));
