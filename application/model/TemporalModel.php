@@ -162,7 +162,7 @@ class TemporalModel
         }
     }
 
-    public static function createUno($temporal_id, $temptable_eg, $temptable_lcn, $temptable_saco, $temptable_fecha)
+    public static function createUno($temporal_id, $temptable_eg, $temptable_lcn, $temptable_saco, $temptable_fecha,$temptable_citaprimtrim)
     {
         if (!$temporal_id || strlen($temporal_id) == 0) {
             Session::add('feedback_negative', Text::get('FEEDBACK_NOTE_CREATION_FAILED'));
@@ -171,9 +171,9 @@ class TemporalModel
 
             $database = DatabaseFactory::getFactory()->getConnection();
 
-            $sql = "INSERT INTO temptable (temptable_rut, temptable_eg, temptable_lcn, temptable_saco, temptable_fecha) VALUES (:temptable_rut, :temptable_eg, :temptable_lcn, :temptable_saco, :temptable_fecha)";
+            $sql = "INSERT INTO temptable (temptable_rut, temptable_eg, temptable_lcn, temptable_saco, temptable_fecha, temptable_citaprimtrim) VALUES (:temptable_rut, :temptable_eg, :temptable_lcn, :temptable_saco, :temptable_fecha, :temptable_citaprimtrim)";
             $query = $database->prepare($sql);
-            $query->execute(array(':temptable_rut' => $temporal_id, ':temptable_eg' => $temptable_eg, ':temptable_lcn' => $temptable_lcn, ':temptable_saco' => $temptable_saco, ':temptable_fecha' => $temptable_fecha));
+            $query->execute(array(':temptable_rut' => $temporal_id, ':temptable_eg' => $temptable_eg, ':temptable_lcn' => $temptable_lcn, ':temptable_saco' => $temptable_saco, ':temptable_fecha' => $temptable_fecha, ':temptable_citaprimtrim' => $temptable_citaprimtrim));
 
             if ($query->rowCount() == 1) {
                 return true;
@@ -253,7 +253,7 @@ class TemporalModel
         return false;
     }
 
-    public static function updateUno($temporal_id, $temptable_id, $temptable_eg, $temptable_lcn, $temptable_saco, $temptable_fecha)
+    public static function updateUno($temporal_id, $temptable_id, $temptable_eg, $temptable_lcn, $temptable_saco, $temptable_fecha, $temptable_citaprimtrim)
     {
         if (!$temporal_id || !$temporal_id) {
             return false;
@@ -261,9 +261,9 @@ class TemporalModel
 
         $database = DatabaseFactory::getFactory()->getConnection();
 
-        $sql = "UPDATE temptable SET temptable_rut = :temptable_rut, temptable_eg = :temptable_eg, temptable_lcn = :temptable_lcn, temptable_saco = :temptable_saco, temptable_fecha = :temptable_fecha WHERE temptable_id = :temptable_id LIMIT 1";
+        $sql = "UPDATE temptable SET temptable_rut = :temptable_rut, temptable_eg = :temptable_eg, temptable_lcn = :temptable_lcn, temptable_saco = :temptable_saco, temptable_fecha = :temptable_fecha, temptable_citaprimtrim = :temptable_citaprimtrim WHERE temptable_id = :temptable_id LIMIT 1";
         $query = $database->prepare($sql);
-        $query->execute(array(':temptable_rut' => $temporal_id, ':temptable_eg' => $temptable_eg, ':temptable_lcn' => $temptable_lcn, ':temptable_saco' => $temptable_saco, ':temptable_id' => $temptable_id, ':temptable_fecha' => $temptable_fecha));
+        $query->execute(array(':temptable_rut' => $temporal_id, ':temptable_eg' => $temptable_eg, ':temptable_lcn' => $temptable_lcn, ':temptable_saco' => $temptable_saco, ':temptable_id' => $temptable_id, ':temptable_fecha' => $temptable_fecha, ':temptable_citaprimtrim' => $temptable_citaprimtrim));
 
         if ($query->rowCount() == 1) {
             return true;

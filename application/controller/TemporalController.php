@@ -52,10 +52,10 @@ class TemporalController extends Controller
                 $resultado = TemporalModel::getUno(Request::post('temporal_id'),Request::post('temptable_id'));
                 break;
             case "new":
-                $resultado = TemporalModel::createUno(Request::post('temporal_id'), Request::post('temptable_eg'), Request::post('temptable_lcn'), Request::post('temptable_saco'),Request::post('temptable_fecha'));
+                $resultado = TemporalModel::createUno(Request::post('temporal_id'), Request::post('temptable_eg'), Request::post('temptable_lcn'), Request::post('temptable_saco'),Request::post('temptable_fecha'),Request::post('temptable_citaprimtrim'));
                 break;
             case "set":
-                $resultado = TemporalModel::updateUno(Request::post('temporal_id'), Request::post('temptable_id'), Request::post('temptable_eg'), Request::post('temptable_lcn'), Request::post('temptable_saco'),Request::post('temptable_fecha'));
+                $resultado = TemporalModel::updateUno(Request::post('temporal_id'), Request::post('temptable_id'), Request::post('temptable_eg'), Request::post('temptable_lcn'), Request::post('temptable_saco'),Request::post('temptable_fecha'),Request::post('temptable_citaprimtrim'));
                 break;
             case "read":
                 $resultado = TemporalModel::getTemporal(Request::post('temporal_id'));
