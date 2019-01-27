@@ -275,7 +275,7 @@ class TemporalModel
 
     public static function updateDos($tempdostable_id, $tempdostable_correlativo,$tempdostable_eg, $tempdostable_dbp, $tempdostable_dof, $tempdostable_cc, $tempdostable_ca, $tempdostable_lf, $tempdostable_bvm, $tempdostable_lh, $tempdostable_cerebelo, $tempdostable_pfe, $tempdostable_egP50, $tempdostable_presentacion, $tempdostable_dorso, $tempdostable_fcf, $tempdostable_sexo,$tempdostable_morfo, $tempdostable_anatomia, $tempdostable_ubicacion, $tempdostable_incersion, $tempdostable_grado, $tempdostable_liq, $tempdostable_cordon, $tempdostable_vasos, $tempdostable_comentario, $tempdostable_comentarios, $tempdostable_fecha, $tempdostable_citasegtrim, $tempdostable_consentimiento)
     {
-        if (!$temporal_id || !$temporal_id) {
+        if (!$tempdostable_id || !$tempdostable_id) {
             return false;
         }
 
